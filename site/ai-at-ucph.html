@@ -1,0 +1,599 @@
+<title>AI at UCPH</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a research register — a structural map first, then who meets where, then time,
+   then what is still taking shape, then the register itself; one reading column, with
+   figures allowed to run wider. */
+:root {
+  --bg: #f3f5f5;
+  --surface: #fcfcfb;
+  --ink: #10171a;
+  --ink-2: #47525a;
+  --muted: #6f7a80;
+  --hair: #dce1e2;
+  --axis: #bfc7ca;
+  --band: #eef1f1;
+  --accent: #1b5a85;
+  --k-coord: #2a78d6;
+  --k-nat: #eb6834;
+  --k-fac: #1baf7a;
+  --k-eu: #eda100;
+  --flash: rgba(42,120,214,0.12);
+  --f-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
+    --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
+    --k-coord: #3987e5; --k-nat: #d95926; --k-fac: #199e70; --k-eu: #c98500;
+    --flash: rgba(57,135,229,0.18);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
+  --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
+  --k-coord: #3987e5; --k-nat: #d95926; --k-fac: #199e70; --k-eu: #c98500;
+  --flash: rgba(57,135,229,0.18);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 15.5px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+.page { max-width: 1060px; margin: 0 auto; display: grid; gap: 64px; }
+.measure { max-width: 66ch; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+h1, h2 { font-family: var(--f-display); font-weight: 600; text-wrap: balance; letter-spacing: -0.01em; margin: 0; }
+h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.02; }
+h2 { font-size: 1.7rem; line-height: 1.15; }
+h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--f-mono); }
+.small { font-size: 0.86rem; color: var(--ink-2); }
+
+header { display: grid; gap: 18px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 62ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; font-family: var(--f-mono); font-size: 0.8rem; color: var(--muted); padding-top: 14px; border-top: 1px solid var(--hair); }
+.facts b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+section { display: grid; gap: 20px; }
+.sec-head { display: grid; gap: 6px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.86rem; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+.sw-coord { background: var(--k-coord); } .sw-nat { background: var(--k-nat); }
+.sw-fac { background: var(--k-fac); } .sw-eu { background: var(--k-eu); }
+.ln { width: 26px; height: 0; border-top: 2px dashed var(--muted); flex: none; }
+.ln.dot { border-top: 2px dotted var(--ink-2); }
+.tag { font-family: var(--f-mono); font-size: 0.66rem; font-weight: 500; background: var(--ink); color: var(--surface); border-radius: 4px; padding: 1px 5px; letter-spacing: 0.04em; }
+
+.figure { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 18px; position: relative; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.scroll svg { display: block; width: 100%; height: auto; }
+#map svg { min-width: 760px; }
+#timeline svg { min-width: 720px; }
+.fig-note { font-size: 0.82rem; color: var(--muted); margin-top: 10px; }
+
+.band { fill: var(--band); }
+.band-label { fill: var(--muted); font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+.node rect.box { fill: var(--surface); stroke-width: 1.6; }
+.node .nm { fill: var(--ink); font-family: var(--f-body); font-size: 12.5px; font-weight: 600; }
+.node .mt { fill: var(--ink-2); font-family: var(--f-mono); font-size: 10.5px; }
+.node .sc-bg { fill: var(--ink); }
+.node .sc-tx { fill: var(--surface); font-family: var(--f-mono); font-size: 9.5px; font-weight: 500; }
+.node { cursor: pointer; }
+.node:hover rect.box, .node:focus rect.box { stroke-width: 2.6; }
+.node:focus { outline: none; }
+.k-coord rect.box { stroke: var(--k-coord); } .k-coord .dot { fill: var(--k-coord); }
+.k-nat rect.box { stroke: var(--k-nat); } .k-nat .dot { fill: var(--k-nat); }
+.k-fac rect.box { stroke: var(--k-fac); } .k-fac .dot { fill: var(--k-fac); }
+.k-eu rect.box { stroke: var(--k-eu); } .k-eu .dot { fill: var(--k-eu); }
+.node.past rect.box { stroke-dasharray: 5 4; }
+.edge { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.edge.open { stroke: var(--ink-2); stroke-dasharray: 1.5 4; stroke-linecap: round; stroke-width: 2; }
+.edge-lb { fill: var(--muted); font-family: var(--f-mono); font-size: 10px; }
+.edge-lb.open { fill: var(--ink-2); }
+.arrowhead { fill: var(--muted); }
+.axis-line { stroke: var(--axis); stroke-width: 1; }
+.tick { stroke: var(--hair); stroke-width: 1; }
+.tick-lb { fill: var(--muted); font-family: var(--f-mono); font-size: 11px; }
+.ev-lb { fill: var(--ink); font-family: var(--f-body); font-size: 12px; font-weight: 500; }
+.ev-sub { fill: var(--muted); font-family: var(--f-mono); font-size: 10px; }
+.today { stroke: var(--muted); stroke-dasharray: 3 3; stroke-width: 1; }
+.fill-coord { fill: var(--k-coord); } .fill-nat { fill: var(--k-nat); } .fill-fac { fill: var(--k-fac); } .fill-eu { fill: var(--k-eu); }
+.ring { stroke: var(--surface); stroke-width: 2; }
+
+.tip { position: absolute; pointer-events: none; z-index: 5; background: var(--ink); color: var(--surface); font-size: 0.82rem; line-height: 1.45; padding: 8px 10px; border-radius: 6px; max-width: 260px; }
+.tip b { display: block; font-weight: 600; }
+.tip span { color: var(--surface); opacity: 0.8; font-family: var(--f-mono); font-size: 0.74rem; }
+
+.seats { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.fac { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 16px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.fac h3 { font-size: 0.82rem; font-family: var(--f-mono); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.seat { display: grid; grid-template-columns: 14px 1fr; gap: 10px; align-items: start; }
+.seat .sw { margin-top: 5px; }
+.seat .sw.none { background: transparent; border: 1.5px solid var(--axis); }
+.seat-nm { font-weight: 500; }
+.seat-un { font-size: 0.82rem; color: var(--ink-2); line-height: 1.4; }
+.pill { display: inline-block; font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-2); border: 1px solid var(--axis); border-radius: 999px; padding: 0 7px; margin-left: 6px; vertical-align: 2px; }
+
+/* units still being clarified */
+.open-list { display: grid; gap: 0; background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; overflow: hidden; }
+.open-row { display: grid; grid-template-columns: minmax(170px, 1.1fr) minmax(0, 2fr) minmax(0, 2fr); gap: 8px 24px; padding: 16px 18px; border-top: 1px solid var(--hair); align-items: start; }
+.open-row:first-child { border-top: 0; }
+.open-row.head { background: var(--band); padding-block: 10px; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.open-name { display: grid; gap: 6px; align-content: start; }
+.open-name b { font-family: var(--f-display); font-size: 1.12rem; font-weight: 600; line-height: 1.2; }
+.state { justify-self: start; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.04em; border-radius: 999px; padding: 1px 8px; border: 1px solid var(--ink-2); color: var(--ink); }
+.state.announced { border-style: dashed; color: var(--ink-2); }
+.open-row p { font-size: 0.9rem; color: var(--ink-2); min-width: 0; }
+.open-row .col-lb { display: none; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.evo-note { border-left: 2px solid var(--ink); padding: 4px 0 4px 14px; color: var(--ink-2); font-size: 0.93rem; max-width: 70ch; }
+.evo-note b { color: var(--ink); }
+@media (max-width: 720px) {
+  .open-row { grid-template-columns: 1fr; }
+  .open-row.head { display: none; }
+  .open-row .col-lb { display: block; margin-top: 4px; }
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: inherit; font-size: 0.86rem; color: var(--ink-2); background: var(--surface); border: 1px solid var(--hair); border-radius: 999px; padding: 5px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.chip:hover { border-color: var(--axis); color: var(--ink); }
+.chip[aria-pressed="true"] { color: var(--ink); border-color: var(--ink-2); background: var(--band); }
+.chip .n { font-family: var(--f-mono); font-size: 0.76rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.register { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 16px 18px; display: grid; gap: 10px; align-content: start; min-width: 0; transition: background-color .6s ease; scroll-margin-top: 24px; }
+.card.flash { background: var(--flash); }
+.card-kind { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.card h3 { font-family: var(--f-display); font-size: 1.22rem; font-weight: 600; line-height: 1.2; }
+.card p { font-size: 0.92rem; color: var(--ink-2); }
+.card dl { display: grid; grid-template-columns: 6.5em 1fr; gap: 4px 12px; margin: 0; font-size: 0.85rem; }
+.card dt { color: var(--muted); }
+.card dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.card-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; padding-top: 8px; border-top: 1px solid var(--hair); font-size: 0.8rem; }
+.card-foot .path { font-family: var(--f-mono); color: var(--muted); }
+
+ul.plain { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; max-width: 72ch; }
+ul.plain li { padding-left: 16px; position: relative; color: var(--ink-2); }
+ul.plain li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 1.5px; background: var(--muted); }
+ul.plain li b { color: var(--ink); font-weight: 600; }
+
+footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; gap: 10px; font-size: 0.86rem; color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+@media (max-width: 520px) { body { padding-block: 24px 48px; } .page { gap: 48px; } .figure { padding: 12px; } }
+</style>
+
+<div class="page">
+
+<header>
+  <span class="eyebrow">DK-AI · UCPH view · as of 17 October 2026</span>
+  <h1>AI at UCPH</h1>
+  <p class="lede">The University of Copenhagen's AI activity is organised in three layers: coordination at university level, a set of research and education centres, and a European network whose Danish hub sits at the Department of Computer Science. People join the layers. The leaders of six of the centres on this page sit on the UCPH AI steering committee. Since September 2026 a new AI Office, headed by UCPH's first Deputy Prorector for AI, runs a cross-university initiative to 2029.</p>
+  <div class="facts" aria-label="Key figures">
+    <span><b>15</b> bodies on this page</span>
+    <span><b>12</b> steering-committee seats</span>
+    <span><b>DKK 110m</b> AI initiative, 2026–2029</span>
+    <span><b>118</b> UCPH research centres read</span>
+  </div>
+</header>
+
+<section id="structure" aria-labelledby="h-structure">
+  <div class="sec-head">
+    <span class="eyebrow">Structure</span>
+    <h2 id="h-structure">How the layers connect</h2>
+  </div>
+  <div class="legend" aria-label="Legend">
+    <span><i class="sw sw-coord"></i>Coordination</span>
+    <span><i class="sw sw-nat"></i>National consortium</span>
+    <span><i class="sw sw-fac"></i>Faculty &amp; discipline centre</span>
+    <span><i class="sw sw-eu"></i>European</span>
+    <span><i class="tag">SC</i>Leader sits on the UCPH AI steering committee</span>
+    <span><i class="ln"></i>Recorded relation (labelled)</span>
+    <span><i class="ln dot"></i>Relation not yet described</span>
+  </div>
+  <div class="figure" id="map">
+    <div class="scroll">
+    <svg viewBox="0 0 1000 600" role="img" aria-labelledby="map-t map-d">
+      <title id="map-t">Structure of AI initiatives associated with UCPH</title>
+      <desc id="map-d">Three bands. European: ELLIS Unit Copenhagen continued as ELLIS Unit Denmark, a member unit of ELLIS, which runs the ELLIS PhD and Postdoc Program. Coordination: UCPH AI, governed by its steering committee, and the AI Office, whose relation to UCPH AI is not yet described. Research and education centres: Pioneer Centre, CAISA, CPDSE, SCIENCE AI Centre, Centre for Language Technology and CDCH, whose leaders sit on the steering committee, and TreeSense and CORS². The Pioneer Centre is the Danish hub of ELLIS Unit Denmark and works closely with CAISA.</desc>
+      <defs>
+        <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L8,4 L0,8 z"/></marker>
+      </defs>
+
+      <rect class="band" x="0" y="14" width="1000" height="132" rx="8"/>
+      <rect class="band" x="0" y="164" width="1000" height="140" rx="8"/>
+      <rect class="band" x="0" y="322" width="1000" height="264" rx="8"/>
+      <text class="band-label" x="20" y="38">European</text>
+      <text class="band-label" x="20" y="188">Coordination</text>
+      <text class="band-label" x="20" y="346">Research and education centres</text>
+
+      <line class="edge" x1="196" y1="88" x2="296" y2="88" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="248" y="80" text-anchor="middle">continued as</text>
+      <line class="edge" x1="476" y1="88" x2="556" y2="88" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="518" y="80" text-anchor="middle">member of</text>
+      <line class="edge" x1="736" y1="88" x2="816" y2="88" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="778" y="80" text-anchor="middle">runs</text>
+
+      <line class="edge" x1="196" y1="238" x2="260" y2="238" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="228" y="230" text-anchor="middle">governed by</text>
+
+      <path class="edge open" d="M688,206 C688,184 170,184 170,206"/>
+      <text class="edge-lb open" x="330" y="181" text-anchor="middle">relation not yet described</text>
+
+      <line class="edge" x1="520" y1="366" x2="442" y2="124" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="464" y="157" text-anchor="start">Danish hub</text>
+      <line class="edge" x1="608" y1="398" x2="676" y2="398"/>
+      <text class="edge-lb" x="642" y="390" text-anchor="middle">work closely</text>
+
+      <g id="nodes"></g>
+    </svg>
+    </div>
+    <div class="tip" id="tip" hidden></div>
+    <p class="fig-note">Select a box to open its entry in the register below. TreeSense and CORS² are anchored in geosciences and pharmacy; their leaders are not on the steering committee's current roster.</p>
+  </div>
+</section>
+
+<section id="committee" aria-labelledby="h-committee">
+  <div class="sec-head">
+    <span class="eyebrow">Governance</span>
+    <h2 id="h-committee">Who meets on the steering committee</h2>
+    <p class="small measure">The UCPH AI steering committee as listed on ai.ku.dk, re-read 17 October 2026. Members are appointed for two years. A filled square marks a member who leads a centre on this page, coloured by that centre's kind; an empty square marks a member without a centre leadership recorded here.</p>
+  </div>
+  <div class="seats" id="seats"></div>
+</section>
+
+<section id="time" aria-labelledby="h-time">
+  <div class="sec-head">
+    <span class="eyebrow">Time</span>
+    <h2 id="h-time">Dated milestones</h2>
+  </div>
+  <div class="legend">
+    <span><i class="sw sw-coord"></i>Coordination</span>
+    <span><i class="sw sw-nat"></i>National consortium</span>
+    <span><i class="sw sw-fac"></i>Faculty &amp; discipline centre</span>
+    <span><i class="sw sw-eu"></i>European</span>
+    <span class="mono" style="font-size:0.8rem">● exact date&nbsp;&nbsp;▬ year or period</span>
+  </div>
+  <div class="figure" id="timeline">
+    <div class="scroll">
+    <svg viewBox="0 0 1000 205" role="img" aria-labelledby="tl-t tl-d">
+      <title id="tl-t">Timeline of dated milestones, 2018 to 2030</title>
+      <desc id="tl-d">SCIENCE AI Centre opened 12 April 2018. ELLIS Unit Copenhagen ran from 2019 and continued as ELLIS Unit Denmark on 1 March 2026. The Pioneer Centre was founded in 2021, CPDSE's grant was awarded in 2024, and CAISA launched in 2025. The AI Office began on 1 September 2026 for a period running to 2029.</desc>
+      <g id="tl"></g>
+    </svg>
+    </div>
+    <div class="tip" id="tip2" hidden></div>
+    <p class="fig-note">Founding dates for UCPH AI, the Centre for Language Technology, CDCH, TreeSense and CORS², and the steering committee's appointment dates, are not yet recorded in the vault. CAISA's launch year follows UCPH's own announcements.</p>
+  </div>
+</section>
+
+<section id="open" aria-labelledby="h-open">
+  <div class="sec-head">
+    <span class="eyebrow">Taking shape</span>
+    <h2 id="h-open">Units still being clarified</h2>
+    <p class="small measure">On 27 August 2026 UCPH announced a cross-university AI initiative of DKK 110 million, organised under two missions, <i>AI at UCPH</i> and <i>UCPH with AI</i>, and designed to run for three years before being embedded in the organisation. Its parts are at different stages. This is what UCPH's own pages describe so far.</p>
+  </div>
+  <div class="open-list" role="table" aria-label="Units still being clarified">
+    <div class="open-row head" role="row"><span role="columnheader">Unit</span><span role="columnheader">Described so far</span><span role="columnheader">Not yet described</span></div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>AI Office</b><span class="state">Established 1 Sep 2026</span></div>
+      <div role="cell"><span class="col-lb">Described so far</span><p>A group unit headed by Deputy Prorector for AI Morten Axel Pedersen, who reports to the Rector on a three-year term to September 2029. It coordinates and supports AI work across the university.</p></div>
+      <div role="cell"><span class="col-lb">Not yet described</span><p>Its staffing, and how it relates to UCPH AI and the steering committee. The two are presented on separate pages.</p></div>
+    </div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>AI task force</b><span class="state announced">Announced 27 Aug 2026</span></div>
+      <div role="cell"><span class="col-lb">Described so far</span><p>Set up as part of the AI initiative.</p></div>
+      <div role="cell"><span class="col-lb">Not yet described</span><p>Its membership, mandate, and relation to the AI Office and to UCPH AI.</p></div>
+    </div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>New governance structure</b><span class="state announced">Announced 27 Aug 2026</span></div>
+      <div role="cell"><span class="col-lb">Described so far</span><p>Established across the university as part of the initiative.</p></div>
+      <div role="cell"><span class="col-lb">Not yet described</span><p>Its design, and where faculties, departments and administration sit in it.</p></div>
+    </div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>Three AI labs</b><span class="state announced">Announced 27 Aug 2026</span></div>
+      <div role="cell"><span class="col-lb">Described so far</span><p>Established to support researchers' use of AI.</p></div>
+      <div role="cell"><span class="col-lb">Not yet described</span><p>Their themes, leads and hosting.</p></div>
+    </div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>Common AI infrastructure</b><span class="state announced">Announced 27 Aug 2026</span></div>
+      <div role="cell"><span class="col-lb">Described so far</span><p>Shared infrastructure and platforms for research, teaching and administration.</p></div>
+      <div role="cell"><span class="col-lb">Not yet described</span><p>How the DKK 110 million divides across the initiative's parts. The tools themselves are outside the scope of this map.</p></div>
+    </div>
+  </div>
+  <p class="evo-note"><b>Possible further evolution.</b> As the task force, labs and governance structure gain published mandates and membership, each could be drawn on this map as a body in its own right, and the relationship between the AI Office and UCPH AI could be shown as a labelled line rather than a dotted one.</p>
+</section>
+
+<section id="register" aria-labelledby="h-register">
+  <div class="sec-head">
+    <span class="eyebrow">Register</span>
+    <h2 id="h-register">Every body on this page</h2>
+    <p class="small measure">Each entry links to its source page and names its file in the DK-AI vault.</p>
+  </div>
+  <div class="chips" role="group" aria-label="Filter by kind" id="chips"></div>
+  <div class="register" id="cards"></div>
+</section>
+
+<section id="education" aria-labelledby="h-edu">
+  <div class="sec-head">
+    <span class="eyebrow">Education</span>
+    <h2 id="h-edu">AI in UCPH education</h2>
+  </div>
+  <ul class="plain small">
+    <li><b>Machine learning og datavidenskab</b>, a bachelor's degree since 2019, belongs to the Faculty of Science and its study board for mathematics and computer science.</li>
+    <li><b>Kognitions- og datavidenskab</b>, a bachelor's degree in the Faculty of Social Sciences, offers an AI and human-centred computing specialisation.</li>
+    <li><b>CPDSE</b>, a joint UCPH–SDU centre, works across bachelor, master, PhD and life-long learning in pharmaceutical data science, with a PhD programme and an industry course in AI- and data-driven drug design.</li>
+    <li>The <b>Pioneer Centre</b> recruits PhD students as a cohort across its five partner universities.</li>
+    <li>The <b>ELLIS PhD &amp; Postdoc Program</b> supervises across two European countries, with Danish participation through ELLIS Unit Denmark.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Drawn from DK-AI, an Open Knowledge Format vault mapping public and non-profit AI activity in Denmark. Every fact traces to a page that was read and is cited in the register. The vault describes how activity is organised; it does not evaluate it.</p>
+  <p class="mono" style="font-size:0.78rem;color:var(--muted)">Source view: views/ucph/index.md · Coverage: views/coverage/index.md · UCPH research centres included where AI or ML is a named focus on their own pages.</p>
+</footer>
+
+</div>
+
+<script>
+(() => {
+  const KIND = {
+    coord: { label: "Coordination", cls: "k-coord" },
+    nat:   { label: "National consortium", cls: "k-nat" },
+    fac:   { label: "Faculty & discipline centre", cls: "k-fac" },
+    eu:    { label: "European", cls: "k-eu" }
+  };
+
+  const items = [
+    { id: "ai-office", kind: "coord", name: "AI Office", x: 600, y: 206, m1: "Deputy Prorector for AI", m2: "2026–29 · DKK 110m",
+      summary: "Group unit running UCPH's cross-university AI initiative, 2026–2029, under two missions: AI at UCPH and UCPH with AI. An AI task force, three AI labs and a new governance structure are announced.",
+      facts: [["Started", "1 September 2026"], ["Period", "2026 – 2029"], ["Volume", "DKK 110m, as announced"], ["Head", "Morten Axel Pedersen, Deputy Prorector for AI"], ["Reports to", "the Rector"]],
+      url: "https://about.ku.dk/management/viceprorector-ai-morten-axel-pedersen/", path: "initiatives/ucph-ai-office.md" },
+    { id: "ucph-ai", kind: "coord", name: "UCPH AI", x: 20, y: 206, m1: "strategic initiative", m2: "all five faculties",
+      summary: "Coordinates the university's AI research, education and innovation across faculties, and serves as a gateway for external partners.",
+      facts: [["Form", "Strategic initiative"], ["Host", "University of Copenhagen"], ["Chair", "Line Katrine Harder Clemmensen"], ["Deputy chair", "Henrik Palmer Olsen"], ["Contact", "ai@ku.dk"]],
+      url: "https://ai.ku.dk/", path: "initiatives/ucph-ai.md" },
+    { id: "committee", kind: "coord", name: "Steering Committee", x: 264, y: 206, m1: "12 seats", m2: "2-year appointments",
+      summary: "Brings together the leaders of six AI and education centres, academics from all five faculties, and the head of UCPH's innovation office as an observer.",
+      facts: [["Form", "Steering committee"], ["Governs", "UCPH AI"], ["Members", "12 named (as of 17 Oct 2026)"], ["Terms", "Two years"]],
+      url: "https://ai.ku.dk/", path: "bodies/ucph-ai-steering-committee.md" },
+    { id: "pioneer", kind: "nat", sc: true, name: "Pioneer Centre for AI", x: 432, y: 366, m1: "2021 · hosted at DIKU", m2: "5 universities · DKK 350m",
+      summary: "National AI research centre organised in seven collaboratories, focused on fundamental research and on platforms and methods for society's challenges.",
+      facts: [["Founded", "2021"], ["Host", "Department of Computer Science"], ["Partners", "DTU, ITU, Aalborg University, Aarhus University"], ["Funded by", "Ministry of Higher Education and Science; Novo Nordisk Fonden; Lundbeck, Villum and Carlsberg Foundations; Danske Regioner"], ["Leadership", "Director Serge Belongie · co-lead Mads Nielsen"]],
+      url: "https://www.aicentre.dk/", path: "initiatives/pioneer-centre-for-ai.md" },
+    { id: "caisa", kind: "nat", sc: true, name: "CAISA", x: 680, y: 366, m1: "AI in Society", m2: "5 universities",
+      summary: "National Centre for Artificial Intelligence in Society, researching AI's societal impact with citizens at the centre of its mission.",
+      facts: [["Launched", "2025, per UCPH announcements"], ["Partners", "UCPH, Aalborg, Aarhus, ITU, DTU; with the Pioneer Centre"], ["Funded by", "Ministry of Digital Affairs; Ministry of Higher Education and Science"], ["Director", "Rebecca Adler-Nissen"], ["Chief Scientist", "Morten Axel Pedersen"]],
+      url: "https://caisa.dk/en", path: "initiatives/caisa.md" },
+    { id: "cpdse", kind: "fac", sc: true, name: "CPDSE", x: 150, y: 366, m1: "UCPH + SDU · 2024", m2: "pharma data science",
+      summary: "Center for Pharmaceutical Data Science Education: a joint UCPH–SDU initiative integrating data science, including AI, into pharmaceutical education from bachelor to life-long learning.",
+      facts: [["Founded", "2024 (grant awarded)"], ["Partners", "University of Copenhagen, University of Southern Denmark"], ["Funded by", "Novo Nordisk Fonden; LEO Foundation; Lundbeck Foundation"], ["Center leader", "Morten Lindow"]],
+      url: "https://cpdse.dk/about/", path: "initiatives/cpdse.md" },
+    { id: "science-ai", kind: "fac", sc: true, name: "SCIENCE AI Centre", x: 20, y: 490, m1: "2018 · Faculty of Science", m2: "education & research",
+      summary: "An umbrella for AI across the Faculty of Science, on three pillars: education, innovation and research.",
+      facts: [["Opened", "12 April 2018"], ["Host", "Faculty of Science"], ["Director", "Christian Igel (CEO)"]],
+      url: "https://science.ku.dk/ai-centre/", path: "initiatives/science-ai-centre.md" },
+    { id: "cst", kind: "fac", sc: true, name: "Language Technology", x: 215, y: 490, m1: "CST · Humanities", m2: "NLP for Danish",
+      summary: "Centre for Language Technology: language technology and natural language processing, primarily for Danish.",
+      facts: [["Host", "Department of Nordic Studies and Linguistics"], ["Head", "Bolette Sandford Pedersen"]],
+      url: "https://cst.ku.dk/english/", path: "initiatives/centre-for-language-technology.md" },
+    { id: "cdch", kind: "fac", sc: true, name: "CDCH", x: 410, y: 490, m1: "Digital & Computational", m2: "Humanities · AI expertise",
+      summary: "Centre for Digital and Computational Humanities: a research hub giving humanities research access to AI and data-science expertise.",
+      facts: [["Part of", "Faculty of Humanities"], ["Head", "Giovanni Colavizza"]],
+      url: "https://cdch.ku.dk/", path: "initiatives/centre-for-digital-and-computational-humanities.md" },
+    { id: "treesense", kind: "fac", name: "TreeSense", x: 605, y: 490, m1: "DNRF Centre of Excellence", m2: "Geosciences · DNRF192",
+      summary: "Develops AI-based algorithms for remote sensing of the world's trees: species, crown size, height and carbon stocks.",
+      facts: [["Part of", "Dept. of Geosciences and Natural Resource Management"], ["Funded by", "Danmarks Grundforskningsfond, grant DNRF192"], ["Director", "Rasmus Fensholt"]],
+      url: "https://treesense.ku.dk/", path: "initiatives/treesense.md" },
+    { id: "cors", kind: "fac", name: "CORS²", x: 800, y: 490, m1: "Regulatory Science", m2: "Pharmacy · drug safety",
+      summary: "Copenhagen Centre for Regulatory Science. Its drug-safety group integrates AI with real-world biomedical data.",
+      facts: [["Part of", "Department of Pharmacy"], ["Partners", "PRC; Nordic PharmacoEpidemiological Network"]],
+      url: "https://pharmacy.ku.dk/research/research-centres/cors2/", path: "initiatives/cors.md" },
+    { id: "ellis-cph", kind: "eu", name: "ELLIS Unit Copenhagen", x: 20, y: 56, m1: "2019 – 2026", m2: "UCPH · DTU · ITU", past: true,
+      summary: "The Danish ELLIS unit founded by researchers from UCPH, DTU and ITU. It continued as ELLIS Unit Denmark on 1 March 2026.",
+      facts: [["Period", "2019 – 1 March 2026"], ["Partners", "UCPH, DTU, ITU"], ["Continued as", "ELLIS Unit Denmark"]],
+      url: "https://www.aicentre.dk/ellis-unit-denmark", path: "initiatives/ellis-unit-copenhagen.md" },
+    { id: "ellis-dk", kind: "eu", name: "ELLIS Unit Denmark", x: 300, y: 56, m1: "since March 2026", m2: "6 universities",
+      summary: "The Danish member unit of the European ELLIS network, spanning six universities, with the Pioneer Centre as its Danish hub.",
+      facts: [["Founded", "1 March 2026"], ["Partners", "UCPH, DTU, ITU, Aalborg, Aarhus, SDU"], ["Members", "30+ (as of 22 Sep 2026)"], ["Director", "Ole Winther (UCPH and DTU)"]],
+      url: "https://www.aicentre.dk/ellis-unit-denmark", path: "initiatives/ellis-unit-denmark.md" },
+    { id: "ellis", kind: "eu", name: "ELLIS", x: 560, y: 56, m1: "pan-European network", m2: "44 sites · 17 countries",
+      summary: "The European Laboratory for Learning and Intelligent Systems, a network of excellence in machine learning. Included because Danish bodies are members.",
+      facts: [["Form", "Pan-European network"], ["Scale", "42 units and 2 institutes, 44 sites, 17 countries"]],
+      url: "https://ellis.eu/", path: "initiatives/ellis.md" },
+    { id: "ellis-phd", kind: "eu", name: "ELLIS PhD & Postdoc", x: 820, y: 56, m1: "programme", m2: "2-country supervision",
+      summary: "Doctoral and postdoctoral training in machine learning and AI, supervised in two European countries, with a six-month research exchange.",
+      facts: [["Level", "PhD and postdoc"], ["Offered by", "ELLIS"], ["Danish link", "ELLIS Unit Denmark"]],
+      url: "https://ellis.eu/research/phd-postdoc", path: "programmes/ellis-phd-postdoc-program.md" }
+  ];
+
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const W = 176, H = 64;
+
+  const g = document.getElementById("nodes");
+  const tip = document.getElementById("tip");
+  const mapBox = document.getElementById("map");
+
+  function showTip(t, box, html, evt) {
+    t.innerHTML = html; t.hidden = false;
+    const r = box.getBoundingClientRect();
+    let x, y;
+    if (evt && evt.clientX) { x = evt.clientX - r.left + 14; y = evt.clientY - r.top + 14; }
+    else { const tr = evt.target.getBoundingClientRect(); x = tr.left - r.left; y = tr.bottom - r.top + 8; }
+    const maxX = r.width - t.offsetWidth - 8;
+    t.style.left = Math.max(8, Math.min(x, maxX)) + "px";
+    t.style.top = y + "px";
+  }
+  const hide = t => { t.hidden = true; };
+
+  items.forEach(it => {
+    const n = el("g", { class: "node " + KIND[it.kind].cls + (it.past ? " past" : ""), tabindex: "0", role: "button",
+      "aria-label": it.name + ", " + KIND[it.kind].label + (it.sc ? ", leader sits on the steering committee" : "") + ". Open register entry." }, g);
+    el("rect", { class: "box", x: it.x, y: it.y, width: W, height: H, rx: 7 }, n);
+    el("rect", { class: "dot", x: it.x + 12, y: it.y + 13, width: 8, height: 8, rx: 2 }, n);
+    const t1 = el("text", { class: "nm", x: it.x + 26, y: it.y + 22 }, n); t1.textContent = it.name;
+    const t2 = el("text", { class: "mt", x: it.x + 12, y: it.y + 40 }, n); t2.textContent = it.m1;
+    const t3 = el("text", { class: "mt", x: it.x + 12, y: it.y + 55 }, n); t3.textContent = it.m2;
+    if (it.sc) {
+      el("rect", { class: "sc-bg", x: it.x + W - 34, y: it.y - 8, width: 26, height: 16, rx: 4 }, n);
+      const s = el("text", { class: "sc-tx", x: it.x + W - 21, y: it.y + 3.5, "text-anchor": "middle" }, n); s.textContent = "SC";
+    }
+    const html = "<b>" + it.name + "</b><span>" + KIND[it.kind].label + (it.past ? " · past" : "") + (it.sc ? " · leader on steering committee" : "") + "</span>";
+    n.addEventListener("mousemove", e => showTip(tip, mapBox, html, e));
+    n.addEventListener("mouseleave", () => hide(tip));
+    n.addEventListener("focus", e => showTip(tip, mapBox, html, e));
+    n.addEventListener("blur", () => hide(tip));
+    n.addEventListener("click", () => openCard(it.id));
+    n.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openCard(it.id); } });
+  });
+
+  const groups = [
+    ["Science", [
+      ["Line Katrine Harder Clemmensen", "Department of Mathematical Sciences", null, "Chair"],
+      ["Christian Igel", "Computer Science · SCIENCE AI Centre", "fac"],
+      ["Serge Belongie", "Computer Science · Pioneer Centre", "nat"],
+      ["Mads Nielsen", "Computer Science · Pioneer Centre", "nat"]]],
+    ["Health and Medical Sciences", [
+      ["Søren Brunak", "Public Health · Center for Protein Research", null],
+      ["Morten Lindow", "Drug Design and Pharmacology · CPDSE", "fac"]]],
+    ["Humanities", [
+      ["Bolette Sandford Pedersen", "Nordic Studies and Linguistics · CST", "fac"],
+      ["Giovanni Colavizza", "Communication · CDCH", "fac"]]],
+    ["Law", [
+      ["Henrik Palmer Olsen", "International Courts and Governance", null, "Vice chair"],
+      ["Sebastian Porsdam Mann", "Bioscience Innovation Law", null]]],
+    ["Social Sciences", [
+      ["Rebecca Adler-Nissen", "Political Science · CAISA", "nat"]]],
+    ["Administration", [
+      ["Anders Pall Skött", "Innovation and External Partnerships", null, "Observer"]]]
+  ];
+  const seats = document.getElementById("seats");
+  groups.forEach(([fac, list]) => {
+    const box = document.createElement("div"); box.className = "fac";
+    box.innerHTML = "<h3>" + fac + " · " + list.length + "</h3>";
+    list.forEach(([nm, unit, kind, role]) => {
+      const s = document.createElement("div"); s.className = "seat";
+      const sw = kind ? "sw sw-" + kind : "sw none";
+      const lead = kind ? (kind === "nat" ? "Leads a national consortium" : "Leads a faculty or discipline centre") : "No centre leadership on this page";
+      s.innerHTML = '<i class="' + sw + '" role="img" aria-label="' + lead + '"></i><div><div class="seat-nm">' + nm +
+        (role ? '<span class="pill">' + role + "</span>" : "") + '</div><div class="seat-un">' + unit + "</div></div>";
+      box.appendChild(s);
+    });
+    seats.appendChild(box);
+  });
+
+  /* timeline */
+  const tl = document.getElementById("tl");
+  const t0 = 2018, t1 = 2030, X0 = 40, X1 = 960;
+  const sx = t => X0 + (t - t0) / (t1 - t0) * (X1 - X0);
+  const AXIS = 170;
+  el("line", { class: "axis-line", x1: X0, y1: AXIS, x2: X1, y2: AXIS }, tl);
+  for (let y = 2018; y <= 2030; y++) {
+    el("line", { class: "tick", x1: sx(y), y1: 22, x2: sx(y), y2: AXIS }, tl);
+    const lb = el("text", { class: "tick-lb", x: sx(y), y: AXIS + 18, "text-anchor": "middle" }, tl); lb.textContent = y;
+  }
+  const tip2 = document.getElementById("tip2"), tlBox = document.getElementById("timeline");
+  const hoverable = (node, html) => {
+    node.setAttribute("tabindex", "0");
+    node.addEventListener("mousemove", e => showTip(tip2, tlBox, html, e));
+    node.addEventListener("mouseleave", () => hide(tip2));
+    node.addEventListener("focus", e => showTip(tip2, tlBox, html, e));
+    node.addEventListener("blur", () => hide(tip2));
+  };
+  const label = (x, y, txt, sub, anchor) => {
+    const a = el("text", { class: "ev-lb", x, y, "text-anchor": anchor || "start" }, tl); a.textContent = txt;
+    if (sub) { const b = el("text", { class: "ev-sub", x, y: y + 13, "text-anchor": anchor || "start" }, tl); b.textContent = sub; }
+  };
+  const yearBar = (yr, lane, cls, html) => {
+    const r = el("rect", { class: cls, x: sx(yr) + 1, y: lane - 4, width: sx(yr + 1) - sx(yr) - 2, height: 8, rx: 4 }, tl);
+    hoverable(r, html); return r;
+  };
+  const today = 2026 + (289 / 365);
+  el("line", { class: "today", x1: sx(today), y1: 16, x2: sx(today), y2: AXIS }, tl);
+  const td = el("text", { class: "ev-sub", x: sx(today) - 4, y: 14, "text-anchor": "end" }, tl); td.textContent = "17 Oct 2026";
+
+  // lane 1: ELLIS
+  const L1 = 46, dkT = 2026 + 59/365;
+  const p = el("rect", { class: "fill-eu", x: sx(2019), y: L1 - 3, width: sx(dkT) - sx(2019), height: 6, rx: 3 }, tl);
+  hoverable(p, "<b>ELLIS Unit Copenhagen</b><span>2019 – 1 March 2026</span>");
+  label(sx(2019), L1 - 10, "ELLIS Unit Copenhagen", null);
+  const dk = el("circle", { class: "fill-eu ring", cx: sx(dkT), cy: L1, r: 6 }, tl);
+  hoverable(dk, "<b>ELLIS Unit Denmark</b><span>1 March 2026 · six universities</span>");
+  label(sx(dkT) - 12, L1 + 20, "ELLIS Unit Denmark", "1 Mar 2026", "end");
+
+  // lane 2: centres
+  const L2 = 100, scT = 2018 + 101/365;
+  const sc = el("circle", { class: "fill-fac ring", cx: sx(scT), cy: L2, r: 6 }, tl);
+  hoverable(sc, "<b>SCIENCE AI Centre opens</b><span>12 April 2018</span>");
+  label(sx(scT) + 12, L2 + 4, "SCIENCE AI Centre", "12 Apr 2018");
+  yearBar(2021, L2, "fill-nat", "<b>Pioneer Centre for AI</b><span>founded 2021</span>");
+  label(sx(2022) + 8, L2 + 4, "Pioneer Centre", "2021");
+  yearBar(2025, L2, "fill-nat", "<b>CAISA</b><span>launched 2025, per UCPH announcements</span>");
+  label(sx(2025) - 8, L2 + 4, "CAISA", "2025", "end");
+
+  // lane 3: CPDSE and the AI Office
+  const L3 = 144, aoT = 2026 + 243/365, aoEnd = 2029 + 243/365;
+  yearBar(2024, L3, "fill-fac", "<b>CPDSE</b><span>grant awarded 2024</span>");
+  label(sx(2024) - 8, L3 + 4, "CPDSE", "grant 2024", "end");
+  const ao = el("rect", { class: "fill-coord", x: sx(aoT), y: L3 - 4, width: sx(aoEnd) - sx(aoT), height: 8, rx: 4 }, tl);
+  hoverable(ao, "<b>AI Office</b><span>1 September 2026 – September 2029</span>");
+  el("circle", { class: "fill-coord ring", cx: sx(aoT), cy: L3, r: 6 }, tl);
+  label(sx(today) + 8, L3 - 12, "AI Office · 1 Sep 2026 → 2029", null);
+
+  /* register */
+  const cards = document.getElementById("cards"), chips = document.getElementById("chips");
+  const cardEls = {};
+  items.forEach(it => {
+    const c = document.createElement("article"); c.className = "card"; c.id = "c-" + it.id; c.dataset.kind = it.kind;
+    const dl = it.facts.map(([k, v]) => "<dt>" + k + "</dt><dd>" + v + "</dd>").join("");
+    c.innerHTML = '<div class="card-kind"><i class="sw sw-' + it.kind + '"></i>' + KIND[it.kind].label + (it.past ? " · 2019–2026" : "") +
+      (it.sc ? ' <i class="tag" title="Leader sits on the UCPH AI steering committee">SC</i>' : "") + "</div>" +
+      "<h3>" + it.name + "</h3><p>" + it.summary + "</p><dl>" + dl + "</dl>" +
+      '<div class="card-foot"><a href="' + it.url + '" target="_blank" rel="noopener">Source page</a><span class="path">' + it.path + "</span></div>";
+    cards.appendChild(c); cardEls[it.id] = c;
+  });
+  let current = "all";
+  const kinds = [["all", "All"], ["coord", KIND.coord.label], ["nat", KIND.nat.label], ["fac", KIND.fac.label], ["eu", KIND.eu.label]];
+  kinds.forEach(([k, lb]) => {
+    const b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.id = "chip-" + k;
+    const n = k === "all" ? items.length : items.filter(i => i.kind === k).length;
+    b.innerHTML = (k === "all" ? "" : '<i class="sw sw-' + k + '"></i>') + lb + ' <span class="n">' + n + "</span>";
+    b.setAttribute("aria-pressed", k === current ? "true" : "false");
+    b.addEventListener("click", () => setFilter(k));
+    chips.appendChild(b);
+  });
+  function setFilter(k) {
+    current = k;
+    chips.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.id === "chip-" + k ? "true" : "false"));
+    items.forEach(it => { cardEls[it.id].hidden = !(k === "all" || it.kind === k); });
+    try { localStorage.setItem("ucph-ai-filter", k); } catch (e) {}
+  }
+  try { const saved = localStorage.getItem("ucph-ai-filter"); if (saved && KIND[saved]) setFilter(saved); } catch (e) {}
+
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function openCard(id) {
+    if (current !== "all" && cardEls[id].dataset.kind !== current) setFilter("all");
+    const c = cardEls[id];
+    c.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+    c.classList.add("flash");
+    setTimeout(() => c.classList.remove("flash"), 1600);
+  }
+})();
+</script>

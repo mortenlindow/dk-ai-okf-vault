@@ -35,6 +35,16 @@ Start at [index.md](index.md). Every directory has an `index.md` describing what
 holds. [views/](views/) contains curated cross-cutting lenses — the UCPH view, the health
 view, and a coverage checklist recording what has been searched and what has not.
 
+## Published pages
+
+`site/` holds the source of pages built from the vault and published as private Claude
+artifacts.
+
+- `site/ai-at-ucph.html` — **AI at UCPH**, a visual summary of the UCPH view, published at
+  https://claude.ai/artifact/1DDCVrmJZ72ZoNYaMJdUG5. To update it, edit this file and
+  republish it to that URL, so the link stays the same. The page carries its facts inline,
+  so when the vault changes, the page has to be updated to match.
+
 ## Checking it
 
 ```
