@@ -1,0 +1,3 @@
+# Personal editor state (Obsidian) and OS files — not part of the vault
+.obsidian/
+.DS_Store
