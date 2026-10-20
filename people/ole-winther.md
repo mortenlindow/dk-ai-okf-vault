@@ -22,6 +22,9 @@ He also co-leads the **Learning Theory and Optimisation** collaboratory at the
 His dual UCPH/DTU base is published by ELLIS and is the reason this entry is not tagged to
 either institution.
 
+> **Distilled from public sources — to be reviewed.** This entry has not yet been
+> reviewed by the person it names.
+
 > **Published role information only.** This entry records the roles under which this
 > person is named on official pages, and nothing else. See the person policy in
 > `CLAUDE.md` §6.

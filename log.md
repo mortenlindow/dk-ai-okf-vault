@@ -3,6 +3,15 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-10-20 (pre-share decisions)
+
+* **Update**: all 17 `Person` entries labelled *"Distilled from public sources — to be
+  reviewed"*, with a matching *Review status* section in [people](people/index.md). The label is
+  removed from an entry once the person it names has reviewed it.
+* **Decision**: the provenance note on [CPDSE](initiatives/cpdse.md) is kept.
+* **Decision**: commits are authored with the curator's personal (gmail) address, as all
+  commits to date already are.
+
 ## 2026-10-20 (follow-up pass — health-data succession, AAU launch, personalised-medicine strategy)
 
 * **Research**: three leads from a quick web search, each then read on the primary source.

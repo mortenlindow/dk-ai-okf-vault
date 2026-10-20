@@ -15,6 +15,9 @@ timestamp: 2026-09-21T00:00:00Z
 | Part of | [Department of Clinical Medicine, Aalborg University](/organisations/academic/klinisk-aau.md) |
 | Head | [Centre for AI in Health (Aalborg University)](/initiatives/centre-for-ai-in-health-aau.md) |
 
+> **Distilled from public sources — to be reviewed.** This entry has not yet been
+> reviewed by the person it names.
+
 > **Published role information only.** This entry records the roles under which this
 > person is named on official pages, and nothing else. See the person policy in
 > `CLAUDE.md` §6.

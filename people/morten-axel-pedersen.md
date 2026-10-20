@@ -18,6 +18,9 @@ timestamp: 2026-10-17T00:00:00Z
 He is also Chief Scientist at [CAISA](/initiatives/caisa.md), and a professor at the
 Copenhagen Center for Social Data Science (SODAS).
 
+> **Distilled from public sources — to be reviewed.** This entry has not yet been
+> reviewed by the person it names.
+
 > **Published role information only.** This entry records the roles under which this
 > person is named on official pages, and nothing else. See the person policy in
 > `CLAUDE.md` §6.

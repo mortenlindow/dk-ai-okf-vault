@@ -22,6 +22,11 @@ speakers without such a role stay as plain text in the event's programme.
 Seats and appointment terms live on the **body**, not here. A person entry carries an
 undated link.
 
+## Review status
+
+Every entry is **distilled from public sources — to be reviewed**: it has not yet been
+reviewed by the person it names. Each file carries this label until that review is done.
+
 ## Removal
 
 To have an entry removed or corrected, open an issue on this repository. Entries record
