@@ -3,6 +3,17 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-10-20 (publication — GitHub Pages and the AI-in-health page)
+
+* **Update**: the repository was made public and `site/` is published on GitHub Pages by a
+  workflow. A new page, *AI in Danish Health* (`site/ai-in-danish-health.html`), summarises the
+  [health view](views/health/index.md), and `site/index.html` links both pages.
+* **Research**: `aisundhed.dk` front page and *Om os* re-read in the browser for the page.
+* **Update**: [Netværk for AI i Sundhed](initiatives/netvaerk-for-ai-i-sundhed.md) — 335 members
+  *(as of 2026-10-20)*; next event January 2027, exact date not yet announced (a row under the
+  Event gate). Its governance description is unchanged: a coordination group in the start-up
+  phase; statutes and a board are not yet listed on the site.
+
 ## 2026-10-20 (pre-share decisions)
 
 * **Update**: all 17 `Person` entries labelled *"Distilled from public sources — to be

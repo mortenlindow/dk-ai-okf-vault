@@ -4,7 +4,7 @@ title: Netværk for AI i Sundhed (Network for AI in Health)
 description: Politically independent Danish cross-disciplinary network working for AI in healthcare driven by clinical need rather than technological possibility.
 resource: https://aisundhed.dk/
 tags: [initiative, health, network, national]
-timestamp: 2026-09-28T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 
 # Summary
@@ -35,7 +35,7 @@ developers alike.
 | Form | voluntary network, politically independent |
 | Status | Active |
 | Founded | 2025 |
-| Members | 270 *(as of 2026-09-28; 173 on 2026-09-21)* |
+| Members | 335 *(as of 2026-10-20; 270 on 2026-09-28; 173 on 2026-09-21)* |
 | Governed by | coordination group, in the network's start-up phase — see Notes |
 | Web | https://aisundhed.dk |
 
@@ -58,18 +58,21 @@ perspectives to public debate. It is also *"investigating the possibility of a m
 programme in health aimed at data scientists."*
 
 - [Generalforsamling and network meeting, 23 September 2026](/events/2026-09-23-generalforsamling-og-netvaerksmoede.md) — held.
+- Next event: January 2027, exact date not yet announced *(as of 2026-10-20)*. Recorded as a row
+  under the Event gate in `CLAUDE.md` §4 until a date and programme are published.
 
 # Notes
 
 **Governance.** The network describes itself as *"run in the startup phase by a coordination
 group with representatives from hospitals, universities, private companies and public
 authorities."* The composition of that group, and the network's host and funding
-arrangements, are not yet recorded in this vault; the site's pages, re-read on 2026-09-28,
+arrangements, are not yet recorded in this vault; the site's pages, re-read on 2026-10-20,
 do not list them.
 
 **A network in a period of growth.** Membership rose from 173 to 270 in the week of the
 [general assembly of 2026-09-23](/events/2026-09-23-generalforsamling-og-netvaerksmoede.md),
-and the public member list grew from 108 to 195 entries over the same days. A
+and the public member list grew from 108 to 195 entries over the same days. Membership
+stood at 335 on 2026-10-20. A
 *generalforsamling* is, in Danish practice, the forum of a membership association. Possible
 further evolution: an elected board, published statutes, or a named chair — any of which
 would give this vault a governance body to record for the network. The next verification

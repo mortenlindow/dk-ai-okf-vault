@@ -44,9 +44,14 @@ that is an HTML fragment, so the sources can also be published as Claude artifac
 
 - `site/ai-at-ucph.html` — **AI at UCPH**, a visual summary of the UCPH view, at
   https://mortenlindow.github.io/dk-ai-okf-vault/ai-at-ucph.html and as a private artifact at
-  https://claude.ai/artifact/1DDCVrmJZ72ZoNYaMJdUG5. To update it, edit this file and
-  republish it to that URL, so the link stays the same. The page carries its facts inline,
-  so when the vault changes, the page has to be updated to match.
+  https://claude.ai/artifact/1DDCVrmJZ72ZoNYaMJdUG5. To update the artifact, republish this
+  file to that URL, so the link stays the same.
+- `site/ai-in-danish-health.html` — **AI in Danish Health**, a visual summary of the health view,
+  at https://mortenlindow.github.io/dk-ai-okf-vault/ai-in-danish-health.html.
+- `site/index.html` — a landing page linking the pages above.
+
+Each page carries its facts inline, so when the vault changes, the page has to be updated to
+match.
 
 ## Checking it
 

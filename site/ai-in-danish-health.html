@@ -1,0 +1,643 @@
+<title>AI in Danish Health</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the same research register as the UCPH page — a map of where activity sits,
+   then the national network in close-up, then time, then the 2027 reorganisation, then
+   the register itself; one reading column, with figures allowed to run wider. */
+:root {
+  --bg: #f3f5f5;
+  --surface: #fcfcfb;
+  --ink: #10171a;
+  --ink-2: #47525a;
+  --muted: #6f7a80;
+  --hair: #dce1e2;
+  --axis: #bfc7ca;
+  --band: #eef1f1;
+  --accent: #1b5a85;
+  --k-reg: #2a78d6;
+  --k-nat: #eb6834;
+  --k-fac: #1baf7a;
+  --k-frame: #eda100;
+  --flash: rgba(42,120,214,0.12);
+  --f-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
+    --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
+    --k-reg: #3987e5; --k-nat: #d95926; --k-fac: #199e70; --k-frame: #c98500;
+    --flash: rgba(57,135,229,0.18);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
+  --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
+  --k-reg: #3987e5; --k-nat: #d95926; --k-fac: #199e70; --k-frame: #c98500;
+  --flash: rgba(57,135,229,0.18);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 15.5px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+.page { max-width: 1060px; margin: 0 auto; display: grid; gap: 64px; }
+.measure { max-width: 66ch; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+h1, h2 { font-family: var(--f-display); font-weight: 600; text-wrap: balance; letter-spacing: -0.01em; margin: 0; }
+h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.02; }
+h2 { font-size: 1.7rem; line-height: 1.15; }
+h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--f-mono); }
+.small { font-size: 0.86rem; color: var(--ink-2); }
+
+header { display: grid; gap: 18px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 62ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; font-family: var(--f-mono); font-size: 0.8rem; color: var(--muted); padding-top: 14px; border-top: 1px solid var(--hair); }
+.facts b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+section { display: grid; gap: 20px; }
+.sec-head { display: grid; gap: 6px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.86rem; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+.sw-reg { background: var(--k-reg); } .sw-nat { background: var(--k-nat); }
+.sw-fac { background: var(--k-fac); } .sw-frame { background: var(--k-frame); }
+.sw-anchor { background: transparent; border: 1.5px solid var(--axis); }
+.ln { width: 26px; height: 0; border-top: 2px dashed var(--muted); flex: none; }
+.bx-dash { width: 22px; height: 14px; border: 1.6px dashed var(--muted); border-radius: 4px; flex: none; }
+
+.figure { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 18px; position: relative; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.scroll svg { display: block; width: 100%; height: auto; }
+#map svg { min-width: 780px; }
+#timeline svg { min-width: 760px; }
+.fig-note { font-size: 0.82rem; color: var(--muted); margin-top: 10px; }
+
+.band { fill: var(--band); }
+.band-label { fill: var(--muted); font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+.col-label { fill: var(--ink); font-family: var(--f-body); font-size: 12.5px; font-weight: 600; }
+.col-sub { fill: var(--muted); font-family: var(--f-mono); font-size: 10px; }
+.col-rule { stroke: var(--hair); stroke-width: 1; stroke-dasharray: 2 4; }
+.node rect.box { fill: var(--surface); stroke-width: 1.6; }
+.node .nm { fill: var(--ink); font-family: var(--f-body); font-size: 12.5px; font-weight: 600; }
+.node .mt { fill: var(--ink-2); font-family: var(--f-mono); font-size: 10.5px; }
+.node .wg-bg { fill: var(--band); stroke: var(--axis); stroke-width: 1; }
+.node .wg-tx { fill: var(--ink-2); font-family: var(--f-mono); font-size: 10px; }
+.node { cursor: pointer; }
+.node:hover rect.box, .node:focus rect.box { stroke-width: 2.6; }
+.node:focus { outline: none; }
+.k-reg rect.box { stroke: var(--k-reg); } .k-reg .dot { fill: var(--k-reg); }
+.k-nat rect.box { stroke: var(--k-nat); } .k-nat .dot { fill: var(--k-nat); }
+.k-fac rect.box { stroke: var(--k-fac); } .k-fac .dot { fill: var(--k-fac); }
+.k-frame rect.box { stroke: var(--k-frame); } .k-frame .dot { fill: var(--k-frame); }
+.node.past rect.box { stroke-dasharray: 5 4; }
+.anchor rect { fill: none; stroke: var(--axis); stroke-width: 1.4; }
+.anchor text { fill: var(--ink-2); font-family: var(--f-mono); font-size: 10.5px; }
+.edge { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.edge-lb { fill: var(--muted); font-family: var(--f-mono); font-size: 10px; }
+.arrowhead { fill: var(--muted); }
+.axis-line { stroke: var(--axis); stroke-width: 1; }
+.tick { stroke: var(--hair); stroke-width: 1; }
+.tick-lb { fill: var(--muted); font-family: var(--f-mono); font-size: 11px; }
+.ev-lb { fill: var(--ink); font-family: var(--f-body); font-size: 12px; font-weight: 500; }
+.ev-sub { fill: var(--muted); font-family: var(--f-mono); font-size: 10px; }
+.today { stroke: var(--muted); stroke-dasharray: 3 3; stroke-width: 1; }
+.fill-reg { fill: var(--k-reg); } .fill-nat { fill: var(--k-nat); } .fill-fac { fill: var(--k-fac); } .fill-frame { fill: var(--k-frame); }
+.ring { stroke: var(--surface); stroke-width: 2; }
+.hollow { fill: var(--surface); stroke-width: 2; }
+.hollow.s-nat { stroke: var(--k-nat); } .hollow.s-fac { stroke: var(--k-fac); }
+
+.tip { position: absolute; pointer-events: none; z-index: 5; background: var(--ink); color: var(--surface); font-size: 0.82rem; line-height: 1.45; padding: 8px 10px; border-radius: 6px; max-width: 260px; }
+.tip b { display: block; font-weight: 600; }
+.tip span { color: var(--surface); opacity: 0.8; font-family: var(--f-mono); font-size: 0.74rem; }
+
+/* the national network in close-up */
+.net { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 14px; }
+.wgs { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.wg { background: var(--surface); border: 1px solid var(--hair); border-top: 3px solid var(--k-nat); border-radius: 8px; padding: 12px 14px; display: grid; gap: 4px; align-content: start; }
+.wg b { font-family: var(--f-display); font-size: 1.08rem; font-weight: 600; line-height: 1.2; }
+.wg .en { font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.wg p { font-size: 0.88rem; color: var(--ink-2); }
+.side { display: grid; gap: 14px; align-content: start; }
+.panel { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 16px; display: grid; gap: 10px; }
+.panel h3 { font-size: 0.78rem; font-family: var(--f-mono); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.bars { display: grid; gap: 8px; }
+.bar-row { display: grid; grid-template-columns: 6.2em 1fr 3em; gap: 10px; align-items: center; font-size: 0.85rem; }
+.bar-row .d { font-family: var(--f-mono); font-size: 0.76rem; color: var(--muted); }
+.bar-row .v { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.bar-track { height: 12px; background: var(--band); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--k-nat); border-radius: 3px; }
+.panel p { font-size: 0.88rem; color: var(--ink-2); }
+@media (max-width: 760px) { .net { grid-template-columns: 1fr; } }
+
+/* dated list and the 2027 table */
+.dated { display: grid; gap: 0; background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; overflow: hidden; }
+.dated-row { display: grid; grid-template-columns: 9.5em 14px 1fr auto; gap: 6px 14px; padding: 12px 18px; border-top: 1px solid var(--hair); align-items: baseline; }
+.dated-row:first-child { border-top: 0; }
+.dated-row .when { font-family: var(--f-mono); font-size: 0.82rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+.dated-row .sw { align-self: center; }
+.dated-row p { font-size: 0.92rem; color: var(--ink-2); min-width: 0; }
+.dated-row p b { color: var(--ink); font-weight: 600; }
+.state { justify-self: start; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.04em; border-radius: 999px; padding: 1px 8px; border: 1px solid var(--ink-2); color: var(--ink); white-space: nowrap; }
+.state.announced { border-style: dashed; color: var(--ink-2); }
+@media (max-width: 620px) {
+  .dated-row { grid-template-columns: 14px 1fr; }
+  .dated-row .when { grid-column: 1 / -1; }
+  .dated-row .state { grid-column: 2; }
+}
+
+.open-list { display: grid; gap: 0; background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; overflow: hidden; }
+.open-row { display: grid; grid-template-columns: minmax(170px, 1.1fr) minmax(0, 2fr) minmax(0, 2fr); gap: 8px 24px; padding: 16px 18px; border-top: 1px solid var(--hair); align-items: start; }
+.open-row:first-child { border-top: 0; }
+.open-row.head { background: var(--band); padding-block: 10px; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.open-name { display: grid; gap: 6px; align-content: start; }
+.open-name b { font-family: var(--f-display); font-size: 1.12rem; font-weight: 600; line-height: 1.2; }
+.open-row p { font-size: 0.9rem; color: var(--ink-2); min-width: 0; }
+.open-row .col-lb { display: none; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+@media (max-width: 720px) {
+  .open-row { grid-template-columns: 1fr; }
+  .open-row.head { display: none; }
+  .open-row .col-lb { display: block; margin-top: 4px; }
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: inherit; font-size: 0.86rem; color: var(--ink-2); background: var(--surface); border: 1px solid var(--hair); border-radius: 999px; padding: 5px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.chip:hover { border-color: var(--axis); color: var(--ink); }
+.chip[aria-pressed="true"] { color: var(--ink); border-color: var(--ink-2); background: var(--band); }
+.chip .n { font-family: var(--f-mono); font-size: 0.76rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.register { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 16px 18px; display: grid; gap: 10px; align-content: start; min-width: 0; transition: background-color .6s ease; scroll-margin-top: 24px; }
+.card.flash { background: var(--flash); }
+.card-kind { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.card h3 { font-family: var(--f-display); font-size: 1.22rem; font-weight: 600; line-height: 1.2; }
+.card p { font-size: 0.92rem; color: var(--ink-2); }
+.card dl { display: grid; grid-template-columns: 6.5em 1fr; gap: 4px 12px; margin: 0; font-size: 0.85rem; }
+.card dt { color: var(--muted); }
+.card dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.card-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; padding-top: 8px; border-top: 1px solid var(--hair); font-size: 0.8rem; }
+.card-foot .path { font-family: var(--f-mono); color: var(--muted); }
+
+ul.plain { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; max-width: 72ch; }
+ul.plain li { padding-left: 16px; position: relative; color: var(--ink-2); }
+ul.plain li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 1.5px; background: var(--muted); }
+ul.plain li b { color: var(--ink); font-weight: 600; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px 40px; }
+.two h3 { font-family: var(--f-display); font-size: 1.2rem; margin-bottom: 10px; }
+
+footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; gap: 10px; font-size: 0.86rem; color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+@media (max-width: 520px) { body { padding-block: 24px 48px; } .page { gap: 48px; } .figure { padding: 12px; } }
+</style>
+
+<div class="page">
+
+<header>
+  <span class="eyebrow">DK-AI · AI-in-health view · as of 20 October 2026</span>
+  <h1>AI in Danish Health</h1>
+  <p class="lede">Public and non-profit AI-in-health activity in Denmark is organised at three levels: networks that reach across the country, centres and networks inside university faculties, and bodies anchored at hospitals and regions. Where founding dates are recorded they run from 2019 to 2026. The earliest are hospital-anchored; the university networks date from 2026. On 1 January 2027 the regional and national health administration around them is reorganised.</p>
+  <div class="facts" aria-label="Key figures">
+    <span><b>12</b> entries in the register</span>
+    <span><b>335</b> members, Netværk for AI i Sundhed</span>
+    <span><b>~500</b> members, RAIN</span>
+    <span><b>DKK 266.7m</b> public AI agreement, from 2026</span>
+    <span><b>1 Jan 2027</b> four regions · Digital Sundhed Danmark</span>
+  </div>
+</header>
+
+<section id="structure" aria-labelledby="h-structure">
+  <div class="sec-head">
+    <span class="eyebrow">Structure</span>
+    <h2 id="h-structure">Where the activity sits</h2>
+    <p class="small measure">Rows are levels; columns are the four university-and-hospital hubs. A box is an AI body recorded in the vault; a grey outline is an institution it names as a partner.</p>
+  </div>
+  <div class="legend" aria-label="Legend">
+    <span><i class="sw sw-nat"></i>National network</span>
+    <span><i class="sw sw-fac"></i>University faculty</span>
+    <span><i class="sw sw-reg"></i>Hospital &amp; region</span>
+    <span><i class="sw sw-anchor"></i>Partner institution</span>
+    <span><i class="bx-dash"></i>Activity after 2020 not yet recorded</span>
+    <span><i class="ln"></i>Recorded relation (labelled)</span>
+  </div>
+  <div class="figure" id="map">
+    <div class="scroll">
+    <svg viewBox="0 0 1000 556" role="img" aria-labelledby="map-t map-d">
+      <title id="map-t">Where AI-in-health bodies sit in Denmark</title>
+      <desc id="map-d">Three levels across four hubs. Across the country: Netværk for AI i Sundhed with five working groups, and Danish Life Science Cluster's Netværk om AI. University faculties: the Centre for AI in Health at Aalborg, partnered with Region Nordjylland; the Health-AI Network at Aarhus, partnered with Aarhus University Hospital; and CORS² at the University of Copenhagen. Hospitals and regions: CAI-X in Odense, a partner in RAIN; and in the Capital Region the AI-Innovationsnetværket, from which RAIT grew in 2020.</desc>
+      <defs>
+        <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L8,4 L0,8 z"/></marker>
+      </defs>
+      <g id="cols"></g>
+      <rect class="band" x="0" y="50" width="1000" height="130" rx="8"/>
+      <rect class="band" x="0" y="196" width="1000" height="114" rx="8"/>
+      <rect class="band" x="0" y="326" width="1000" height="222" rx="8"/>
+      <text class="band-label" x="20" y="70">Across the country</text>
+      <text class="band-label" x="20" y="216">University faculties</text>
+      <text class="band-label" x="20" y="346">Hospitals and regions</text>
+
+      <line class="edge" x1="140" y1="292" x2="140" y2="376" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="148" y="340">partner</text>
+      <line class="edge" x1="380" y1="292" x2="380" y2="376" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="388" y="340">partner</text>
+      <line class="edge" x1="620" y1="422" x2="620" y2="464" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="628" y="447">partner in</text>
+      <line class="edge" x1="860" y1="422" x2="860" y2="464" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="868" y="447">gave rise to · 2020</text>
+
+      <g class="anchor"><rect x="40" y="380" width="200" height="40" rx="7"/><text x="54" y="404">Region Nordjylland</text></g>
+      <g class="anchor"><rect x="280" y="380" width="200" height="40" rx="7"/><text x="294" y="404">Aarhus University Hospital</text></g>
+
+      <g id="nodes"></g>
+    </svg>
+    </div>
+    <div class="tip" id="tip" hidden></div>
+    <p class="fig-note">Select a box to open its entry in the register below. RAIN is hosted in the Region of Southern Denmark and draws members from across the country. Netværk om AI works through Danish Life Science Cluster's regional hubs. Region Midtjylland's and Region Sjælland's own AI programmes are not yet recorded in the vault.</p>
+  </div>
+</section>
+
+<section id="network" aria-labelledby="h-network">
+  <div class="sec-head">
+    <span class="eyebrow">Close-up</span>
+    <h2 id="h-network">Netværk for AI i Sundhed</h2>
+    <p class="small measure">A politically independent, cross-disciplinary network, founded in 2025, working for AI in Danish healthcare that is developed and implemented on the basis of clinical needs. It convenes clinicians, researchers, technology developers and decision-makers across hospitals, universities, companies and public authorities, and works from two sides: systematic needs assessment, with a focus on health equity, and competence building in the health service and among developers alike.</p>
+  </div>
+  <div class="net">
+    <div class="wgs" aria-label="Working groups">
+      <div class="wg"><b>Behovsafdækning</b><span class="en">Needs assessment</span><p>Where AI can create the greatest clinical value. The September programme names its session <i>Behovsbanken</i>.</p></div>
+      <div class="wg"><b>Læring på tværs</b><span class="en">Learning across</span><p>Competence building across the professions involved in responsible use of AI, and for patients.</p></div>
+      <div class="wg"><b>Tænketank</b><span class="en">Think tank</span><p>The clinical voice in Danish and international AI policy debate.</p></div>
+      <div class="wg"><b>Implementering</b><span class="en">Implementation</span><p>The transition from pilot testing to sustained clinical operation.</p></div>
+      <div class="wg"><b>Sustainability</b><span class="en">Operations</span><p>The network's day-to-day operation, communication, fundraising and coordination across groups.</p></div>
+    </div>
+    <div class="side">
+      <div class="panel">
+        <h3>Members, as shown on aisundhed.dk</h3>
+        <div class="bars" role="list">
+          <div class="bar-row" role="listitem"><span class="d">21 Sep 2026</span><span class="bar-track"><span class="bar-fill" style="display:block;width:51.6%"></span></span><span class="v">173</span></div>
+          <div class="bar-row" role="listitem"><span class="d">28 Sep 2026</span><span class="bar-track"><span class="bar-fill" style="display:block;width:80.6%"></span></span><span class="v">270</span></div>
+          <div class="bar-row" role="listitem"><span class="d">20 Oct 2026</span><span class="bar-track"><span class="bar-fill" style="display:block;width:100%"></span></span><span class="v">335</span></div>
+        </div>
+        <p>The first two readings bracket the general assembly and network meeting of 23 September 2026.</p>
+      </div>
+      <div class="panel">
+        <h3>How it is run</h3>
+        <p>In its start-up phase the network is run by a coordination group with representatives from hospitals, universities, private companies and public authorities. Working groups are open: a member may join one or more.</p>
+        <p>Next event: <b>January 2027</b>, exact date to be announced.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="time" aria-labelledby="h-time">
+  <div class="sec-head">
+    <span class="eyebrow">Time</span>
+    <h2 id="h-time">Dated milestones</h2>
+  </div>
+  <div class="legend">
+    <span><i class="sw sw-nat"></i>National network</span>
+    <span><i class="sw sw-fac"></i>University faculty</span>
+    <span><i class="sw sw-reg"></i>Hospital &amp; region</span>
+    <span><i class="sw sw-frame"></i>Funding &amp; administration</span>
+    <span class="mono" style="font-size:0.8rem">● dated&nbsp;&nbsp;○ announced&nbsp;&nbsp;▬ year</span>
+  </div>
+  <div class="figure" id="timeline">
+    <div class="scroll">
+    <svg viewBox="0 0 1000 306" role="img" aria-labelledby="tl-t tl-d">
+      <title id="tl-t">Timeline of dated milestones, 2019 to 2029</title>
+      <desc id="tl-d">The AI-Innovationsnetværket started in June 2019 and RAIT grew out of it in August 2020. Netværk for AI i Sundhed was founded in 2025 and held its first general assembly on 23 September 2026; its next meeting is in January 2027. Aarhus University's Health-AI Network was established in 2026 with an inaugural meeting on 27 October 2026. Aalborg University announced its Centre for AI in Health on 25 September 2026. The tripartite agreement on three large-scale AI projects was announced in December 2025. Region Østdanmark and Digital Sundhed Danmark begin on 1 January 2027.</desc>
+      <g id="tl"></g>
+    </svg>
+    </div>
+    <div class="tip" id="tip2" hidden></div>
+    <p class="fig-note">Founding dates for RAIN, CAI-X, CORS² and Netværk om AI are not yet recorded in the vault.</p>
+  </div>
+
+  <div class="dated" aria-label="Autumn 2026 and the turn of the year">
+    <div class="dated-row"><span class="when">23 Sep 2026</span><i class="sw sw-nat"></i><p><b>Netværk for AI i Sundhed</b> — general assembly and network meeting, Copenhagen.</p><span class="state">Held</span></div>
+    <div class="dated-row"><span class="when">25 Sep 2026</span><i class="sw sw-fac"></i><p><b>Aalborg University</b> announces its Centre for AI in Health, gathering competences across AAU SUND; a workshop for researchers and clinicians on the centre's build-up follows.</p><span class="state">Announced</span></div>
+    <div class="dated-row"><span class="when">27 Oct 2026</span><i class="sw sw-fac"></i><p><b>Health-AI Network</b> — inaugural meeting at the Aarhus Institute of Advanced Studies.</p><span class="state announced">Upcoming</span></div>
+    <div class="dated-row"><span class="when">31 Dec 2026</span><i class="sw sw-frame"></i><p><b>Sundhedsdatastyrelsen, sundhed.dk and MedCom</b> cease as independent organisations.</p><span class="state announced">Scheduled</span></div>
+    <div class="dated-row"><span class="when">1 Jan 2027</span><i class="sw sw-frame"></i><p><b>Region Østdanmark</b> and <b>Digital Sundhed Danmark</b> begin, together with 17 regional health councils.</p><span class="state announced">Scheduled</span></div>
+    <div class="dated-row"><span class="when">Jan 2027</span><i class="sw sw-nat"></i><p><b>Netværk for AI i Sundhed</b> — next event; date to be announced.</p><span class="state announced">Upcoming</span></div>
+  </div>
+</section>
+
+<section id="reform" aria-labelledby="h-reform">
+  <div class="sec-head">
+    <span class="eyebrow">2027</span>
+    <h2 id="h-reform">A new administrative setting</h2>
+    <p class="small measure">Under the health reform, the regional and national administration around these bodies changes on a single date. The bodies themselves keep their identity; what changes is where they sit.</p>
+  </div>
+  <div class="open-list" role="table" aria-label="Changes on 1 January 2027">
+    <div class="open-row head" role="row"><span role="columnheader">Change</span><span role="columnheader">What happens</span><span role="columnheader">Bodies on this page</span></div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>Region Østdanmark</b><span class="state announced">1 Jan 2027</span></div>
+      <div role="cell"><span class="col-lb">What happens</span><p>Region Hovedstaden and Region Sjælland merge, and Denmark has four regions instead of five. Their politicians have operational responsibility for the two regions through 2026.</p></div>
+      <div role="cell"><span class="col-lb">Bodies on this page</span><p>RAIT and the AI-Innovationsnetværket are recorded in Region Hovedstaden and will sit in Region Østdanmark.</p></div>
+    </div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>Digital Sundhed Danmark</b><span class="state announced">1 Jan 2027</span></div>
+      <div role="cell"><span class="col-lb">What happens</span><p>A national organisation, jointly owned by municipalities, regions and the state, brings together sundhed.dk, Sundhedsdatastyrelsen, MedCom, the National Genome Centre and shared national tasks from the regions. A preparatory organisation has run since 1 January 2026; the owners appoint a board in the second half of 2026.</p></div>
+      <div role="cell"><span class="col-lb">Bodies on this page</span><p>Its stated tasks include better use of health data across the health service. An AI remit is not yet recorded in the vault.</p></div>
+    </div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>17 regional health councils</b><span class="state announced">1 Jan 2027</span></div>
+      <div role="cell"><span class="col-lb">What happens</span><p>New councils run health services closer to citizens and hospitals.</p></div>
+      <div role="cell"><span class="col-lb">Bodies on this page</span><p>Not yet read in the vault for AI activity.</p></div>
+    </div>
+    <div class="open-row" role="row">
+      <div class="open-name" role="cell"><b>Three large-scale AI projects</b><span class="state">From 2026</span></div>
+      <div role="cell"><span class="col-lb">What happens</span><p>The government, KL and Danske Regioner fund three public-sector AI projects with DKK 266.7m. The parties revisit them in the 2027 economy agreements.</p></div>
+      <div role="cell"><span class="col-lb">Bodies on this page</span><p>One project — automated documentation in clinical practice — runs in the regions' hospitals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="register" aria-labelledby="h-register">
+  <div class="sec-head">
+    <span class="eyebrow">Register</span>
+    <h2 id="h-register">Every body on this page</h2>
+    <p class="small measure">Each entry links to its source page and names its file in the DK-AI vault.</p>
+  </div>
+  <div class="chips" role="group" aria-label="Filter by kind" id="chips"></div>
+  <div class="register" id="cards"></div>
+</section>
+
+<section id="evolution" aria-labelledby="h-evo">
+  <div class="sec-head">
+    <span class="eyebrow">Looking ahead</span>
+    <h2 id="h-evo">Possible further evolution</h2>
+  </div>
+  <div class="two">
+    <div>
+      <h3>In the landscape</h3>
+      <ul class="plain small">
+        <li><b>Two open networks with national reach.</b> Netværk for AI i Sundhed is independent; RAIN is hosted by a regional public body. Each convenes clinicians, researchers, developers and decision-makers, and they could come to share events, members or working themes.</li>
+        <li><b>Connections across the levels.</b> The national network, the faculty bodies and the hospital bodies have largely separate origins. The think tank's link to national policy fora, and RAIT's origin in a regional network, show two ways such connections have formed.</li>
+        <li><b>Governance for the national network.</b> Once statutes and a board are published on aisundhed.dk, the map can show them as a governance body, as it does for the Aalborg centre's steering committee.</li>
+        <li><b>Education.</b> The national network is exploring a master's programme in health for data scientists.</li>
+        <li><b>The 2027 setting.</b> Region Østdanmark, the health councils and Digital Sundhed Danmark are new places where AI-in-health activity could be organised.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>In this map</h3>
+      <ul class="plain small">
+        <li><b>Regions.</b> Region Midtjylland's and Region Sjælland's own AI programmes, and Syddansk Sundhedsinnovation's Partnership on Artificial Intelligence in Healthcare.</li>
+        <li><b>Hospitals.</b> The university hospitals as bodies in their own right, and leads at Rigshospitalet, the Technical University Hospital of Greater Copenhagen and Steno Diabetes Center Copenhagen.</li>
+        <li><b>National bodies.</b> Sundhedsstyrelsen, Dataetisk Råd and Lægemiddelstyrelsen, and the professional and specialist societies.</li>
+        <li><b>Corrections and additions are welcome.</b> The vault is open on <a href="https://github.com/mortenlindow/dk-ai-okf-vault">GitHub</a>; every named person's entry is marked <i>distilled from public sources, to be reviewed</i>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Drawn from DK-AI, an Open Knowledge Format vault mapping public and non-profit AI activity in Denmark: who convenes whom, who governs it, who funds it, and when. Every fact traces to a page that was read and is cited in the register. The vault describes how activity is organised; it does not evaluate it.</p>
+  <p>Deployed clinical AI solutions are outside this map. They are mapped by the <a href="https://healthmap.newnordics.ai/">Nordic AI Health Map</a>.</p>
+  <p class="mono" style="font-size:0.78rem;color:var(--muted)">Source view: views/health/index.md · Coverage: views/coverage/index.md · Companies taking part in these bodies are not given entries.</p>
+</footer>
+
+</div>
+
+<script>
+(() => {
+  const KIND = {
+    nat:   { label: "National network", cls: "k-nat" },
+    fac:   { label: "University faculty", cls: "k-fac" },
+    reg:   { label: "Hospital & region", cls: "k-reg" },
+    frame: { label: "Funding & administration", cls: "k-frame" }
+  };
+
+  const items = [
+    { id: "aisundhed", kind: "nat", name: "Netværk for AI i Sundhed", x: 40, y: 82, w: 680, h: 84,
+      m1: "independent · cross-disciplinary · founded 2025 · 335 members",
+      wgs: ["Behovsafdækning", "Læring på tværs", "Tænketank", "Implementering", "Sustainability"],
+      summary: "A politically independent, cross-disciplinary network working for AI in Danish healthcare that is developed and implemented on the basis of clinical needs, with an explicit focus on health equity.",
+      facts: [["Founded", "2025"], ["Members", "335 (as of 20 Oct 2026)"], ["Structure", "Five open working groups"], ["Run by", "A coordination group, in the start-up phase"], ["Next event", "January 2027, date to be announced"]],
+      url: "https://aisundhed.dk/", path: "initiatives/netvaerk-for-ai-i-sundhed.md" },
+    { id: "dlsc", kind: "nat", name: "Netværk om AI", x: 760, y: 82, m1: "Danish Life Science Cluster", m2: "public–private · hubs",
+      summary: "A development network for public and private actors — municipalities, hospitals, regions, companies and educational institutions — working with AI in healthcare, run through the cluster's regional hubs.",
+      facts: [["Form", "Development network"], ["Hosted by", "Danish Life Science Cluster, a non-profit with a public mandate"], ["Members", "Public and private actors"]],
+      url: "https://www.danishlifesciencecluster.dk/netvaerksgrupper/netvaerk-om-ai-kunstig-intelligens/", path: "initiatives/dlsc-netvaerk-om-ai.md" },
+    { id: "aau", kind: "fac", name: "Centre for AI in Health", x: 40, y: 228, m1: "AAU SUND · Clinical Medicine", m2: "announced Sep 2026",
+      summary: "An interdisciplinary research centre bringing AI research and clinical practice together, with priorities in decision support, workflow and the effective use of data, and an emphasis on data protection, ethics and transparency.",
+      facts: [["Announced", "25 September 2026"], ["Hosted by", "Department of Clinical Medicine, Aalborg University"], ["Partners", "Region Nordjylland"], ["Head", "Martin Bøgsted"], ["Deputy head", "Lasse Riis Østergaard"], ["Governance", "Steering committee with rules of procedure"]],
+      url: "https://www.klinisk.aau.dk/forskning/forskningscentre-pa-klinisk-institut/centre-for-ai-in-health", path: "initiatives/centre-for-ai-in-health-aau.md" },
+    { id: "au", kind: "fac", name: "Health-AI Network", x: 280, y: 228, m1: "Faculty of Health · 2026", m2: "two co-chairs · open",
+      summary: "A faculty research network at Aarhus University for researchers working with, or interested in, AI in health: a forum for knowledge sharing, collaboration and an overview of the faculty's AI competences.",
+      facts: [["Founded", "2026"], ["Hosted by", "Faculty of Health, Aarhus University"], ["Partners", "Aarhus University Hospital"], ["Co-chairs", "Stine Sofia Korreman · Adam Hulman"], ["Inaugural", "27 October 2026, Aarhus"]],
+      url: "https://health.au.dk/en/display/artikel/new-network-brings-together-researchers-on-ai-in-health", path: "initiatives/health-ai-network-au.md" },
+    { id: "cors", kind: "fac", name: "CORS²", x: 760, y: 228, m1: "UCPH · Dept. of Pharmacy", m2: "AI in drug safety",
+      summary: "Copenhagen Centre for Regulatory Science. Its drug-safety research integrates AI with real-world biomedical data.",
+      facts: [["Part of", "Department of Pharmacy, University of Copenhagen"], ["Partners", "PRC; Nordic PharmacoEpidemiological Network"]],
+      url: "https://pharmacy.ku.dk/research/research-centres/cors2/", path: "initiatives/cors.md" },
+    { id: "caix", kind: "reg", name: "CAI-X", x: 520, y: 358, m1: "OUH + SDU (2 faculties)", m2: "all clinical specialties",
+      summary: "Danish Centre for Clinical Artificial Intelligence: a knowledge and competence centre connecting Odense University Hospital's clinicians with SDU's engineers and researchers, and with companies.",
+      facts: [["Partners", "Odense University Hospital; SDU Faculties of Engineering and Health Sciences"], ["Leadership", "Peter Børker Nielsen, programme manager · Benjamin S. Rasmussen, clinical research · Esmaeil Nadimi, technical research"], ["Partner in", "RAIN"]],
+      url: "https://cai-x.com/about-cai-x", path: "initiatives/cai-x.md" },
+    { id: "rain", kind: "reg", name: "RAIN", x: 520, y: 468, m1: "open network · ~500 members", m2: "Syddansk Sundhedsinnovation",
+      summary: "An open network for AI in healthcare where clinicians, researchers, consultants, technology providers and policymakers exchange ideas and knowledge, at hospitals and across the region.",
+      facts: [["Hosted by", "Syddansk Sundhedsinnovation, Region of Southern Denmark"], ["Partners", "CAI-X; UNIFY at OUH; the Mærsk Mc-Kinney Møller Institute, SDU; Regional IT; Syddansk Sundhedsinnovation"], ["Members", "About 500 from across Denmark (as of 17 Oct 2026)"]],
+      url: "https://syddansksundhedsinnovation.dk/en/projects/2022/rain-network-for-ai-in-healthcare", path: "initiatives/rain-network-ai-healthcare.md" },
+    { id: "innov", kind: "reg", name: "AI-Innovationsnetværket", x: 760, y: 358, m1: "informal network · Jun 2019", m2: "last evidenced Nov 2020", past: true,
+      summary: "An informal network of clinicians, technicians, managers and researchers across Region Hovedstaden, set up to improve the conditions for developing and implementing AI, including data access and infrastructure.",
+      facts: [["Started", "June 2019"], ["Part of", "Region Hovedstaden"], ["Source", "The network's own paper, November 2020"], ["Gave rise to", "RAIT, August 2020"]],
+      url: "https://edagsorden.regionh.dk/cms/HtmlPublication-7022/enclosures/71.pdf", path: "initiatives/ai-innovationsnetvaerket-region-hovedstaden.md" },
+    { id: "rait", kind: "reg", name: "RAIT", x: 760, y: 468, m1: "4 radiology departments", m2: "founded Aug 2020",
+      summary: "Radiological AI Test Centre: the radiology departments at Herlev, Gentofte, Frederiksberg and Bispebjerg hospitals, working together to develop, clinically validate and implement AI in radiology, including testing how algorithms perform on Danish patient data.",
+      facts: [["Founded", "August 2020"], ["Part of", "Region Hovedstaden"], ["Partners", "Herlev and Gentofte Hospital; Bispebjerg and Frederiksberg Hospital"], ["Grew out of", "AI-Innovationsnetværket"]],
+      url: "https://www.rait.dk/who-is-rait", path: "initiatives/rait.md" },
+    { id: "deal", kind: "frame", name: "Three large-scale AI projects", map: false,
+      summary: "A tripartite agreement allocating DKK 266.7m, financed jointly by the state, the municipalities and the regions, to three AI projects across the public sector. One is automated documentation in clinical practice in the regions.",
+      facts: [["Announced", "December 2025"], ["Period", "From 2026"], ["Volume", "DKK 266.7m"], ["Parties", "The government, KL, Danske Regioner"], ["Governed by", "Den Digitale Taskforce for Kunstig Intelligens"]],
+      url: "https://www.regioner.dk/services/nyheder/2025/december/aftale-om-tre-storskalaprojekter-med-kunstig-intelligens-i-den-offentlige-sektor/", path: "funding/offentlig-ai-aftale-2026.md" },
+    { id: "dsd", kind: "frame", name: "Digital Sundhed Danmark", map: false,
+      summary: "A national organisation for shared digital health solutions, infrastructure and health data, jointly owned by municipalities, regions and the state. It succeeds Sundhedsdatastyrelsen, sundhed.dk and MedCom.",
+      facts: [["Established", "1 January 2027"], ["Preparatory", "Since 1 January 2026"], ["Board", "Appointed by the owners, second half of 2026"], ["Offices", "Aalborg, Odense, Copenhagen"]],
+      url: "https://sundhedsdatastyrelsen.dk/om-os/organisation/digital-sundhed-danmark", path: "organisations/health/digital-sundhed-danmark.md" },
+    { id: "oest", kind: "frame", name: "Region Østdanmark", map: false,
+      summary: "The new health region formed by merging Region Hovedstaden and Region Sjælland, leaving Denmark with four regions.",
+      facts: [["Operational", "1 January 2027"], ["Succeeds", "Region Hovedstaden, Region Sjælland"]],
+      url: "https://www.regionoest.dk/", path: "organisations/health/region-oestdanmark.md" }
+  ];
+
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const W = 200, H = 64;
+
+  /* column headers */
+  const cols = document.getElementById("cols");
+  [["North Denmark", "Aalborg", 140], ["Central Denmark", "Aarhus", 380], ["Southern Denmark", "Odense", 620], ["Capital Region & Zealand", "Copenhagen · Region Østdanmark from 2027", 860]].forEach(([a, b, cx], i) => {
+    const t = el("text", { class: "col-label", x: cx, y: 22, "text-anchor": "middle" }, cols); t.textContent = a;
+    const s = el("text", { class: "col-sub", x: cx, y: 37, "text-anchor": "middle" }, cols); s.textContent = b;
+    if (i > 0) el("line", { class: "col-rule", x1: cx - 120, y1: 8, x2: cx - 120, y2: 44 }, cols);
+  });
+
+  const g = document.getElementById("nodes");
+  const tip = document.getElementById("tip");
+  const mapBox = document.getElementById("map");
+
+  function showTip(t, box, html, evt) {
+    t.innerHTML = html; t.hidden = false;
+    const r = box.getBoundingClientRect();
+    let x, y;
+    if (evt && evt.clientX) { x = evt.clientX - r.left + 14; y = evt.clientY - r.top + 14; }
+    else { const tr = evt.target.getBoundingClientRect(); x = tr.left - r.left; y = tr.bottom - r.top + 8; }
+    const maxX = r.width - t.offsetWidth - 8;
+    t.style.left = Math.max(8, Math.min(x, maxX)) + "px";
+    t.style.top = y + "px";
+  }
+  const hide = t => { t.hidden = true; };
+
+  items.filter(it => it.map !== false).forEach(it => {
+    const w = it.w || W, h = it.h || H;
+    const n = el("g", { class: "node " + KIND[it.kind].cls + (it.past ? " past" : ""), tabindex: "0", role: "button",
+      "aria-label": it.name + ", " + KIND[it.kind].label + ". Open register entry." }, g);
+    el("rect", { class: "box", x: it.x, y: it.y, width: w, height: h, rx: 7 }, n);
+    el("rect", { class: "dot", x: it.x + 12, y: it.y + 13, width: 8, height: 8, rx: 2 }, n);
+    const t1 = el("text", { class: "nm", x: it.x + 26, y: it.y + 22 }, n); t1.textContent = it.name;
+    const t2 = el("text", { class: "mt", x: it.x + 12, y: it.y + 40 }, n); t2.textContent = it.m1;
+    if (it.m2) { const t3 = el("text", { class: "mt", x: it.x + 12, y: it.y + 55 }, n); t3.textContent = it.m2; }
+    if (it.wgs) {
+      let px = it.x + 12;
+      it.wgs.forEach(wg => {
+        const pw = wg.length * 6.2 + 18;
+        el("rect", { class: "wg-bg", x: px, y: it.y + 52, width: pw, height: 20, rx: 10 }, n);
+        const tx = el("text", { class: "wg-tx", x: px + pw / 2, y: it.y + 65.5, "text-anchor": "middle" }, n); tx.textContent = wg;
+        px += pw + 8;
+      });
+    }
+    const html = "<b>" + it.name + "</b><span>" + KIND[it.kind].label + (it.past ? " · activity after 2020 not yet recorded" : "") + "</span>";
+    n.addEventListener("mousemove", e => showTip(tip, mapBox, html, e));
+    n.addEventListener("mouseleave", () => hide(tip));
+    n.addEventListener("focus", e => showTip(tip, mapBox, html, e));
+    n.addEventListener("blur", () => hide(tip));
+    n.addEventListener("click", () => openCard(it.id));
+    n.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openCard(it.id); } });
+  });
+
+  /* timeline */
+  const tl = document.getElementById("tl");
+  const t0 = 2019, t1 = 2029, X0 = 40, X1 = 960;
+  const sx = t => X0 + (t - t0) / (t1 - t0) * (X1 - X0);
+  const AXIS = 272;
+  el("line", { class: "axis-line", x1: X0, y1: AXIS, x2: X1, y2: AXIS }, tl);
+  for (let y = t0; y <= t1; y++) {
+    el("line", { class: "tick", x1: sx(y), y1: 22, x2: sx(y), y2: AXIS }, tl);
+    const lb = el("text", { class: "tick-lb", x: sx(y), y: AXIS + 18, "text-anchor": "middle" }, tl); lb.textContent = y;
+  }
+  const tip2 = document.getElementById("tip2"), tlBox = document.getElementById("timeline");
+  const hoverable = (node, html) => {
+    node.setAttribute("tabindex", "0");
+    node.addEventListener("mousemove", e => showTip(tip2, tlBox, html, e));
+    node.addEventListener("mouseleave", () => hide(tip2));
+    node.addEventListener("focus", e => showTip(tip2, tlBox, html, e));
+    node.addEventListener("blur", () => hide(tip2));
+  };
+  const label = (x, y, txt, sub, anchor) => {
+    const a = el("text", { class: "ev-lb", x, y, "text-anchor": anchor || "start" }, tl); a.textContent = txt;
+    if (sub) { const b = el("text", { class: "ev-sub", x, y: y + 13, "text-anchor": anchor || "start" }, tl); b.textContent = sub; }
+  };
+  const dot = (t, lane, kind, html, hollow) => {
+    const c = el("circle", hollow ? { class: "hollow s-" + kind, cx: sx(t), cy: lane, r: 5 } : { class: "fill-" + kind + " ring", cx: sx(t), cy: lane, r: 6 }, tl);
+    hoverable(c, html); return c;
+  };
+  const yearBar = (yr, lane, kind, html) => {
+    const r = el("rect", { class: "fill-" + kind, x: sx(yr) + 1, y: lane - 4, width: sx(yr + 1) - sx(yr) - 2, height: 8, rx: 4 }, tl);
+    hoverable(r, html); return r;
+  };
+  const today = 2026 + (292 / 365);
+  el("line", { class: "today", x1: sx(today), y1: 18, x2: sx(today), y2: AXIS }, tl);
+  const td = el("text", { class: "ev-sub", x: sx(today) - 4, y: 14, "text-anchor": "end" }, tl); td.textContent = "20 Oct 2026";
+
+  // lane 1: hospital and region
+  const L1 = 46;
+  dot(2019 + 151/365, L1, "reg", "<b>AI-Innovationsnetværket</b><span>started June 2019</span>");
+  label(sx(2019 + 151/365) - 6, L1 + 22, "AI-Innovationsnetværket", "Jun 2019");
+  dot(2020 + 213/365, L1, "reg", "<b>RAIT</b><span>founded August 2020</span>");
+  label(sx(2020 + 213/365) + 12, L1 + 4, "RAIT", "Aug 2020");
+
+  // lane 2: the national network
+  const L2 = 104;
+  yearBar(2025, L2, "nat", "<b>Netværk for AI i Sundhed</b><span>founded 2025</span>");
+  label(sx(2025), L2 - 12, "Netværk for AI i Sundhed", null);
+  dot(2026 + 265/365, L2, "nat", "<b>General assembly and network meeting</b><span>23 September 2026 · Copenhagen</span>");
+  label(sx(2026 + 265/365) - 12, L2 + 20, "General assembly", "23 Sep 2026", "end");
+  dot(2027 + 10/365, L2, "nat", "<b>Next network event</b><span>January 2027 · date to be announced</span>", true);
+  label(sx(2027 + 10/365) + 12, L2 + 4, "Next network event", "Jan 2027");
+
+  // lane 3: Aarhus
+  const L3 = 158;
+  yearBar(2026, L3, "fac", "<b>Health-AI Network (AU)</b><span>established 2026</span>");
+  label(sx(2026) - 8, L3 + 4, "Health-AI Network, AU", "2026", "end");
+  dot(2026 + 299/365, L3, "fac", "<b>Inaugural meeting</b><span>27 October 2026 · Aarhus</span>", true);
+  label(sx(2027) + 10, L3 + 4, "Inaugural meeting", "27 Oct 2026");
+
+  // lane 4: Aalborg
+  const L4 = 206;
+  dot(2026 + 267/365, L4, "fac", "<b>Centre for AI in Health (AAU)</b><span>announced 25 September 2026</span>");
+  label(sx(2026 + 267/365) - 12, L4 + 4, "Centre for AI in Health, AAU", "announced 25 Sep 2026", "end");
+
+  // lane 5: funding and administration
+  const L5 = 246;
+  dot(2025 + 340/365, L5, "frame", "<b>Three large-scale AI projects</b><span>announced December 2025 · DKK 266.7m</span>");
+  label(sx(2025 + 340/365) - 12, L5 + 4, "Three large-scale AI projects", "Dec 2025 · DKK 266.7m", "end");
+  dot(2027, L5, "frame", "<b>Region Østdanmark · Digital Sundhed Danmark</b><span>1 January 2027</span>");
+  label(sx(2027) + 12, L5 - 10, "Region Østdanmark", null);
+  label(sx(2027) + 12, L5 + 4, "Digital Sundhed Danmark", "1 Jan 2027");
+
+  /* register */
+  const cards = document.getElementById("cards"), chips = document.getElementById("chips");
+  const cardEls = {};
+  items.forEach(it => {
+    const c = document.createElement("article"); c.className = "card"; c.id = "c-" + it.id; c.dataset.kind = it.kind;
+    const dl = it.facts.map(([k, v]) => "<dt>" + k + "</dt><dd>" + v + "</dd>").join("");
+    c.innerHTML = '<div class="card-kind"><i class="sw sw-' + it.kind + '"></i>' + KIND[it.kind].label + "</div>" +
+      "<h3>" + it.name + "</h3><p>" + it.summary + "</p><dl>" + dl + "</dl>" +
+      '<div class="card-foot"><a href="' + it.url + '" target="_blank" rel="noopener">Source page</a><span class="path">' + it.path + "</span></div>";
+    cards.appendChild(c); cardEls[it.id] = c;
+  });
+  let current = "all";
+  const kinds = [["all", "All"], ["nat", KIND.nat.label], ["fac", KIND.fac.label], ["reg", KIND.reg.label], ["frame", KIND.frame.label]];
+  kinds.forEach(([k, lb]) => {
+    const b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.id = "chip-" + k;
+    const n = k === "all" ? items.length : items.filter(i => i.kind === k).length;
+    b.innerHTML = (k === "all" ? "" : '<i class="sw sw-' + k + '"></i>') + lb + ' <span class="n">' + n + "</span>";
+    b.setAttribute("aria-pressed", k === current ? "true" : "false");
+    b.addEventListener("click", () => setFilter(k));
+    chips.appendChild(b);
+  });
+  function setFilter(k) {
+    current = k;
+    chips.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.id === "chip-" + k ? "true" : "false"));
+    items.forEach(it => { cardEls[it.id].hidden = !(k === "all" || it.kind === k); });
+    try { localStorage.setItem("dk-health-ai-filter", k); } catch (e) {}
+  }
+  try { const saved = localStorage.getItem("dk-health-ai-filter"); if (saved && KIND[saved]) setFilter(saved); } catch (e) {}
+
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function openCard(id) {
+    if (current !== "all" && cardEls[id].dataset.kind !== current) setFilter("all");
+    const c = cardEls[id];
+    c.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+    c.classList.add("flash");
+    setTimeout(() => c.classList.remove("flash"), 1600);
+  }
+})();
+</script>

@@ -16,7 +16,7 @@ Danish public AI-in-health activity is organised at three levels, each with its 
   hospitals, universities, companies and authorities. Its five working groups span needs
   assessment, cross-disciplinary learning, a think tank, implementation and the network's
   own operations. Membership grew from 173 to 270 in the week of its first general
-  assembly in September 2026. [RAIN](../../initiatives/rain-network-ai-healthcare.md), an
+  assembly in September 2026, and stood at 335 on 20 October. [RAIN](../../initiatives/rain-network-ai-healthcare.md), an
   open network of about 500 professionals anchored in the Region of Southern Denmark, also
   draws members from across the country.
 - **University faculties.** The
