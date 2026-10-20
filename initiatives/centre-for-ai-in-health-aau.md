@@ -4,7 +4,7 @@ title: Centre for AI in Health (Aalborg University)
 description: Interdisciplinary research centre at AAU SUND applying AI in healthcare, from research to clinical practice.
 resource: https://www.klinisk.aau.dk/forskning/forskningscentre-pa-klinisk-institut/centre-for-ai-in-health
 tags: [initiative, health, centre, aau]
-timestamp: 2026-09-21T00:00:00Z
+timestamp: 2026-10-20T00:00:00Z
 ---
 
 # Summary
@@ -16,6 +16,10 @@ bringing AI research and clinical practice together to create real-world impact.
 Its stated priorities are decision support, workflow optimisation and effective use of
 data, alongside an explicit emphasis on data security, personal-data protection, ethics
 and transparency.
+
+Aalborg University announced the centre as new on 25 September 2026, describing it as
+gathering competences across the Faculty of Medicine (AAU SUND) so that AI creates concrete
+value in the health service [3].
 
 It has a named head, a deputy, an administrator, a steering committee and published rules
 of procedure. The AI-in-health bodies in this vault take a range of organisational forms,
@@ -38,7 +42,7 @@ nationally.
 | | |
 |---|---|
 | Head | [Martin Bøgsted](/people/martin-boegsted.md), Professor |
-| Deputy head | [Lasse Riis Oestergaard](/people/lasse-riis-oestergaard.md), Professor |
+| Deputy head | [Lasse Riis Oestergaard](/people/lasse-riis-oestergaard.md), Professor, Institut for Medicin og Sundhedsteknologi [3] |
 | Secretariat | Camilla Høyer, Centre Administrator |
 
 A **Steering Committee** governs the centre, guided by published **Rules of Procedure**:
@@ -55,7 +59,10 @@ Interdisciplinary workshops, co-creation of research projects, hackathons and
 knowledge-sharing activities. A two-day strategic workshop was held on 29–30 September to
 align participants on shared priorities and research directions.
 
-*The year of that workshop, and the centre's founding date, are not stated on the page.*
+AAU's launch news of 25 September 2026 describes an upcoming workshop at which researchers
+and clinicians will discuss the centre's build-up, activities and long-term development [3].
+The centre page gives the workshop's day and month; the news item gives the announcement
+date. *The two are read side by side; neither page states a founding date.*
 No event concept was created: the Event gate in `CLAUDE.md` §4 requires a date, and only
 a day and month are published.
 
@@ -78,3 +85,4 @@ than given a concept of its own.
 
 [1] [Centre for AI in Health — Klinisk Institut, Aalborg Universitet](https://www.klinisk.aau.dk/forskning/forskningscentre-pa-klinisk-institut/centre-for-ai-in-health)
 [2] [AI and Health Data Science — AAU SUND](https://www.sundhedsvidenskab.aau.dk/forskning/forskningsstyrker/ai-and-health-data-science)
+[3] [Nyt AI-center skal hjælpe patienter og sundhedsprofessionelle — AAU news, 25 September 2026](https://www.aau.dk/nyt-ai-center-skal-hjaelpe-patienter-og-sundhedsprofessionelle-n177709)

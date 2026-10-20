@@ -31,7 +31,7 @@ pass 0.
 
 ## National bodies
 
-* [Sundhedsdatastyrelsen](sundhedsdatastyrelsen.md) - Danish Health Data Authority.
+* [Sundhedsdatastyrelsen](sundhedsdatastyrelsen.md) - Danish Health Data Authority; ceases as an independent organisation on 2026-12-31.
+* [Digital Sundhed Danmark](digital-sundhed-danmark.md) - Digital Health Denmark; established 2027-01-01, succeeding Sundhedsdatastyrelsen, sundhed.dk and MedCom.
 
-*Expected to grow to include further university hospitals, sundhed.dk, MedCom, and the
-national health-data organisation reported to succeed them from 2027.*
+*Expected to grow to include further university hospitals.*

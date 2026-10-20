@@ -96,7 +96,8 @@ Patterns in the landscape suggest directions it could take:
   in health, alongside the adjacent machine-learning and health-informatics degrees at UCPH.
 - **The 2027 reform.** On 2027-01-01 Region Hovedstaden and Region Sjælland merge into
   [Region Østdanmark](../../organisations/health/region-oestdanmark.md), 17 regional health
-  councils begin, and the national health-data bodies are reported to merge. The hospital
+  councils begin, and Sundhedsdatastyrelsen, sundhed.dk and MedCom become
+  [Digital Sundhed Danmark](../../organisations/health/digital-sundhed-danmark.md). The hospital
   layer of this view will sit in a new administrative setting.
 
 For how this map itself is expected to grow, see [coverage](../coverage/index.md).
@@ -108,5 +109,5 @@ For how this map itself is expected to grow, see [coverage](../coverage/index.md
 * Aalborg: [AAU SUND](../../organisations/academic/sund-aau.md) · [Clinical Medicine](../../organisations/academic/klinisk-aau.md)
 * Odense and Southern Denmark: [Odense University Hospital](../../organisations/health/ouh.md) · [University of Southern Denmark](../../organisations/academic/sdu.md) · [Syddansk Sundhedsinnovation](../../organisations/health/syddansk-sundhedsinnovation.md)
 * Regions: [Hovedstaden](../../organisations/health/region-hovedstaden.md) · [Midtjylland](../../organisations/health/region-midtjylland.md) · [Nordjylland](../../organisations/health/region-nordjylland.md) · [Sjælland](../../organisations/health/region-sjaelland.md) · [Syddanmark](../../organisations/health/region-syddanmark.md) · from 2027: [Region Østdanmark](../../organisations/health/region-oestdanmark.md)
-* National: [Sundhedsdatastyrelsen](../../organisations/health/sundhedsdatastyrelsen.md) · [Danske Regioner](../../organisations/public/danske-regioner.md) · [Danish Life Science Cluster](../../organisations/funders/danish-life-science-cluster.md)
+* National: [Sundhedsdatastyrelsen](../../organisations/health/sundhedsdatastyrelsen.md) · from 2027: [Digital Sundhed Danmark](../../organisations/health/digital-sundhed-danmark.md) · [Danske Regioner](../../organisations/public/danske-regioner.md) · [Danish Life Science Cluster](../../organisations/funders/danish-life-science-cluster.md)
 * Reference: [Nordic AI Health Map](../../references/nordic-ai-health-map.md)

@@ -36,8 +36,9 @@ present scope rules — a statement about the rules, not about the body).
 * [KL](../../organisations/public/kl.md) - **recorded**: [Netværk for kunstig intelligens](../../initiatives/kl-netvaerk-for-kunstig-intelligens.md) (read 2026-09-21).
 * [Danske Regioner](../../organisations/public/danske-regioner.md) - **recorded** as party to the [Digital Taskforce](../../initiatives/digital-taskforce-kunstig-intelligens.md) and the [tripartite agreement](../../funding/offentlig-ai-aftale-2026.md). Not yet read: its own AI policy papers.
 * [Digitaliseringsministeriet](../../organisations/public/digitaliseringsministeriet.md) - **recorded** as secretariat of the Digital Taskforce. Not yet read: the taskforce's commissorium.
-* [Sundhedsdatastyrelsen](../../organisations/health/sundhedsdatastyrelsen.md) - frame stub. Not yet read for AI activity, or for the reported 2027 merger with sundhed.dk and MedCom.
-* Digitaliseringsstyrelsen · Indenrigs- og Sundhedsministeriet · MedCom · sundhed.dk - not yet read.
+* [Sundhedsdatastyrelsen](../../organisations/health/sundhedsdatastyrelsen.md) - **recorded**: succession into [Digital Sundhed Danmark](../../organisations/health/digital-sundhed-danmark.md) on 2027-01-01, together with sundhed.dk and MedCom (read 2026-10-20). Not yet read for the authority's own AI activity.
+* Indenrigs- og Sundhedsministeriet - *Strategi for personlig medicin 2025–2027* read 2026-10-20 (with Danske Regioner; 13 initiatives, DKK 90m). AI is one of its seven strategic aims; none of the 13 funded initiatives is an AI body or AI programme, so it is not included under the current AI-focus rule. The strategy refers to AI funding under Kræftplan V and to DKK 2bn for innovation and digitalisation in the health service 2026–2035 under the 2024 health-reform agreement; neither is yet read.
+* Digitaliseringsstyrelsen · MedCom · sundhed.dk - not yet read.
 
 # Funders
 

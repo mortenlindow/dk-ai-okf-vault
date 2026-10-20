@@ -3,6 +3,45 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-10-20 (follow-up pass — health-data succession, AAU launch, personalised-medicine strategy)
+
+* **Research**: three leads from a quick web search, each then read on the primary source.
+  Sundhedsdatastyrelsen's pages on Digital Sundhed Danmark (Danish and English); AAU's launch
+  news for the Centre for AI in Health (25 September 2026, `aau.dk`, cited, not used as a
+  resource); the ministry's publication page and the PDF of *Strategi for personlig medicin
+  2025–2027* (`ism.dk`, read with `pdftotext -layout`). The search's own lead for the third
+  item was a DR news item, used only to find the ministry's page.
+* **Creation**: 1 `Organisation` — [Digital Sundhed Danmark](organisations/health/digital-sundhed-danmark.md),
+  holding the single `# Succession` narrative.
+* **Update**: [Sundhedsdatastyrelsen](organisations/health/sundhedsdatastyrelsen.md) expanded from
+  frame stub — `Dissolving 2026-12-31`, `Succeeded by`; [Centre for AI in Health](initiatives/centre-for-ai-in-health-aau.md)
+  — the launch announcement, the deputy head's department, and the workshop read side by side
+  with the centre page; [Region Østdanmark](organisations/health/region-oestdanmark.md), the health
+  view, the health organisations index and coverage now name the successor in place of "reported".
+* **Judgement — the strategy is not a `Policy` file.** Government and Danske Regioner's
+  personalised-medicine strategy (31 August 2025; 13 initiatives; DKK 90m over 2025–2027)
+  names *"Bruge sundhedsdata og kunstig intelligens klogt"* as one of seven strategic aims.
+  Its budget table lists the 13 funded initiatives (patient involvement, pharmacogenetics,
+  biobanks, ATMPs, genomic data); none is an AI body or AI programme. It is recorded in
+  coverage, not as a concept, under the current AI-focus rule.
+* **Judgement — no person files, no stubs for sundhed.dk and MedCom.** The Danish page names
+  the seven-person joint management of the preparatory organisation; the organisation is held
+  as a link target with no AI remit on the pages read, so none of those names is recorded.
+  sundhed.dk and MedCom are named in prose until a second concept needs to link to them.
+* **Not yet recorded**: Digital Sundhed Danmark's board (to be appointed in the second half of
+  2026); the National Genome Centre's position after 2027 (listed among the bodies brought
+  together, not among those ceasing); the AAU centre's founding date and steering-committee
+  membership.
+* **Leads not yet written**: AI funding under Kræftplan V; the DKK 2bn for innovation and
+  digitalisation in the health service 2026–2035 under the 2024 health-reform agreement — both
+  referred to in the strategy, neither yet read.
+* **Open points**: (1) the `Kind` list in `CLAUDE.md` §7 has no value for a body owned jointly by
+  municipalities, regions and the state; Digital Sundhed Danmark carries a descriptive value
+  pending a decision. (2) The `ism.dk` page header reads *Sundheds- og Kirkeministeriet* as of
+  2026-10-20; the strategy PDF (August 2025) names *Indenrigs- og Sundhedsministeriet*. Recorded
+  side by side; the ministry's current name is not yet read on a durable page.
+* **Coverage**: 6 pages read, 1 new concept, 3 updated — a follow-up, not a sweep; no ratio claimed.
+
 ## 2026-10-17 (entity pass — the AI Office and the Deputy Prorector for AI)
 
 * **Research**: a summary of public sources supplied by the user served as the lead list;

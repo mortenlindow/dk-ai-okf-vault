@@ -41,8 +41,8 @@ concepts keep their paths; their `Part of` rows will need updating **after** the
 before. A verification pass in January 2027 should sweep for this.
 
 This is the **second** Danish public-health succession landing on 2027-01-01, alongside the
-reported merger of [Sundhedsdatastyrelsen](/organisations/health/sundhedsdatastyrelsen.md),
-sundhed.dk and MedCom. **The administrative layer beneath Danish health AI is being rebuilt
+merger of [Sundhedsdatastyrelsen](/organisations/health/sundhedsdatastyrelsen.md),
+sundhed.dk and MedCom into [Digital Sundhed Danmark](/organisations/health/digital-sundhed-danmark.md). **The administrative layer beneath Danish health AI is being rebuilt
 on a single date**, which makes early 2027 the most important scheduled verification point
 in this vault.
 
