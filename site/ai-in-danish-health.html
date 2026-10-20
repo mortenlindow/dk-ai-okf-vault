@@ -251,8 +251,8 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
       <text class="band-label" x="20" y="216">University faculties</text>
       <text class="band-label" x="20" y="346">Hospitals and regions</text>
 
-      <line class="edge" x1="140" y1="292" x2="140" y2="376" marker-end="url(#ah)"/>
-      <text class="edge-lb" x="148" y="340">partner</text>
+      <line class="edge" x1="200" y1="292" x2="200" y2="376" marker-end="url(#ah)"/>
+      <text class="edge-lb" x="208" y="340">partner</text>
       <line class="edge" x1="380" y1="292" x2="380" y2="376" marker-end="url(#ah)"/>
       <text class="edge-lb" x="388" y="340">partner</text>
       <line class="edge" x1="620" y1="422" x2="620" y2="464" marker-end="url(#ah)"/>
@@ -390,7 +390,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
       <ul class="plain small">
         <li><b>Two open networks with national reach.</b> Netværk for AI i Sundhed is independent; RAIN is hosted by a regional public body. Each convenes clinicians, researchers, developers and decision-makers, and they could come to share events, members or working themes.</li>
         <li><b>Connections across the levels.</b> The national network, the faculty bodies and the hospital bodies have largely separate origins. The think tank's link to national policy fora, and RAIT's origin in a regional network, show two ways such connections have formed.</li>
-        <li><b>Governance for the national network.</b> Once statutes and a board are published on aisundhed.dk, the map can show them as a governance body, as it does for the Aalborg centre's steering committee.</li>
+        <li><b>Governance for the national network.</b> Once statutes and a board are published on aisundhed.dk, this page can show them alongside the network, as the register does for the Aalborg centre's steering committee.</li>
         <li><b>Education.</b> The national network is exploring a master's programme in health for data scientists.</li>
         <li><b>The 2027 setting.</b> Region Østdanmark, the health councils and Digital Sundhed Danmark are new places where AI-in-health activity could be organised.</li>
       </ul>
@@ -569,9 +569,9 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   // lane 1: hospital and region
   const L1 = 46;
   dot(2019 + 151/365, L1, "reg", "<b>AI-Innovationsnetværket</b><span>started June 2019</span>");
-  label(sx(2019 + 151/365) - 6, L1 + 22, "AI-Innovationsnetværket", "Jun 2019");
+  label(sx(2019 + 151/365) - 6, L1 + 28, "AI-Innovationsnetværket", "Jun 2019");
   dot(2020 + 213/365, L1, "reg", "<b>RAIT</b><span>founded August 2020</span>");
-  label(sx(2020 + 213/365) + 12, L1 + 4, "RAIT", "Aug 2020");
+  label(sx(2020 + 213/365) + 12, L1 - 2, "RAIT", "Aug 2020");
 
   // lane 2: the national network
   const L2 = 104;
