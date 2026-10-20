@@ -1,0 +1,49 @@
+# Publishes site/ to GitHub Pages.
+# Pages in site/ may be HTML fragments (the Artifact publisher adds the document
+# skeleton itself), so the build prepends a doctype, charset and viewport to any
+# page that lacks one. The sources stay unchanged and republishable as Artifacts.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp -R site/. _site/
+          for f in _site/*.html; do
+            if ! grep -qi '<!doctype' "$f"; then
+              { printf '<!doctype html>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'; cat "$f"; } > "$f.tmp"
+              mv "$f.tmp" "$f"
+            fi
+          done
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

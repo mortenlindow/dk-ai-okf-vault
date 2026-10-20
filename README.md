@@ -37,10 +37,13 @@ view, and a coverage checklist recording what has been searched and what has not
 
 ## Published pages
 
-`site/` holds the source of pages built from the vault and published as private Claude
-artifacts.
+`site/` holds the source of pages built from the vault. It is published on GitHub Pages at
+https://mortenlindow.github.io/dk-ai-okf-vault/ by `.github/workflows/pages.yml` on every push
+to `main` that touches `site/`. The workflow adds a doctype, charset and viewport to any page
+that is an HTML fragment, so the sources can also be published as Claude artifacts unchanged.
 
-- `site/ai-at-ucph.html` — **AI at UCPH**, a visual summary of the UCPH view, published at
+- `site/ai-at-ucph.html` — **AI at UCPH**, a visual summary of the UCPH view, at
+  https://mortenlindow.github.io/dk-ai-okf-vault/ai-at-ucph.html and as a private artifact at
   https://claude.ai/artifact/1DDCVrmJZ72ZoNYaMJdUG5. To update it, edit this file and
   republish it to that URL, so the link stays the same. The page carries its facts inline,
   so when the vault changes, the page has to be updated to match.
