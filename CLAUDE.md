@@ -230,7 +230,7 @@ to it, or when it holds a fact we need. It stays a small, near-closed set (~40 f
 | `Funding Programme` | `funding/` | A named pot of money with rules, a call, or an allocation decision. |
 | `Policy` | `policy/` | A normative instrument: national strategy, statute, rules of procedure. |
 | `Infrastructure` | `infrastructure/` | Shared public/non-profit infrastructure that initiatives organise around. An **anchor, never a product**. |
-| `Programme` | `programmes/` | A named, publicly offered course of study whose subject is AI or its direct application **and which connects two or more concepts** — jointly offered, or run by a mapped initiative. **The one exception to the Structure Test**, and rare by design; see §1. |
+| `Programme` | `programmes/` | A named, publicly offered course of study whose subject is AI or its direct application **and which connects two or more concepts** — jointly offered, or run by a mapped initiative. **An exception to the Structure Test**, alongside `Training`, and rare by design; see §1. |
 | `Training` | `training/` | A publicly offered piece of **generative-AI training or awareness material for clinicians** from a Danish supplier: a course, e-learning module, webinar, workshop, guide or recorded series. **The training-register carve-out**; see §1. One file per offering. |
 | `Reference` | `references/` | An external dataset or map DK-AI points at rather than replicates. |
 | `Log` | `snapshots/` | A dated snapshot of state with **no single durable subject**. Kept near-empty. |
@@ -293,7 +293,45 @@ this table.
     provider — the same logic as the Event gate.
 
   Record `Level`, `Offered by`, `Status` and the web page — nothing that resembles a syllabus.
-- **Companies are never concepts.**
+- **A `Training` file is one offering, and it is named `<supplier>-<offering>`.** Titles such
+  as *Introduktion til generativ AI* repeat across suppliers, so the filename leads with the
+  supplier slug: `training/region-midtjylland-generativ-ai-for-klinikere.md`. A course run
+  several times is one file; a module that is part of a larger course is a line in that
+  course's `# Scope`, not a file. Template:
+
+  ```markdown
+  ---
+  type: Training
+  title: <title as the supplier writes it>
+  description: <one line: what it is and who it is for — no dates, no prices>
+  resource: https://<the offering's own page>
+  tags: [training, health, e-learning, regional]
+  timestamp: 2026-11-02T00:00:00Z
+  ---
+
+  # Facts
+
+  | | |
+  |---|---|
+  | Form | e-learning module |
+  | Offered by | [Region X](/organisations/health/region-x.md) |
+  | Scope | <one line> |
+  | Audience | <as stated> |
+  | Specialty | general |
+  | Level | introductory |
+  | Delivery | self-paced online |
+  | Time required | 45 minutes |
+  | Updated | last updated 2026-05-12 |
+  | Language | Danish |
+  | Cost | free |
+  | Access | staff login |
+  | Status | Active |
+
+  # Scope
+
+  # Citations
+  ```
+- **Companies are never concepts** — including as suppliers in the training register.
 - **A re-classification is never a reason to move a file.** Path is identity.
 
 ---
@@ -321,6 +359,7 @@ is also permanent identity.
 | **Future event** | `\| Status \| Announced` plus a blockquote under `# Summary`: `> **Forward-looking — announced, not yet held.** Captured <date>.` When it happens: **same file, same path** — flip `Status`, delete the blockquote, add `# Outcome`, bump `timestamp`, log an `**Update**`. |
 | **Term-limited appointment** | 3-col `\| Seat \| Holder \| Term \|` table on the **appointing body only**. Where terms exist but dates are not published: `2-year term, start not published` — **never guess**. On turnover the outgoing holder moves to `# Notes`, never deleted: the roster is the historical record. |
 | **Dissolution + succession** | Predecessor: `\| Status \| Dissolving 2026-12-31 \|` + `\| Succeeded by \| [link] \|`. Successor: `\| Succeeds \| [links] \|`. The **succession narrative has exactly one home — the successor's `# Succession` section**; three predecessors × one story would be three drifting copies. If the successor's name is not yet published, use a descriptive slug and say so; the eventual rename is a genuine identity change, logged as `**Rename**` with the old path kept in `\| Also known as \|`. |
+| **Training offering** | `Updated` is the **provider's** date, quoted with what it is (*last updated 2026-05-12*, *published 2025-09*, *next runs 2026-11-20 and 2027-02-05*) — never inferred; where none is shown, *not stated on the page (checked <date>)*. `Status`: `Active` (available now), `Announced` (future runs alone), `Held` (past runs alone, kept as the record), `Unknown`. A new run of a known course updates the same file. |
 | **Volatile counts** | `\| Members \| 173 *(as of 2026-09-21)* \|`. **Never in `description:`** — descriptions get cached into `index.md` entries and go stale invisibly. Whole-concept volatility gets a `> **Dated snapshot — volatile.**` blockquote. |
 
 `type: Log` is reserved for genuinely **subjectless** landscape snapshots. Entities are
@@ -405,7 +444,10 @@ same disease as type proliferation.
 | `Funded by` · `Awards` · `Volume` · `Instrument` | funding |
 | `Succeeds` · `Succeeded by` | organisational succession |
 | `Convened by` · `Part of series` · `Venue` | Event |
-| `Level` · `Offered by` | Programme only: bachelor / master / continuing education, and the body that runs it |
+| `Level` · `Offered by` | Programme: bachelor / master / continuing education, and the body that runs it. Training: introductory / intermediate / advanced, and the supplier (plain text for a company) |
+| `Scope` · `Audience` · `Specialty` | Training only: one-line scope; who it is for, as stated; `general` or the named clinical specialty or profession |
+| `Delivery` · `Time required` | Training only: self-paced online / live online / in person (+ place) / blended / document; the time asked of attendees, as published |
+| `Updated` · `Language` · `Cost` · `Access` | Training only: the provider's own date and what it is (*last updated*, *published*, *next runs*); Danish / English; as stated; open / members / registration / staff login |
 | `Also known as` · `Web` | aliases, canonical site |
 
 ---
@@ -417,10 +459,10 @@ kebab, lowercase, no `#`.
 
 | Slot | Values |
 |---|---|
-| class | `organisation` `initiative` `body` `person` `event` `funding` `policy` `infrastructure` `programme` `reference` `snapshot` |
+| class | `organisation` `initiative` `body` `person` `event` `funding` `policy` `infrastructure` `programme` `training` `reference` `snapshot` |
 | **focus** | `ucph` · `health` — **load-bearing; these drive the two views.** Both may apply; neither is required |
-| form/kind | `centre` `network` `consortium` `strategic-initiative` `working-group` `cluster` `steering-committee` `series` `university` `faculty` `department` `hospital` `region` `municipality` `state-agency` `ministry` `foundation` `association` |
-| geo/sector | `national` `regional` `municipal` `nordic` `eu` · `au` `aau` `dtu` `itu` `sdu` `ruc` `cbs` |
+| form/kind | `centre` `network` `consortium` `strategic-initiative` `working-group` `cluster` `steering-committee` `series` `university` `faculty` `department` `hospital` `region` `municipality` `state-agency` `ministry` `foundation` `association` · training: `course` `e-learning` `webinar` `workshop` `guide` |
+| geo/sector | `national` `regional` `municipal` `nordic` `eu` · `au` `aau` `dtu` `itu` `sdu` `ruc` `cbs` · `commercial` (training only: a for-profit supplier) |
 | subject | `governance` `education` `data-infrastructure` `clinical` `nlp` `imaging` `succession` `funding` |
 
 - **No status tags** (`active`, `dissolved`). A tag cannot carry an as-of date, so a

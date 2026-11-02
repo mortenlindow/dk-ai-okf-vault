@@ -4,8 +4,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a research register — how it was collected, then time, then the 2027
-   reorganisation, then the register itself; one reading column, with the timeline
+/* Layout: a research register — how it was collected, then time, then the register
+   itself; one reading column, with the timeline
    allowed to run wider. */
 :root {
   --bg: #f3f5f5;
@@ -118,19 +118,6 @@ section { display: grid; gap: 20px; }
   .dated-row .state { grid-column: 2; }
 }
 
-.open-list { display: grid; gap: 0; background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; overflow: hidden; }
-.open-row { display: grid; grid-template-columns: minmax(170px, 1.1fr) minmax(0, 2fr) minmax(0, 2fr); gap: 8px 24px; padding: 16px 18px; border-top: 1px solid var(--hair); align-items: start; }
-.open-row:first-child { border-top: 0; }
-.open-row.head { background: var(--band); padding-block: 10px; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-.open-name { display: grid; gap: 6px; align-content: start; }
-.open-name b { font-family: var(--f-display); font-size: 1.12rem; font-weight: 600; line-height: 1.2; }
-.open-row p { font-size: 0.9rem; color: var(--ink-2); min-width: 0; }
-.open-row .col-lb { display: none; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-@media (max-width: 720px) {
-  .open-row { grid-template-columns: 1fr; }
-  .open-row.head { display: none; }
-  .open-row .col-lb { display: block; margin-top: 4px; }
-}
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { font: inherit; font-size: 0.86rem; color: var(--ink-2); background: var(--surface); border: 1px solid var(--hair); border-radius: 999px; padding: 5px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
@@ -234,37 +221,6 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   </div>
 </section>
 
-<section id="reform" aria-labelledby="h-reform">
-  <div class="sec-head">
-    <span class="eyebrow">2027</span>
-    <h2 id="h-reform">A new administrative setting</h2>
-    <p class="small measure">Under the health reform, the regional and national administration around these bodies changes on a single date. The bodies themselves keep their identity; what changes is where they sit.</p>
-  </div>
-  <div class="open-list" role="table" aria-label="Changes on 1 January 2027">
-    <div class="open-row head" role="row"><span role="columnheader">Change</span><span role="columnheader">What happens</span><span role="columnheader">Bodies on this page</span></div>
-    <div class="open-row" role="row">
-      <div class="open-name" role="cell"><b>Region Østdanmark</b><span class="state announced">1 Jan 2027</span></div>
-      <div role="cell"><span class="col-lb">What happens</span><p>Region Hovedstaden and Region Sjælland merge, and Denmark has four regions instead of five. Their politicians have operational responsibility for the two regions through 2026.</p></div>
-      <div role="cell"><span class="col-lb">Bodies on this page</span><p>RAIT and the AI-Innovationsnetværket are recorded in Region Hovedstaden and will sit in Region Østdanmark.</p></div>
-    </div>
-    <div class="open-row" role="row">
-      <div class="open-name" role="cell"><b>Digital Sundhed Danmark</b><span class="state announced">1 Jan 2027</span></div>
-      <div role="cell"><span class="col-lb">What happens</span><p>A national organisation, jointly owned by municipalities, regions and the state, brings together sundhed.dk, Sundhedsdatastyrelsen, MedCom, the National Genome Centre and shared national tasks from the regions. A preparatory organisation has run since 1 January 2026; the owners appoint a board in the second half of 2026.</p></div>
-      <div role="cell"><span class="col-lb">Bodies on this page</span><p>Its stated tasks include better use of health data across the health service. An AI remit is not yet recorded in the vault.</p></div>
-    </div>
-    <div class="open-row" role="row">
-      <div class="open-name" role="cell"><b>17 regional health councils</b><span class="state announced">1 Jan 2027</span></div>
-      <div role="cell"><span class="col-lb">What happens</span><p>New councils run health services closer to citizens and hospitals.</p></div>
-      <div role="cell"><span class="col-lb">Bodies on this page</span><p>Not yet read in the vault for AI activity.</p></div>
-    </div>
-    <div class="open-row" role="row">
-      <div class="open-name" role="cell"><b>Three large-scale AI projects</b><span class="state">From 2026</span></div>
-      <div role="cell"><span class="col-lb">What happens</span><p>The government, KL and Danske Regioner fund three public-sector AI projects with DKK 266.7m. The parties revisit them in the 2027 economy agreements.</p></div>
-      <div role="cell"><span class="col-lb">Bodies on this page</span><p>One project — automated documentation in clinical practice — runs in the regions' hospitals.</p></div>
-    </div>
-  </div>
-</section>
-
 <section id="register" aria-labelledby="h-register">
   <div class="sec-head">
     <span class="eyebrow">Register</span>
@@ -273,34 +229,6 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   </div>
   <div class="chips" role="group" aria-label="Filter by kind" id="chips"></div>
   <div class="register" id="cards"></div>
-</section>
-
-<section id="evolution" aria-labelledby="h-evo">
-  <div class="sec-head">
-    <span class="eyebrow">Looking ahead</span>
-    <h2 id="h-evo">Possible further evolution</h2>
-  </div>
-  <div class="two">
-    <div>
-      <h3>In the landscape</h3>
-      <ul class="plain small">
-        <li><b>Two open networks with national reach.</b> Netværk for AI i Sundhed is independent; RAIN is hosted by a regional public body. Each convenes clinicians, researchers, developers and decision-makers, and they could come to share events, members or working themes.</li>
-        <li><b>Connections across the levels.</b> The national network, the faculty bodies and the hospital bodies have largely separate origins. The think tank's link to national policy fora, and RAIT's origin in a regional network, show two ways such connections have formed.</li>
-        <li><b>Governance across the bodies.</b> The Aalborg centre and the Aarhus network both publish named steering committees. Once statutes and a board are published on aisundhed.dk, the register can show the national network's governance in the same way.</li>
-        <li><b>Education.</b> The national network is exploring a master's programme in health for data scientists.</li>
-        <li><b>The 2027 setting.</b> Region Østdanmark, the health councils and Digital Sundhed Danmark are new places where AI-in-health activity could be organised.</li>
-      </ul>
-    </div>
-    <div>
-      <h3>In the vault</h3>
-      <ul class="plain small">
-        <li><b>Regions.</b> Region Midtjylland's and Region Sjælland's own AI programmes, and Syddansk Sundhedsinnovation's Partnership on Artificial Intelligence in Healthcare.</li>
-        <li><b>Hospitals.</b> The university hospitals as bodies in their own right, and leads at Rigshospitalet, the Technical University Hospital of Greater Copenhagen and Steno Diabetes Center Copenhagen.</li>
-        <li><b>National bodies.</b> Sundhedsstyrelsen, Dataetisk Råd and Lægemiddelstyrelsen, and the professional and specialist societies.</li>
-        <li><b>Corrections and additions are welcome.</b> The vault is open on <a href="https://github.com/mortenlindow/dk-ai-okf-vault">GitHub</a>; every named person's entry is marked <i>distilled from public sources, to be reviewed</i>.</li>
-      </ul>
-    </div>
-  </div>
 </section>
 
 <footer>

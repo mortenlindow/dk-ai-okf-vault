@@ -4,7 +4,7 @@ Courses of study whose **subject is AI or machine learning** *and* which **conne
 more concepts** — offered jointly by several institutions or faculties, or run by a mapped
 initiative. **Rare by design.**
 
-This class is the one exception to the Structure Test (`CLAUDE.md` §1), on this reasoning:
+This class is an exception to the Structure Test, alongside the [training register](../training/index.md), (`CLAUDE.md` §1), on this reasoning:
 **education *organising* is structure; education *provision* is a catalogue someone else
 already keeps.** Single-provider AI degrees are recorded as rows in their provider's
 `# Activities`, and the complete national list is at

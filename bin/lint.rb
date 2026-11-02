@@ -39,17 +39,18 @@ FOLDER_TYPES = {
   'policy'         => 'Policy',
   'infrastructure' => 'Infrastructure',
   'programmes'     => 'Programme',
+  'training'       => 'Training',
   'references'     => 'Reference',
   'snapshots'      => 'Log'
 }.freeze
 
 TAGS = Set.new(%w[
-  organisation initiative body person event funding policy infrastructure programme reference snapshot
+  organisation initiative body person event funding policy infrastructure programme training reference snapshot
   ucph health
   centre network consortium strategic-initiative working-group cluster steering-committee
   series university faculty department hospital region municipality state-agency ministry
-  foundation association
-  national regional municipal nordic eu au aau dtu itu sdu ruc cbs
+  foundation association course e-learning webinar workshop guide
+  national regional municipal nordic eu au aau dtu itu sdu ruc cbs commercial
   governance education data-infrastructure clinical nlp imaging succession
 ]).freeze
 
@@ -61,7 +62,8 @@ RELATIONS = Set.new([
   'Members', 'Funded by', 'Awards', 'Volume', 'Instrument',
   'Succeeds', 'Succeeded by',
   'Convened by', 'Part of series', 'Venue',
-  'Also known as', 'Web', 'Term length', 'Initiatives', 'Phases', 'Level', 'Offered by'
+  'Also known as', 'Web', 'Term length', 'Initiatives', 'Phases', 'Level', 'Offered by',
+  'Scope', 'Audience', 'Specialty', 'Delivery', 'Time required', 'Updated', 'Language', 'Cost', 'Access'
 ]).freeze
 
 FOCUS_VIEWS = { 'ucph' => 'views/ucph/index.md', 'health' => 'views/health/index.md' }.freeze

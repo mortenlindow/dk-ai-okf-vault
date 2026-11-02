@@ -14,6 +14,10 @@ those, see [Nordic AI Health Map](references/nordic-ai-health-map.md).
 Two foci: **UCPH** and **AI in health**. They overlap heavily, so they are **views, not
 folders** — every concept has exactly one home in its class folder.
 
+One register sits alongside the map: **generative-AI training and awareness material for
+clinicians**, from Danish suppliers of every kind, including companies. It is a deliberate,
+bounded catalogue — see the training-register carve-out in `CLAUDE.md` §1.
+
 ## Classes
 
 * [Organisations](organisations/index.md) - host bodies: universities, hospitals, regions, authorities, funders.
@@ -24,7 +28,8 @@ folders** — every concept has exactly one home in its class folder.
 * [Funding](funding/index.md) - funding programmes and their awards.
 * [Policy](policy/index.md) - strategies, agreements, rules of procedure.
 * [Infrastructure](infrastructure/index.md) - shared public infrastructure initiatives organise around.
-* [Programmes](programmes/index.md) - AI degrees and continuing education; the one exception to the Structure Test.
+* [Programmes](programmes/index.md) - AI degrees and continuing education that connect two or more concepts; an exception to the Structure Test.
+* [Training](training/index.md) - generative-AI training and awareness material for clinicians; the training register.
 * [References](references/index.md) - external resources we point at, never replicate.
 * [Snapshots](snapshots/index.md) - dated landscape snapshots (rare).
 
@@ -34,6 +39,7 @@ folders** — every concept has exactly one home in its class folder.
 * [AI in health](views/health/index.md) - everything health.
 * [National map](views/national-map/index.md) - by sector and by funder.
 * [Coverage](views/coverage/index.md) - how far the map reaches, and how each part was read.
+* [Generative-AI training for clinicians](views/genai-training/index.md) - the training register: general and by specialty, with delivery, time required and update date.
 
 ## Working here
 
