@@ -125,6 +125,9 @@ details ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 6px; font-
 .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; padding-top: 8px; border-top: 1px solid var(--hair); font-size: 0.8rem; }
 .foot .path { font-family: var(--f-mono); color: var(--muted); text-decoration-color: var(--axis); overflow-wrap: anywhere; }
 .foot .path:hover { color: var(--accent); }
+.grp { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 10px; margin: 14px 0 0; padding-bottom: 6px; border-bottom: 1px solid var(--hair); font-family: var(--f-display); font-size: 1.25rem; font-weight: 600; }
+.grp:first-child { margin-top: 0; }
+.grp .n { font-family: var(--f-mono); font-size: 0.78rem; font-weight: 400; color: var(--muted); }
 .empty { padding: 32px; text-align: center; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 12px; }
 
 footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; gap: 8px; font-size: 0.86rem; color: var(--ink-2); }
@@ -169,16 +172,17 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     <div class="row1">
       <label class="search"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Search titles, issuers, provisions" aria-label="Search the register"></label>
       <label class="sort">Sort <select id="sort" aria-label="Sort order">
-        <option value="level">By level</option>
+        <option value="level">By issuer level</option>
         <option value="newest">Newest date</option>
         <option value="oldest">Oldest date</option>
         <option value="title">Title A–Z</option>
         <option value="issuer">Issuer A–Z</option>
       </select></label>
     </div>
-    <div class="fgroup"><span>Level</span><div class="chips" id="f-level" role="group" aria-label="Filter by level"></div></div>
+    <div class="fgroup"><span>Issued at</span><div class="chips" id="f-level" role="group" aria-label="Filter by level"></div></div>
     <div class="fgroup"><span>Force</span><div class="chips" id="f-cat" role="group" aria-label="Filter by force"></div></div>
     <div class="fgroup"><span>About</span><div class="chips" id="f-focus" role="group" aria-label="Filter by AI focus"></div></div>
+    <div class="fgroup"><span>Education level</span><div class="chips" id="f-edu" role="group" aria-label="Filter by education level"></div></div>
     <div class="fgroup"><span>Region</span><div class="chips" id="f-region" role="group" aria-label="Filter by region"></div></div>
     <div class="status-line"><span id="count" aria-live="polite"></span><button type="button" class="linkbtn" id="reset">Clear filters</button></div>
   </div>
@@ -200,6 +204,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
                   regions: { label: "Regions", c: "--l-regions" }, hosp: { label: "Hospitals & departments", c: "--l-hosp" } };
   const CAT = { binding: "Binding", guidance: "Guidance", recommendation: "Recommendation", input: "Input", stub: "Login-walled" };
   const FOCUS = { "generative-ai": "Generative AI", imaging: "Imaging AI", clinical: "Clinical use", governance: "Governance & data" };
+  const EDU = { primary: "Primary & lower secondary", upper: "Upper secondary", vocational: "Vocational", higher: "Higher education", phd: "PhD", postgrad: "Postgraduate medical training", continuing: "Continuing professional education", unspecified: "Level not stated" };
   const REGIONS = ["Region Hovedstaden", "Region Sjælland", "Region Syddanmark", "Region Midtjylland", "Region Nordjylland"];
   const ICON = {
     national: '<path d="M3 9l9-5 9 5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/>',
@@ -213,14 +218,15 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     research: { label: "Research", note: "Rules on AI in research at universities, hospitals and regions." },
     education: { label: "Education", note: "Rules on AI in teaching, exams, theses and the training of health professionals." }
   };
-  const state = { tab: "clinical", q: "", sort: "level", level: new Set(), cat: new Set(), focus: new Set(), region: new Set() };
+  const state = { tab: "clinical", q: "", sort: "level", level: new Set(), cat: new Set(), focus: new Set(), region: new Set(), edu: new Set() };
+  const has = (it, key, val) => Array.isArray(it[key]) ? it[key].includes(val) : it[key] === val;
   const inTab = () => items.filter(it => it.domains.includes(state.tab));
 
   function makeChips(id, key, entries, sw) {
     const el = document.getElementById(id);
     el.innerHTML = "";
     entries.forEach(([val, label]) => {
-      const n = inTab().filter(it => it[key] === val).length;
+      const n = inTab().filter(it => has(it, key, val)).length;
       if (!n) return;
       const b = document.createElement("button");
       b.type = "button"; b.className = "chip"; b.dataset.key = key; b.dataset.val = val; b.setAttribute("aria-pressed", "false");
@@ -237,6 +243,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     makeChips("f-cat", "cat", Object.entries(CAT));
     makeChips("f-focus", "focus", Object.entries(FOCUS));
     makeChips("f-region", "region", REGIONS.map(r => [r, r.replace("Region ", "")]));
+    makeChips("f-edu", "edu", Object.entries(EDU));
     document.querySelectorAll(".fgroup").forEach(g => { g.hidden = !g.querySelector(".chip"); });
   }
   const tabsEl = document.getElementById("tabs");
@@ -251,7 +258,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     state.tab = k;
     tabsEl.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.id === "tab-" + k ? "true" : "false"));
     document.getElementById("tabnote").textContent = TABS[k].note;
-    ["level", "cat", "focus", "region"].forEach(x => state[x].clear());
+    ["level", "cat", "focus", "region", "edu"].forEach(x => state[x].clear());
     buildChips();
     if (push) { try { history.replaceState(null, "", "#" + k); } catch (e) {} }
     render();
@@ -271,7 +278,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
 
   function card(it) {
     const L = LEVEL[it.level];
-    const rows = [["Form", it.form], ["Date", it.date], ["Updated", it.updated], ["For", it.audience], ["Specialty", it.specialty], ["Force", it.force], ["Access", it.access]]
+    const rows = [["Form", it.form], ["Educ. level", it.eduText], ["Date", it.date], ["Updated", it.updated], ["For", it.audience], ["Specialty", it.specialty], ["Force", it.force], ["Access", it.access]]
       .filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
     const prov = it.provisions.length
       ? `<details><summary>Key provisions (${it.provisions.length})</summary><ul>${it.provisions.map(p => `<li>${esc(p)}</li>`).join("")}</ul></details>` : "";
@@ -292,7 +299,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   function matches(it) {
     const q = state.q.trim().toLowerCase();
     if (q && ![it.title, it.issuer, it.desc, it.audience, it.specialty, ...it.provisions].join(" ").toLowerCase().includes(q)) return false;
-    for (const k of ["level", "cat", "focus", "region"]) if (state[k].size && !state[k].has(it[k])) return false;
+    for (const k of ["level", "cat", "focus", "region", "edu"]) if (state[k].size && ![...state[k]].some(v => has(it, k, v))) return false;
     return true;
   }
   const grid = document.getElementById("grid"), count = document.getElementById("count");
@@ -304,13 +311,20 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
       return;
     }
     const list = pool.filter(matches).sort(sorters[state.sort]);
-    grid.innerHTML = list.length ? list.map(card).join("") : '<div class="empty">No documents match these filters. <button type="button" class="linkbtn" data-reset>Clear filters</button></div>';
+    let html;
+    if (state.tab === "education" && list.length) {
+      html = Object.entries(EDU).map(([k, lab]) => {
+        const g = list.filter(it => it.edu.includes(k));
+        return g.length ? `<h3 class="grp">${esc(lab)} <span class="n">${g.length}</span></h3>` + g.map(card).join("") : "";
+      }).join("");
+    } else html = list.map(card).join("");
+    grid.innerHTML = list.length ? html : '<div class="empty">No documents match these filters. <button type="button" class="linkbtn" data-reset>Clear filters</button></div>';
     count.innerHTML = `Showing <b>${list.length}</b> of ${pool.length} ${esc(TABS[state.tab].label.toLowerCase())} documents`;
     const r = grid.querySelector("[data-reset]"); if (r) r.addEventListener("click", reset);
   }
   function reset() {
     state.q = ""; document.getElementById("q").value = "";
-    ["level", "cat", "focus", "region"].forEach(k => state[k].clear());
+    ["level", "cat", "focus", "region", "edu"].forEach(k => state[k].clear());
     document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", "false"));
     render();
   }

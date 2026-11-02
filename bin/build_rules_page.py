@@ -26,6 +26,13 @@ def sortdate(s):
     m = re.search(r"\b(20\d\d)\b", s)
     if m: return f"{m.group(1)}-01-01"
     return None
+EDU_KEYS = [("primary", "primary"), ("upper secondary", "upper"), ("vocational", "vocational"), ("higher education", "higher"),
+            ("phd", "phd"), ("postgraduate medical", "postgrad"), ("continuing", "continuing")]
+def edu_levels(facts):
+    if "education" not in facts.get("Domain", ""): return []
+    lv = facts.get("Level", "").lower()
+    keys = [k for word, k in EDU_KEYS if word in lv]
+    return keys or ["unspecified"]
 def plain(md): return re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", md).replace("*", "")
 def force_cat(f):
     f = f.lower()
@@ -52,7 +59,7 @@ for slug, lvl in LEVEL.items():
         issuer=issuer, form=plain(facts.get("Form","")), force=plain(facts.get("Force","")), cat=force_cat(facts.get("Force","")),
         date=plain(facts.get("Date","")), updated=plain(facts.get("Updated","")), sort=sortdate(facts.get("Date","")) or sortdate(facts.get("Updated","")),
         audience=plain(facts.get("Audience","")), specialty=plain(facts.get("Specialty","")), access=plain(facts.get("Access","")),
-        status=facts.get("Status",""), region=region, domains=[d.strip() for d in re.split(r",| and ", plain(facts.get("Domain","clinical"))) if d.strip()], focus=focus, provisions=[plain(p) for p in prov]))
+        status=facts.get("Status",""), region=region, edu=edu_levels(facts), eduText=plain(facts.get("Level","")) if "education" in facts.get("Domain","") else "", domains=[d.strip() for d in re.split(r",| and ", plain(facts.get("Domain","clinical"))) if d.strip()], focus=focus, provisions=[plain(p) for p in prov]))
 data = json.dumps(out, ensure_ascii=False).replace("</", "<\\/")
 tpl = open(f"{root}/bin/templates/clinical-ai-rules.html").read()
 assert tpl.count("__DATA__") == 1

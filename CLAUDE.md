@@ -481,7 +481,7 @@ same disease as type proliferation.
 | `Funded by` · `Awards` · `Volume` · `Instrument` | funding |
 | `Succeeds` · `Succeeded by` | organisational succession |
 | `Convened by` · `Part of series` · `Venue` | Event |
-| `Level` · `Offered by` | Programme: bachelor / master / continuing education, and the body that runs it. Training: introductory / intermediate / advanced, and the supplier (plain text for a company) |
+| `Level` · `Offered by` | Programme: bachelor / master / continuing education, and the body that runs it. Training: introductory / intermediate / advanced, and the supplier (plain text for a company). Policy in the `education` domain: the education level the rules apply to — `primary and lower secondary`, `upper secondary`, `vocational`, `higher education`, `PhD`, `postgraduate medical training`, `continuing professional education`; several separated by `;` |
 | `Scope` · `Audience` · `Specialty` | Training and Policy: one-line scope; who it is for, as stated; `general` or the named clinical specialty or profession |
 | `Delivery` · `Time required` | Training only: self-paced online / live online / in person (+ place) / blended / document; the time asked of attendees, as published |
 | `Updated` · `Language` · `Cost` · `Access` | Training: the provider's own date and what it is (*last updated*, *published*, *next runs*); Danish / English; as stated; open / members / registration / staff login. Policy may use `Updated` and `Access` |
