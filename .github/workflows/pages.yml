@@ -1,7 +1,7 @@
 # Publishes site/ to GitHub Pages.
 # Pages in site/ may be HTML fragments (the Artifact publisher adds the document
-# skeleton itself), so the build prepends a doctype, charset and viewport to any
-# page that lacks one. The sources stay unchanged and republishable as Artifacts.
+# skeleton itself), so the build prepends a doctype, and a charset and viewport
+# where missing, to any page that lacks a doctype. The sources stay unchanged and republishable as Artifacts.
 name: Pages
 
 on:
@@ -30,7 +30,12 @@ jobs:
           cp -R site/. _site/
           for f in _site/*.html; do
             if ! grep -qi '<!doctype' "$f"; then
-              { printf '<!doctype html>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'; cat "$f"; } > "$f.tmp"
+              {
+                printf '<!doctype html>\n'
+                grep -qi '<meta charset' "$f" || printf '<meta charset="utf-8">\n'
+                grep -qi 'name="viewport"' "$f" || printf '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+                cat "$f"
+              } > "$f.tmp"
               mv "$f.tmp" "$f"
             fi
           done
