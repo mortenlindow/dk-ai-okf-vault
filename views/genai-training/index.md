@@ -41,19 +41,24 @@ delivery · time required · date.
 
 * [Prompt din praksis](../../training/fsus-prompt-din-praksis.md) - FSUS · conference with workshops · in person, Nyborg · two days · held 29–30 October 2025.
 
+### Physiotherapy
+
+* [Hvad kan du som selvstændig fysioterapeut bruge AI til](../../training/danske-fysioterapeuter-ai-for-selvstaendige.md) - Danske Fysioterapeuter · webinar for members in private practice · live online · 1 hour · 19 November 2026 · free.
+
 ### Pharmacy
 
 * [Patienten, farmaceuten og AI](../../training/pharmakon-patienten-farmaceuten-og-ai.md) - Pharmakon (commercial) · evidence summary · document · March 2025.
 
 ### Leadership and research
 
+* [Ledelse i en AI-drevet tid: nye ledelsesdilemmaer](../../training/region-hovedstaden-ledelse-i-en-ai-drevet-tid.md) - Region Hovedstaden · course for clinical and administrative leaders · in person · two days · page updated July 2026.
 * [Ledelse og AI](../../training/region-sjaelland-ledelse-og-ai.md) - Region Sjælland · recordings, podcasts, webinars for leaders · self-paced online · page updated March 2026.
 * [Ansvarlig brug af generativ AI i forskning](../../training/region-sjaelland-ansvarlig-brug-af-generativ-ai-i-forskning.md) - Region Sjælland research library · course · format not stated · page updated September 2026.
 
 ## By supplier
 
-* Regions and hospitals: Region Syddanmark (3), Region Sjælland (2), Region Midtjylland (1), Aarhus University Hospital (1).
-* Professional organisations and their bodies: Lægedage — PLO and DSAM (3), KAP-S (1), FSUS (1), DGE (1).
+* Regions and hospitals: Region Syddanmark (3), Region Sjælland (2), Region Hovedstaden (1), Region Midtjylland (1), Aarhus University Hospital (1).
+* Professional organisations and their bodies: Lægedage — PLO and DSAM (3), KAP-S (1), FSUS (1), DGE (1), Danske Fysioterapeuter (1).
 * Commercial: Dagens Medicin (1), Pharmakon (1).
 
 ## Read, not filed
@@ -71,16 +76,19 @@ an audience other than clinicians:
 * **KL** — the municipal webinar series and guide on generative AI, aimed at municipal staff.
 * **Komponent** — *Kunstig intelligens i din regionale hverdag*, for regional administrative staff.
 * **Atrium** — *Emerging Technologies in Healthcare*, a one-day course naming AI in healthcare.
+* **Københavns Professionshøjskole** — *IT, algoritmer og kunstig intelligens*, a module for
+  laboratory technicians and bioanalysts naming AI and machine learning; and general AI modules
+  at UCN, UCL and UC SYD for public-sector staff.
 
 ## Where this register is expected to grow
 
 Read in this pass but not yet recorded, because the pages could not be opened or gave titles alone:
 
-* **Region Hovedstaden** — its pages, including a two-day course for clinical and
-  administrative leaders on generative AI, sit behind a bot check that was not passed.
-* **University of Copenhagen** continuing education, **VIA University College** (a short
-  course for nurses and therapists), **Danske Fysioterapeuter** (an AI webinar for
-  self-employed physiotherapists), and the course lists of the professionshøjskoler.
+* **Region Hovedstaden** — further staff material on generative AI; the region's site search
+  returned nothing usable, and Rigshospitalet's pages were not reached.
+* **University of Copenhagen** continuing education, which could not be reached in this pass.
+* **VIA University College** — a short course for nurses and therapists known from a search
+  snippet; not found on via.dk on 2026-11-02, so it may have been withdrawn or renamed.
 * **Specialty societies** beyond general practice, and the professional associations for
   midwives, bioanalysts, radiographers and pharmacy technicians.
 * The **podcast** the DGE discussion sheet accompanies.

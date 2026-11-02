@@ -13,6 +13,7 @@ The register, grouped for reading, is [Generative-AI training for clinicians](..
 * [Guide til brug af generativ AI i Region Syddanmark](region-syddanmark-guide-til-brug-af-generativ-ai.md) - Region Syddanmark's staff guide to generative AI: what it is, when and how it may be used, and which services are approved.
 * [Bliv klogere på generativ AI (Region Midtjylland)](region-midtjylland-bliv-klogere-paa-generativ-ai.md) - five-week email course with short videos in which Region Midtjylland colleagues show how they use generative AI safely at work.
 * [Ledelse og AI (Region Sjælland)](region-sjaelland-ledelse-og-ai.md) - Region Sjælland's collection of recordings, podcasts and a webinar series for its leaders on leading with AI, including generative AI.
+* [Ledelse i en AI-drevet tid: nye ledelsesdilemmaer (Region Hovedstaden)](region-hovedstaden-ledelse-i-en-ai-drevet-tid.md) - two-day course for Region Hovedstaden's clinical and administrative leaders on using generative AI in their own leadership and units.
 * [Ansvarlig brug af generativ AI i forskning (Region Sjælland)](region-sjaelland-ansvarlig-brug-af-generativ-ai-i-forskning.md) - course from Region Sjælland's research library on responsible use of generative AI in research.
 * [AI i almen praksis: Refleksionsark til podcast (DGE)](dge-refleksionsark-ai-i-almen-praksis.md) - two-page discussion sheet for general practitioners' continuing-education groups, to accompany a podcast on AI in general practice.
 * [Patienten, farmaceuten og AI (Pharmakon)](pharmakon-patienten-farmaceuten-og-ai.md) - Pharmakon's summary for pharmacy practice of the AI presentations at the 2024 FIP congress, including generative AI.
@@ -22,6 +23,7 @@ The register, grouped for reading, is [Generative-AI training for clinicians](..
 * [AI i praksis – muligheder og udfordringer (Lægedage 2026)](laegedage-ai-i-praksis-muligheder-og-udfordringer.md) - half-day Lægedage course for general practitioners and their staff introducing AI, including large language models, in clinic and administration.
 * [Brug af AI til instrukser m.v. (Lægedage 2026)](laegedage-brug-af-ai-til-instrukser.md) - hands-on Lægedage workshop for general practitioners on using language models for instructions, phrases, staff teaching and certificates.
 * [AI begynderkursus – prompt i praksis (Lægedage 2026)](laegedage-ai-begynderkursus-prompt-i-praksis.md) - beginners' Lægedage course for general-practice staff on writing prompts for everyday tasks.
+* [Hvad kan du som selvstændig fysioterapeut bruge AI til (Danske Fysioterapeuter)](danske-fysioterapeuter-ai-for-selvstaendige.md) - one-hour member webinar introducing language models to self-employed physiotherapists, for planning, notes, administration and responsible use.
 
 ## Held — kept as the record
 

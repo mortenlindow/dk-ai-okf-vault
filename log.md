@@ -3,6 +3,21 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-11-02 (training register — browser follow-up)
+
+* **Research**: the pages earlier sweeps could not open, read in the built-in browser: Region
+  Hovedstaden's leadership course pages and CAMES, fysio.dk's course and conference calendars,
+  VIA, KP, Absalon, UCL, UCN, UC SYD, AU Health and SDU course lists.
+* **Creation**: 2 `Training` concepts — [Ledelse i en AI-drevet tid](training/region-hovedstaden-ledelse-i-en-ai-drevet-tid.md)
+  (Region Hovedstaden, clinical and administrative leaders) and
+  [Hvad kan du som selvstændig fysioterapeut bruge AI til](training/danske-fysioterapeuter-ai-for-selvstaendige.md)
+  (Danske Fysioterapeuter, 19 November 2026). The register now holds 17 offerings.
+* **Not yet recorded**: the VIA course for nurses and therapists was not found on via.dk; the
+  University of Copenhagen's continuing-education sites could not be reached in the browser
+  either; CAMES's course pages name no generative AI as of 2026-11-02.
+* **Coverage**: the professionshøjskoler's course lists name AI in general public-sector and IT
+  modules; none of those read is aimed at clinicians.
+
 ## 2026-11-02 (new class — the generative-AI training register, first sweep)
 
 * **Decision**: at the curator's request, a register of **generative-AI training and awareness
