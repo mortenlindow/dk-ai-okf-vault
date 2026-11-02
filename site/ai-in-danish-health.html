@@ -102,7 +102,7 @@ section { display: grid; gap: 20px; }
 .tip span { color: var(--surface); opacity: 0.8; font-family: var(--f-mono); font-size: 0.74rem; }
 
 
-/* dated list and the 2027 table */
+/* dated list */
 .dated { display: grid; gap: 0; background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; overflow: hidden; }
 .dated-row { display: grid; grid-template-columns: 9.5em 14px 1fr auto; gap: 6px 14px; padding: 12px 18px; border-top: 1px solid var(--hair); align-items: baseline; }
 .dated-row:first-child { border-top: 0; }
@@ -153,13 +153,11 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
 <header>
   <span class="eyebrow">DK-AI · AI-in-health view · as of 2 November 2026</span>
   <h1>AI in Danish Health</h1>
-  <p class="lede">Public and non-profit AI-in-health activity in Denmark is organised at three levels: networks that reach across the country, centres and networks inside university faculties, and bodies anchored at hospitals and regions. Where founding dates are recorded they run from 2019 to 2026. The earliest are hospital-anchored; the university networks date from 2026. On 1 January 2027 the regional and national health administration around them is reorganised.</p>
+  <p class="lede">Public and non-profit AI-in-health activity in Denmark is organised at three levels: networks that reach across the country, centres and networks inside university faculties, and bodies anchored at hospitals and regions. Where founding dates are recorded they run from 2019 to 2026. The earliest are hospital-anchored; the university networks date from 2026.</p>
   <div class="facts" aria-label="Key figures">
-    <span><b>12</b> entries in the register</span>
+    <span><b>9</b> entries in the register</span>
     <span><b>368</b> members, Netværk for AI i Sundhed</span>
     <span><b>~500</b> members, RAIN</span>
-    <span><b>DKK 266.7m</b> public AI agreement, from 2026</span>
-    <span><b>1 Jan 2027</b> four regions · Digital Sundhed Danmark</span>
   </div>
 </header>
 
@@ -196,14 +194,13 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     <span><i class="sw sw-nat"></i>National network</span>
     <span><i class="sw sw-fac"></i>University faculty</span>
     <span><i class="sw sw-reg"></i>Hospital &amp; region</span>
-    <span><i class="sw sw-frame"></i>Funding &amp; administration</span>
     <span class="mono" style="font-size:0.8rem">● dated&nbsp;&nbsp;○ announced&nbsp;&nbsp;▬ year</span>
   </div>
   <div class="figure" id="timeline">
     <div class="scroll">
-    <svg viewBox="0 0 1000 306" role="img" aria-labelledby="tl-t tl-d">
+    <svg viewBox="0 0 1000 272" role="img" aria-labelledby="tl-t tl-d">
       <title id="tl-t">Timeline of dated milestones, 2019 to 2029</title>
-      <desc id="tl-d">The AI-Innovationsnetværket started in June 2019 and RAIT grew out of it in August 2020. Netværk for AI i Sundhed was founded in 2025 and held its first general assembly on 23 September 2026; its next meeting is in January 2027. Aarhus University's Health-AI Network was established in 2026 with an inaugural meeting on 27 October 2026. Aalborg University announced its Centre for AI in Health on 25 September 2026. The tripartite agreement on three large-scale AI projects was announced in December 2025. Region Østdanmark and Digital Sundhed Danmark begin on 1 January 2027.</desc>
+      <desc id="tl-d">The AI-Innovationsnetværket started in June 2019 and RAIT grew out of it in August 2020. Netværk for AI i Sundhed was founded in 2025 and held its first general assembly on 23 September 2026; its next meeting is in January 2027. Aarhus University's Health-AI Network was established in 2026 with an inaugural meeting on 27 October 2026. Aalborg University announced its Centre for AI in Health on 25 September 2026.</desc>
       <g id="tl"></g>
     </svg>
     </div>
@@ -215,8 +212,6 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     <div class="dated-row"><span class="when">23 Sep 2026</span><i class="sw sw-nat"></i><p><b>Netværk for AI i Sundhed</b> — general assembly and network meeting, Copenhagen.</p><span class="state">Held</span></div>
     <div class="dated-row"><span class="when">25 Sep 2026</span><i class="sw sw-fac"></i><p><b>Aalborg University</b> announces its Centre for AI in Health, gathering competences across AAU SUND; a workshop for researchers and clinicians on the centre's build-up follows.</p><span class="state">Announced</span></div>
     <div class="dated-row"><span class="when">27 Oct 2026</span><i class="sw sw-fac"></i><p><b>Health-AI Network</b> — inaugural meeting at the Aarhus Institute of Advanced Studies.</p><span class="state">Held</span></div>
-    <div class="dated-row"><span class="when">31 Dec 2026</span><i class="sw sw-frame"></i><p><b>Sundhedsdatastyrelsen, sundhed.dk and MedCom</b> cease as independent organisations.</p><span class="state announced">Scheduled</span></div>
-    <div class="dated-row"><span class="when">1 Jan 2027</span><i class="sw sw-frame"></i><p><b>Region Østdanmark</b> and <b>Digital Sundhed Danmark</b> begin, together with 17 regional health councils.</p><span class="state announced">Scheduled</span></div>
     <div class="dated-row"><span class="when">Jan 2027</span><i class="sw sw-nat"></i><p><b>Netværk for AI i Sundhed</b> — next event; date to be announced.</p><span class="state announced">Upcoming</span></div>
   </div>
 </section>
@@ -244,8 +239,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   const KIND = {
     nat:   { label: "National network", cls: "k-nat" },
     fac:   { label: "University faculty", cls: "k-fac" },
-    reg:   { label: "Hospital & region", cls: "k-reg" },
-    frame: { label: "Funding & administration", cls: "k-frame" }
+    reg:   { label: "Hospital & region", cls: "k-reg" }
   };
 
   const items = [
@@ -284,19 +278,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     { id: "rait", kind: "reg", name: "RAIT",
       summary: "Radiological AI Test Centre: the radiology departments at Herlev, Gentofte, Frederiksberg and Bispebjerg hospitals, working together to develop, clinically validate and implement AI in radiology, including testing how algorithms perform on Danish patient data.",
       facts: [["Founded", "August 2020"], ["Part of", "Region Hovedstaden"], ["Partners", "Herlev and Gentofte Hospital; Bispebjerg and Frederiksberg Hospital"], ["Grew out of", "AI-Innovationsnetværket"]],
-      url: "https://www.rait.dk/who-is-rait", path: "initiatives/rait.md" },
-    { id: "deal", kind: "frame", name: "Three large-scale AI projects",
-      summary: "A tripartite agreement allocating DKK 266.7m, financed jointly by the state, the municipalities and the regions, to three AI projects across the public sector. One is automated documentation in clinical practice in the regions.",
-      facts: [["Announced", "December 2025"], ["Period", "From 2026"], ["Volume", "DKK 266.7m"], ["Parties", "The government, KL, Danske Regioner"], ["Governed by", "Den Digitale Taskforce for Kunstig Intelligens"]],
-      url: "https://www.regioner.dk/services/nyheder/2025/december/aftale-om-tre-storskalaprojekter-med-kunstig-intelligens-i-den-offentlige-sektor/", path: "funding/offentlig-ai-aftale-2026.md" },
-    { id: "dsd", kind: "frame", name: "Digital Sundhed Danmark",
-      summary: "A national organisation for shared digital health solutions, infrastructure and health data, jointly owned by municipalities, regions and the state. It succeeds Sundhedsdatastyrelsen, sundhed.dk and MedCom.",
-      facts: [["Established", "1 January 2027"], ["Preparatory", "Since 1 January 2026"], ["Board", "Appointed by the owners, second half of 2026"], ["Offices", "Aalborg, Odense, Copenhagen"]],
-      url: "https://sundhedsdatastyrelsen.dk/om-os/organisation/digital-sundhed-danmark", path: "organisations/health/digital-sundhed-danmark.md" },
-    { id: "oest", kind: "frame", name: "Region Østdanmark",
-      summary: "The new health region formed by merging Region Hovedstaden and Region Sjælland, leaving Denmark with four regions.",
-      facts: [["Operational", "1 January 2027"], ["Succeeds", "Region Hovedstaden, Region Sjælland"]],
-      url: "https://www.regionoest.dk/", path: "organisations/health/region-oestdanmark.md" }
+      url: "https://www.rait.dk/who-is-rait", path: "initiatives/rait.md" }
   ];
 
   const NS = "http://www.w3.org/2000/svg";
@@ -318,7 +300,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   const tl = document.getElementById("tl");
   const t0 = 2019, t1 = 2029, X0 = 40, X1 = 960;
   const sx = t => X0 + (t - t0) / (t1 - t0) * (X1 - X0);
-  const AXIS = 272;
+  const AXIS = 238;
   el("line", { class: "axis-line", x1: X0, y1: AXIS, x2: X1, y2: AXIS }, tl);
   for (let y = t0; y <= t1; y++) {
     el("line", { class: "tick", x1: sx(y), y1: 22, x2: sx(y), y2: AXIS }, tl);
@@ -376,14 +358,6 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   dot(2026 + 267/365, L4, "fac", "<b>Centre for AI in Health (AAU)</b><span>announced 25 September 2026</span>");
   label(sx(2026 + 267/365) - 12, L4 + 4, "Centre for AI in Health, AAU", "announced 25 Sep 2026", "end");
 
-  // lane 5: funding and administration
-  const L5 = 246;
-  dot(2025 + 340/365, L5, "frame", "<b>Three large-scale AI projects</b><span>announced December 2025 · DKK 266.7m</span>");
-  label(sx(2025 + 340/365) - 12, L5 + 4, "Three large-scale AI projects", "Dec 2025 · DKK 266.7m", "end");
-  dot(2027, L5, "frame", "<b>Region Østdanmark · Digital Sundhed Danmark</b><span>1 January 2027</span>");
-  label(sx(2027) + 12, L5 - 10, "Region Østdanmark", null);
-  label(sx(2027) + 12, L5 + 4, "Digital Sundhed Danmark", "1 Jan 2027");
-
   /* register */
   const cards = document.getElementById("cards"), chips = document.getElementById("chips");
   const cardEls = {};
@@ -396,7 +370,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     cards.appendChild(c); cardEls[it.id] = c;
   });
   let current = "all";
-  const kinds = [["all", "All"], ["nat", KIND.nat.label], ["fac", KIND.fac.label], ["reg", KIND.reg.label], ["frame", KIND.frame.label]];
+  const kinds = [["all", "All"], ["nat", KIND.nat.label], ["fac", KIND.fac.label], ["reg", KIND.reg.label]];
   kinds.forEach(([k, lb]) => {
     const b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.id = "chip-" + k;
     const n = k === "all" ? items.length : items.filter(i => i.kind === k).length;
