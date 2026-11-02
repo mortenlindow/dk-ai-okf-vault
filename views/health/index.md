@@ -99,6 +99,7 @@ earliest-dated bodies are hospital-anchored; the university networks are the mos
 ## Rules and guidance
 
 * [Rules and guidance on clinical AI](../clinical-ai-rules/index.md) - the register of rules, guidance and institutional input on the clinical use of AI, from statute to single hospital departments.
+* [Rules and guidance on AI in research and education](../research-education-ai-rules/index.md) - the companion register for research and education, including health research and specialist medical and nursing training.
 
 ## Training
 

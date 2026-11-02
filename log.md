@@ -3,6 +3,65 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-11-02 (sweep pass — research and education register, hospitals and regions)
+
+* **Research**: the public instruction databases of Region Hovedstaden, Region Midtjylland, Region
+  Sjælland and Region Nordjylland, searched for AI terms with research and education terms; the
+  regions' research, ethics-committee and postgraduate-education sites; Odense University
+  Hospital's internal-fund calls.
+* **Creation**: 4 `Policy` — AI rules in specialist intensive-care nursing assignments
+  (Rigshospitalet) and in the national order for specialist acute-care nursing; a research note
+  (AUH); a disclosure clause in a pre-graduate fund call (OUH).
+* **Update**: three clinical-placement frameworks in Region Sjælland's psychiatry and a department
+  strategy are listed as passages in the research and education view; the one listed in the
+  clinical view moves there.
+* **Not yet recorded**: Region Hovedstaden's research support and ethics committee (bot check);
+  Region Syddanmark's internal instructions (no public database).
+* **Coverage**: 4 filed, 4 listed.
+
+## 2026-11-02 (sweep pass — research and education register, school levels)
+
+* **Research**: Børne- og Undervisningsministeriet, its agencies STUK and STIL, Retsinformation, EVA,
+  KL, and the school-sector organisations, by a research agent, at the curator's request that
+  education be stratified by level.
+* **Creation**: 15 `Policy` — the upper-secondary exam order and list of aids; the folkeskole exam
+  rules; recommendations for the folkeskole, the upper-secondary programmes and vocational general
+  subjects; guidance for vocational trade committees; legal guidance and a mini-guide for
+  institutions; the 2024 expert-group report; an exam trial; a political agreement on the hf
+  assignment; input from the pupils' association, the teachers' union and the schools' association.
+* **Decision — education level.** Education documents carry `Level` with a fixed set of values
+  (`CLAUDE.md` §7), and the view lists them by level.
+* **Not yet recorded**: a national AI strategy for the education sector (announced); municipal
+  school policies.
+* **Coverage**: ~15 bodies, 15 filed.
+
+## 2026-11-02 (sweep pass — research and education register, universities)
+
+* **Research**: the eight universities, at university level and at their health faculties and PhD
+  schools, by a research agent.
+* **Creation**: 18 `Policy` — exam rules and staff principles at AU, SDU, AAU, ITU, RUC, CBS and DTU;
+  the health faculties' and medical doctoral schools' own rules at SDU, AU and AAU; a study-board
+  example at AAU.
+* **Not yet recorded**: the University of Copenhagen — its study-rule, PhD-school and health-faculty
+  subdomains did not respond from any route on 2026-11-02. Given the vault's UCPH focus, KU's PhD
+  guideline of 5 January 2026 and its exam rules are the first leads for the next pass.
+* **Coverage**: 8 universities, 18 filed.
+
+## 2026-11-02 (sweep pass — research and education register, national bodies and funders)
+
+* **Research**: the research-integrity framework, the research-ethics committees, Retsinformation,
+  research funders, Sundhedsstyrelsen's specialist-training curricula, the external examiners — by
+  a research agent; the ethics committees' site and Sundhedsstyrelsen's radiology curriculum read in
+  the browser after refusing automated reading.
+* **Creation**: 13 `Policy` — the 2026 code of conduct for research integrity and the agency's list
+  of international AI guidelines; the 2023 committee-act amendment; the ethics committees' AI
+  checklist (May 2026); the radiology specialist-training curriculum's AI competence; seven
+  funders' AI rules or input; the external examiners' guidance on university GAI rules.
+* **Decision — research and education.** Rules on AI in research and education are filed as `Policy`
+  with `Domain` set accordingly, in a second register view; new subject tag `research`.
+* **Leads not yet written**: see the view.
+* **Coverage**: ~25 bodies, 13 filed.
+
 ## 2026-11-02 (update — domain for the rules register)
 
 * **Update**: every `Policy` document in the rules register carries a `Domain` row (all 39 are

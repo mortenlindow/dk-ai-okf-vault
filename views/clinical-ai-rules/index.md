@@ -87,7 +87,6 @@ They are listed here rather than given files (read 2026-11-02):
 * **KK 04.04.01 Good Tape — anvendelse** (Region Midtjylland, Koncern Kvalitet) — an AI-based transcription service, barred for sensitive data.
 * **Håndtering af data på BBK** (Regionshospitalet Gødstrup, Blodprøver og Biokemi) — a section on which data the region's own chatbot may receive.
 * **Information om e-Dok AI** (Region Midtjylland) — the document system's AI search summary should not be the sole basis for clinical decisions.
-* **Rammer for sygeplejestuderendes praktik i MVH-Psykiatri** (Region Sjælland) — personal data may never be entered into translation or chat tools.
 * **Brug af digital tolkeapp Helen Assistant** (Bispebjerg and Frederiksberg Hospital) and **Vejledning til brug af digital tolkeapp** (Herlev and Gentofte Hospital) — parallel to the [Nordsjællands Hospital guideline](../../policy/nordsjaellands-hospital-brug-af-digital-tolkeloesning-helen-assistant.md); their texts do not call the app AI.
 
 ## Read, not filed
@@ -120,7 +119,7 @@ They are listed here rather than given files (read 2026-11-02):
 * **Region Nordjylland** — further radiology AI documents in PRI, and the region's 2023 AI vision paper.
 * **Dansk Sygeplejeråd** — its 2023 policy paper on technology.
 
-## Deferred to the research and education register
+## Research and education
 
-* Rigshospitalet, Intensiv Behandling, *Opgavekriterier* — an annex on AI in the final assignments of the specialist intensive-care nursing education.
-* AUH, Lever-, Mave- og Tarmsygdomme, *Kunstig intelligens og AI-værktøjer ved forskning*.
+Rules on AI in research and in education are in the companion register,
+[Rules and guidance on AI in research and education](../research-education-ai-rules/index.md).

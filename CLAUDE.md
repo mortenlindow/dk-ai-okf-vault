@@ -349,7 +349,10 @@ this table.
     when the health service is among its addressees.
   - **Domain.** Every document carries `| Domain |` — `clinical`, `research` or `education` (or
     two of them). Rules on AI in research and education are filed the same way and kept apart
-    from clinical rules by this row, in their own view and their own tab on the site page.
+    from clinical rules by this row, in `/views/research-education-ai-rules/index.md` and their own
+    tabs on the site page. Education documents also carry `Level` (§7), and the view lists them by
+    level. The admission test is the same, with (c) read as *AI named, applied to research or to
+    education* — including school levels, which the curator asked to be covered.
   - **One document, one home.** A staff guide already filed in `training/` stays there and is
     listed in the register view by link; it is not filed twice.
   - **Filename `<issuer>-<short-title>`**, as for training: `policy/sundhedsstyrelsen-…md`.
@@ -502,7 +505,7 @@ kebab, lowercase, no `#`.
 | **focus** | `ucph` · `health` — **load-bearing; these drive the two views.** Both may apply; neither is required. `Training` files carry neither: every entry is health by admission, so the tag would be noise, and the register has its own view |
 | form/kind | `centre` `network` `consortium` `strategic-initiative` `working-group` `cluster` `steering-committee` `series` `university` `faculty` `department` `hospital` `region` `municipality` `state-agency` `ministry` `foundation` `association` · training: `course` `e-learning` `webinar` `workshop` `guide` · policy: `statute` `guidance` `guideline` `instruction` `statement` |
 | geo/sector | `national` `regional` `municipal` `nordic` `eu` · `au` `aau` `dtu` `itu` `sdu` `ruc` `cbs` · `commercial` (training only: a for-profit supplier) |
-| subject | `governance` `education` `data-infrastructure` `clinical` `nlp` `imaging` `succession` `funding` `generative-ai` |
+| subject | `governance` `education` `data-infrastructure` `clinical` `nlp` `imaging` `succession` `funding` `generative-ai` `research` |
 
 - **No status tags** (`active`, `dissolved`). A tag cannot carry an as-of date, so a
   stale status tag is a lie. Status is a `# Facts` row.

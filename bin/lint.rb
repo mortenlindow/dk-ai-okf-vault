@@ -52,7 +52,7 @@ TAGS = Set.new(%w[
   foundation association course e-learning webinar workshop guide
   statute guidance guideline instruction statement
   national regional municipal nordic eu au aau dtu itu sdu ruc cbs commercial
-  governance education data-infrastructure clinical nlp imaging succession generative-ai
+  governance education data-infrastructure clinical nlp imaging succession generative-ai research
 ]).freeze
 
 RELATIONS = Set.new([

@@ -18,8 +18,9 @@ One register sits alongside the map: **generative-AI training and awareness mate
 clinicians**, from Danish suppliers of every kind, including companies. It is a deliberate,
 bounded catalogue — see the training-register carve-out in `CLAUDE.md` §1.
 
-A second register holds **rules, guidance and institutional input on the clinical use of AI**,
-from statute down to single hospital departments — filed as `Policy`, see `CLAUDE.md` §4.
+Two more registers hold **rules, guidance and institutional input on AI** — one on its clinical use,
+from statute down to single hospital departments, and one on AI in research and education, from the
+folkeskole to specialist medical training. Both are filed as `Policy`; see `CLAUDE.md` §4.
 
 ## Classes
 
@@ -43,7 +44,8 @@ from statute down to single hospital departments — filed as `Policy`, see `CLA
 * [National map](views/national-map/index.md) - by sector and by funder.
 * [Coverage](views/coverage/index.md) - how far the map reaches, and how each part was read.
 * [Generative-AI training for clinicians](views/genai-training/index.md) - the training register: general and by specialty, with delivery, time required and update date.
-* [Rules and guidance on clinical AI](views/clinical-ai-rules/index.md) - the rules register: national, professional, regional, and hospital and department level.
+* [Rules and guidance on clinical AI](views/clinical-ai-rules/index.md) - the rules register for clinical use: national, professional, regional, and hospital and department level.
+* [Rules and guidance on AI in research and education](views/research-education-ai-rules/index.md) - research by issuer; education by level, from schools to specialist training.
 
 ## Working here
 

@@ -11,7 +11,9 @@ idx = open(f"{root}/policy/index.md").read()
 cur = None
 for line in idx.splitlines():
     if line.startswith("## National"): cur = "national"
-    elif line.startswith("## Professional"): cur = "prof"
+    elif line.startswith("## Professional") or line.startswith("## Associations"): cur = "prof"
+    elif line.startswith("## Research funders"): cur = "funders"
+    elif line.startswith("## Universities"): cur = "uni"
     elif line.startswith("## Regions"): cur = "regions"
     elif line.startswith("## Hospitals"): cur = "hosp"
     m = re.match(r"\* \[.*?\]\(([\w-]+)\.md\)", line)
