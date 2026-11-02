@@ -1,0 +1,37 @@
+name: Correction
+description: Something in a register or a vault file is wrong, out of date or incomplete.
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping keep DK-AI accurate. Issues are public, so please leave out personal contact details.
+        Anyone named in the vault can ask for their entry to be removed or corrected without giving a reason.
+  - type: input
+    id: entry
+    attributes:
+      label: Which entry?
+      description: The card's title, or the vault file path shown on the card (for example policy/….md).
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+      description: What the entry says now, and what it should say.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A public page or document that shows the correct information. The vault records what public sources state.
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Your relation to the entry (optional)
+      options:
+        - I am writing on behalf of the body or the document's issuer
+        - I am named in the entry
+        - Other, or prefer not to say

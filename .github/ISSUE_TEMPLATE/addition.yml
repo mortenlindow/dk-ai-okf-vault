@@ -1,0 +1,39 @@
+name: Addition
+description: Suggest a network, centre, training offering, rule or guideline that is not yet recorded.
+title: "Addition: "
+labels: ["addition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. The vault records public and non-profit bodies that organise AI in Denmark, generative-AI training for clinicians, and rules and guidance on the use of AI in clinical work, research and education. Companies and AI products are not given entries. Issues are public, so please leave out personal contact details.
+  - type: dropdown
+    id: register
+    attributes:
+      label: Which register?
+      options:
+        - Networks about AI in Danish Health
+        - Generative AI training for clinicians
+        - Rules and guidance on AI in Denmark
+        - AI at UCPH
+        - The vault in general
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: What should be added?
+      description: The name of the body, offering or document.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Public page or document
+      description: Where it is published. A document behind a login can still be recorded, by its title and where it is listed.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else

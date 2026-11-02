@@ -134,6 +134,18 @@ details ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 6px; font-
 
 footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; gap: 8px; font-size: 0.86rem; color: var(--ink-2); }
 @media (max-width: 520px) { body { padding-block: 24px 48px; } .page { gap: 36px; } .grid { grid-template-columns: 1fr; } }
+
+/* Corrections and additions panel */
+.contrib { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px 22px; align-items: center; background: var(--surface); border: 1px solid var(--hair); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 22px; }
+.contrib > svg { width: 36px; height: 36px; color: var(--accent); }
+.contrib h2 { font-family: var(--f-display, "Newsreader", Georgia, serif); font-size: 1.3rem; line-height: 1.2; margin: 0 0 4px; letter-spacing: -0.01em; }
+.contrib p { margin: 0; font-size: 0.92rem; color: var(--ink-2); max-width: 64ch; }
+.contrib-actions { display: grid; gap: 8px; }
+.contrib .btn { display: block; text-align: center; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--surface); font-weight: 500; font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+.contrib .btn.ghost { background: transparent; color: var(--accent); }
+.contrib .btn:hover { filter: brightness(1.08); }
+.contrib .all { font-size: 0.82rem; text-align: center; }
+@media (max-width: 760px) { .contrib { grid-template-columns: auto minmax(0, 1fr); } .contrib-actions { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; } .contrib .all { grid-column: 1 / -1; } }
 </style>
 
 <div class="page">
@@ -145,12 +157,25 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   <p class="small"><a href="index.html">DK-AI home</a> · See also: <a href="ai-in-danish-health.html">Networks about AI in Danish Health</a> · <a href="genai-training.html">Generative AI training for clinicians</a></p>
 </header>
 
+<aside class="contrib" id="contribute" aria-labelledby="h-contrib">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M9.5 12.5l.4-1.9 4.3-4.3a1 1 0 0 1 1.5 1.5l-4.3 4.3z"/></svg>
+  <div>
+    <h2 id="h-contrib">Corrections and additions</h2>
+    <p>Spotted something wrong, out of date or missing? Every card has a <b>Suggest a correction</b> link that names the entry for you; for anything not yet recorded, suggest an addition. Requests go through GitHub issues: a free GitHub account is needed, and issues are public. Anyone named in the vault can ask for their entry to be removed without giving a reason.</p>
+  </div>
+  <div class="contrib-actions">
+    <a class="btn" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml">Report a correction</a>
+    <a class="btn ghost" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=addition.yml&amp;register=Rules+and+guidance+on+AI+in+Denmark">Suggest an addition</a>
+    <a class="all" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">See open issues</a>
+  </div>
+</aside>
+
 <section aria-labelledby="h-about">
   <h2 id="h-about" class="eyebrow" style="font-family:var(--f-mono);font-size:0.74rem;font-weight:400;letter-spacing:0.08em">About this register</h2>
   <div class="two">
     <div>
       <h3>How it was collected</h3>
-      <p class="small">All three domains were collected on 2 November 2026. For clinical use, national authorities, about thirty professional and patient organisations, the five regions, and four of the five regions' public instruction databases were searched for documents that name AI and say what health organisations or staff must, should or may do. Institutional input that binds no one — consultation responses, policy proposals — is included and marked as such. Each document was read at its source; where its text sits behind a staff login, only its existence is recorded. For research and education, national bodies, research funders, the research-ethics committees, the eight universities, and the school-level authorities and organisations were searched the same way; education documents are grouped by the level they apply to. Every card distils at most five provisions in the vault's own words — the source document is always the authority.</p>
+      <p class="small">All three domains were collected on 2 November 2026. For clinical use, national authorities, about thirty professional and patient organisations, the five regions, and four of the five regions' public instruction databases were searched for documents that name AI and say what health organisations or staff must, should or may do. Institutional input that binds no one — consultation responses, policy proposals — is included and marked as such. Where a document's text sits behind a staff login, only its existence is recorded. For research and education, national bodies, research funders, the research-ethics committees, the eight universities, and the school-level authorities and organisations were searched the same way; education documents are grouped by the level they apply to. Every card distils at most five provisions in the vault's own words — the source document is always the authority.</p>
       <div class="force-key small">
         <div><b>Binding</b><span>a statute, or an instruction or guideline staff must follow</span></div>
         <div><b>Guidance</b><span>guidance from an authority or body, presented as such</span></div>
@@ -161,7 +186,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     </div>
     <div>
       <h3>Where to find the data</h3>
-      <p class="small">The register is part of DK-AI, an open knowledge base on <a href="https://github.com/mortenlindow/dk-ai-okf-vault">GitHub</a>. Each card names its file in the vault's <a href="https://github.com/mortenlindow/dk-ai-okf-vault/tree/main/policy">policy folder</a>. The <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/views/clinical-ai-rules/index.md">register view</a> also lists documents where AI is a short passage of a wider instruction, documents read but not included, the searches made, and leads still to follow. Corrections and additions: <a href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">open an issue</a>.</p>
+      <p class="small">The register is part of DK-AI, an open knowledge base on <a href="https://github.com/mortenlindow/dk-ai-okf-vault">GitHub</a>. Each card names its file in the vault's <a href="https://github.com/mortenlindow/dk-ai-okf-vault/tree/main/policy">policy folder</a>. The <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/views/clinical-ai-rules/index.md">register view</a> also lists documents where AI is a short passage of a wider instruction, documents read but not included, the searches made, and leads still to follow. How sources are read and recorded across DK-AI is described on the <a href="index.html#method">home page</a>.</p>
     </div>
   </div>
 </section>
@@ -201,6 +226,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
 <script>
 (() => {
   const REPO = "https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/";
+  const ISSUE_NEW = "https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml";
   const items = __DATA__;
   const LEVEL = { national: { label: "National", c: "--l-national" }, prof: { label: "Associations & organisations", c: "--l-prof" },
                   funders: { label: "Research funders", c: "--l-funders" }, regions: { label: "Regions", c: "--l-regions" },
@@ -297,7 +323,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
         ${stub}
         <dl>${rows}</dl>
         ${prov}
-        <div class="foot"><a href="${esc(it.url)}" target="_blank" rel="noopener">Source document</a><a class="path" href="${REPO + it.path}" target="_blank" rel="noopener">${esc(it.path)}</a></div>
+        <div class="foot"><a href="${esc(it.url)}" target="_blank" rel="noopener">Source document</a><a href="${ISSUE_NEW}&title=${encodeURIComponent('Correction: ' + it.title)}&entry=${encodeURIComponent(it.path)}" target="_blank" rel="noopener">Suggest a correction</a><a class="path" href="${REPO + it.path}" target="_blank" rel="noopener">${esc(it.path)}</a></div>
       </div>
     </article>`;
   }

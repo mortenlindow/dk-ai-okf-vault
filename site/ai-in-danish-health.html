@@ -147,6 +147,18 @@ ul.plain li b { color: var(--ink); font-weight: 600; }
 footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; gap: 10px; font-size: 0.86rem; color: var(--ink-2); }
 
 @media (max-width: 520px) { body { padding-block: 24px 48px; } .page { gap: 48px; } .figure { padding: 12px; } }
+
+/* Corrections and additions panel */
+.contrib { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px 22px; align-items: center; background: var(--surface); border: 1px solid var(--hair); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 22px; }
+.contrib > svg { width: 36px; height: 36px; color: var(--accent); }
+.contrib h2 { font-family: var(--f-display, "Newsreader", Georgia, serif); font-size: 1.3rem; line-height: 1.2; margin: 0 0 4px; letter-spacing: -0.01em; }
+.contrib p { margin: 0; font-size: 0.92rem; color: var(--ink-2); max-width: 64ch; }
+.contrib-actions { display: grid; gap: 8px; }
+.contrib .btn { display: block; text-align: center; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--surface); font-weight: 500; font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+.contrib .btn.ghost { background: transparent; color: var(--accent); }
+.contrib .btn:hover { filter: brightness(1.08); }
+.contrib .all { font-size: 0.82rem; text-align: center; }
+@media (max-width: 760px) { .contrib { grid-template-columns: auto minmax(0, 1fr); } .contrib-actions { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; } .contrib .all { grid-column: 1 / -1; } }
 </style>
 
 <div class="page">
@@ -161,6 +173,19 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   <p class="small"><a href="index.html">DK-AI home</a> · See also: <a href="genai-training.html">Generative AI training for clinicians</a> · <a href="ai-rules.html">Rules and guidance on AI in Denmark</a></p>
 </header>
 
+<aside class="contrib" id="contribute" aria-labelledby="h-contrib">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M9.5 12.5l.4-1.9 4.3-4.3a1 1 0 0 1 1.5 1.5l-4.3 4.3z"/></svg>
+  <div>
+    <h2 id="h-contrib">Corrections and additions</h2>
+    <p>Spotted something wrong, out of date or missing? Every card has a <b>Suggest a correction</b> link that names the entry for you; for anything not yet recorded, suggest an addition. Requests go through GitHub issues: a free GitHub account is needed, and issues are public. Anyone named in the vault can ask for their entry to be removed without giving a reason.</p>
+  </div>
+  <div class="contrib-actions">
+    <a class="btn" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml">Report a correction</a>
+    <a class="btn ghost" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=addition.yml&amp;register=Networks+about+AI+in+Danish+Health">Suggest an addition</a>
+    <a class="all" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">See open issues</a>
+  </div>
+</aside>
+
 <section id="about" aria-labelledby="h-about">
   <div class="sec-head">
     <span class="eyebrow">About this register</span>
@@ -169,17 +194,14 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   <div class="two">
     <div>
       <h3>How it was collected</h3>
-      <p class="small">The register is drawn from DK-AI, a knowledge base of public and non-profit AI activity in Denmark, built in September and October 2026. Collection started from four seed sources: aisundhed.dk, UCPH's ai.ku.dk, Aarhus University's Health-AI Network and Aalborg University's Centre for AI in Health. It then swept whole classes of bodies — every Danish university, every region, the state agencies and the main foundations — so that the register does not simply follow the seeds' own links. Every fact was read on the body's own page or in a primary document, and each entry below cites its source. News items are used as citations, never as the source for a body. The scope is structure: bodies that convene, govern, fund or coordinate — networks, centres, consortia, agreements. AI products and deployed solutions are outside it. People are named in their published roles, and each person's entry in the vault is marked <i>distilled from public sources, to be reviewed</i>.</p>
+      <p class="small">Collection ran in September and October 2026. It started from four seed sources: aisundhed.dk, UCPH's ai.ku.dk, Aarhus University's Health-AI Network and Aalborg University's Centre for AI in Health. It then swept whole classes of bodies — every Danish university, every region, the state agencies and the main foundations — so that the register does not simply follow the seeds' own links. The scope is structure: bodies that convene, govern, fund or coordinate AI-in-health work. AI products and deployed solutions are outside it. People are named in their published roles, and each person's entry in the vault is marked <i>distilled from public sources, to be reviewed</i>. How sources are read and recorded across DK-AI is described on the <a href="index.html#method">home page</a>.</p>
     </div>
     <div>
-      <h3>How to access the vault</h3>
-      <p class="small">The full vault is open on GitHub at <a href="https://github.com/mortenlindow/dk-ai-okf-vault">github.com/mortenlindow/dk-ai-okf-vault</a>. It is written in the Open Knowledge Format (OKF): one Markdown file per body, person, event or agreement, each with a short header naming its type, source and capture date, and linked to the others by ordinary links. It reads directly in the browser on GitHub, or can be downloaded and opened in any Markdown editor such as Obsidian, or given to an AI assistant as a folder.</p>
-      <ul class="plain small" style="margin-top:12px">
+      <h3>Where to find the data</h3>
+      <ul class="plain small">
         <li><b>Start here:</b> <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/views/health/index.md">the AI-in-health view</a>, which this page summarises.</li>
         <li><b>What has been searched:</b> <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/views/coverage/index.md">coverage</a>, and <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/log.md">the log</a> of every collection pass.</li>
         <li><b>Each card below</b> names its file in the vault; select the path to open it.</li>
-        <li><b>Download:</b> <a href="https://github.com/mortenlindow/dk-ai-okf-vault/archive/refs/heads/main.zip">the whole vault as a ZIP</a>.</li>
-        <li><b>Corrections and additions:</b> <a href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">open an issue</a> on GitHub.</li>
       </ul>
     </div>
   </div>
@@ -366,7 +388,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     const dl = it.facts.map(([k, v]) => "<dt>" + k + "</dt><dd>" + v + "</dd>").join("");
     c.innerHTML = '<div class="card-kind"><i class="sw sw-' + it.kind + '"></i>' + KIND[it.kind].label + "</div>" +
       "<h3>" + it.name + "</h3><p>" + it.summary + "</p><dl>" + dl + "</dl>" +
-      '<div class="card-foot"><a href="' + it.url + '" target="_blank" rel="noopener">Source page</a><a class="path" href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/' + it.path + '" target="_blank" rel="noopener">' + it.path + "</a></div>";
+      '<div class="card-foot"><a href="' + it.url + '" target="_blank" rel="noopener">Source page</a>' + '<a href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml&title=' + encodeURIComponent('Correction: ' + it.name) + '&entry=' + encodeURIComponent(it.path) + '" target="_blank" rel="noopener">Suggest a correction</a>' + '<a class="path" href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/' + it.path + '" target="_blank" rel="noopener">' + it.path + "</a></div>";
     cards.appendChild(c); cardEls[it.id] = c;
   });
   let current = "all";

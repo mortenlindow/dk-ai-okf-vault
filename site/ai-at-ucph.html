@@ -179,6 +179,18 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
 
 @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
 @media (max-width: 520px) { body { padding-block: 24px 48px; } .page { gap: 48px; } .figure { padding: 12px; } }
+
+/* Corrections and additions panel */
+.contrib { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px 22px; align-items: center; background: var(--surface); border: 1px solid var(--hair); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 22px; }
+.contrib > svg { width: 36px; height: 36px; color: var(--accent); }
+.contrib h2 { font-family: var(--f-display, "Newsreader", Georgia, serif); font-size: 1.3rem; line-height: 1.2; margin: 0 0 4px; letter-spacing: -0.01em; }
+.contrib p { margin: 0; font-size: 0.92rem; color: var(--ink-2); max-width: 64ch; }
+.contrib-actions { display: grid; gap: 8px; }
+.contrib .btn { display: block; text-align: center; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--surface); font-weight: 500; font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+.contrib .btn.ghost { background: transparent; color: var(--accent); }
+.contrib .btn:hover { filter: brightness(1.08); }
+.contrib .all { font-size: 0.82rem; text-align: center; }
+@media (max-width: 760px) { .contrib { grid-template-columns: auto minmax(0, 1fr); } .contrib-actions { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; } .contrib .all { grid-column: 1 / -1; } }
 </style>
 
 <div class="page">
@@ -193,7 +205,21 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     <span><b>DKK 110m</b> AI initiative, 2026–2029</span>
     <span><b>118</b> UCPH research centres read</span>
   </div>
+  <p class="small"><a href="index.html">DK-AI home</a> · See also: <a href="ai-in-danish-health.html">Networks about AI in Danish Health</a></p>
 </header>
+
+<aside class="contrib" id="contribute" aria-labelledby="h-contrib">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M9.5 12.5l.4-1.9 4.3-4.3a1 1 0 0 1 1.5 1.5l-4.3 4.3z"/></svg>
+  <div>
+    <h2 id="h-contrib">Corrections and additions</h2>
+    <p>Spotted something wrong, out of date or missing? Every card has a <b>Suggest a correction</b> link that names the entry for you; for anything not yet recorded, suggest an addition. Requests go through GitHub issues: a free GitHub account is needed, and issues are public. Anyone named in the vault can ask for their entry to be removed without giving a reason.</p>
+  </div>
+  <div class="contrib-actions">
+    <a class="btn" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml">Report a correction</a>
+    <a class="btn ghost" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=addition.yml&amp;register=AI+at+UCPH">Suggest an addition</a>
+    <a class="all" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">See open issues</a>
+  </div>
+</aside>
 
 <section id="structure" aria-labelledby="h-structure">
   <div class="sec-head">
@@ -568,7 +594,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     c.innerHTML = '<div class="card-kind"><i class="sw sw-' + it.kind + '"></i>' + KIND[it.kind].label + (it.past ? " · 2019–2026" : "") +
       (it.sc ? ' <i class="tag" title="Leader sits on the UCPH AI steering committee">SC</i>' : "") + "</div>" +
       "<h3>" + it.name + "</h3><p>" + it.summary + "</p><dl>" + dl + "</dl>" +
-      '<div class="card-foot"><a href="' + it.url + '" target="_blank" rel="noopener">Source page</a><span class="path">' + it.path + "</span></div>";
+      '<div class="card-foot"><a href="' + it.url + '" target="_blank" rel="noopener">Source page</a>' + '<a href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml&title=' + encodeURIComponent('Correction: ' + it.name) + '&entry=' + encodeURIComponent(it.path) + '" target="_blank" rel="noopener">Suggest a correction</a>' + '<span class="path">' + it.path + "</span></div>";
     cards.appendChild(c); cardEls[it.id] = c;
   });
   let current = "all";

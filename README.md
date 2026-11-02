@@ -63,6 +63,15 @@ that is an HTML fragment, so the sources can also be published as Claude artifac
 Each page carries its facts inline, so when the vault changes, the page has to be updated to
 match.
 
+## Corrections and additions
+
+Corrections and additions come in as GitHub issues, through two forms in
+`.github/ISSUE_TEMPLATE/`: **Correction** (labelled `correction`) and **Addition** (labelled
+`addition`). Every page carries a panel linking to both, and every card has a *Suggest a
+correction* link that opens the correction form with the entry's title and vault path filled in.
+A correction is applied like any other change: read the cited source, edit the file, and log it
+in `log.md`.
+
 ## Checking it
 
 ```

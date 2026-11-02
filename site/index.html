@@ -113,6 +113,18 @@ figure svg { width: 100%; height: auto; display: block; }
 .open svg { width: 40px; height: 40px; color: var(--ink); }
 .open p { max-width: 75ch; }
 footer { display: grid; gap: 6px; padding-top: 22px; border-top: 1px solid var(--hair); }
+
+/* Corrections and additions panel */
+.contrib { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px 22px; align-items: center; background: var(--surface); border: 1px solid var(--hair); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 22px; }
+.contrib > svg { width: 36px; height: 36px; color: var(--accent); }
+.contrib h2 { font-family: var(--f-display, "Newsreader", Georgia, serif); font-size: 1.3rem; line-height: 1.2; margin: 0 0 4px; letter-spacing: -0.01em; }
+.contrib p { margin: 0; font-size: 0.92rem; color: var(--ink-2); max-width: 64ch; }
+.contrib-actions { display: grid; gap: 8px; }
+.contrib .btn { display: block; text-align: center; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--surface); font-weight: 500; font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+.contrib .btn.ghost { background: transparent; color: var(--accent); }
+.contrib .btn:hover { filter: brightness(1.08); }
+.contrib .all { font-size: 0.82rem; text-align: center; }
+@media (max-width: 760px) { .contrib { grid-template-columns: auto minmax(0, 1fr); } .contrib-actions { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; } .contrib .all { grid-column: 1 / -1; } }
 </style>
 </head>
 <body>
@@ -128,6 +140,7 @@ footer { display: grid; gap: 6px; padding-top: 22px; border-top: 1px solid var(-
       <span><b>89</b>rules documents</span>
       <span><b>17</b>training offerings</span>
     </div>
+    <p class="small"><a href="#contribute">Corrections and additions</a> are made through GitHub issues.</p>
   </div>
   <svg viewBox="0 0 400 300" role="img" aria-label="Illustration: a network of linked nodes in three colours, standing for networks, training and rules">
     <g stroke="var(--axis)" stroke-width="1.4" fill="none">
@@ -170,7 +183,20 @@ footer { display: grid; gap: 6px; padding-top: 22px; border-top: 1px solid var(-
   </div>
 </section>
 
-<section aria-labelledby="h-method">
+<aside class="contrib" id="contribute" aria-labelledby="h-contrib">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M9.5 12.5l.4-1.9 4.3-4.3a1 1 0 0 1 1.5 1.5l-4.3 4.3z"/></svg>
+  <div>
+    <h2 id="h-contrib">Corrections and additions</h2>
+    <p>Spotted something wrong, out of date or missing in any register? Each card on the register pages has a <b>Suggest a correction</b> link that names the entry for you; for anything not yet recorded, suggest an addition. Bodies, issuers and suppliers are welcome to correct their own entries. Requests go through GitHub issues: a free GitHub account is needed, and issues are public. Anyone named in the vault can ask for their entry to be removed without giving a reason.</p>
+  </div>
+  <div class="contrib-actions">
+    <a class="btn" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml">Report a correction</a>
+    <a class="btn ghost" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=addition.yml">Suggest an addition</a>
+    <a class="all" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">See open issues</a>
+  </div>
+</aside>
+
+<section id="method" aria-labelledby="h-method">
   <div class="head">
     <span class="eyebrow">Method</span>
     <h2 id="h-method">Collected once, recorded as files, shown many ways</h2>
@@ -274,9 +300,10 @@ footer { display: grid; gap: 6px; padding-top: 22px; border-top: 1px solid var(-
   </div>
 </section>
 
+
 <footer>
   <p class="small">Also from the vault: <a href="ai-at-ucph.html">AI at UCPH</a>, the University of Copenhagen's coordination layer, centres and steering committee.</p>
-  <p class="small">The vault describes; it does not rank or assess. Corrections and additions are welcome: <a href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">open an issue</a>.</p>
+  <p class="small">The vault describes; it does not rank or assess.</p>
 </footer>
 
 </div>

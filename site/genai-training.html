@@ -23,6 +23,7 @@
   --g-nursing: #eb6834;
   --g-pharmacy: #c98500;
   --g-lead: #d6457a;
+  --g-physio: #138a95;
   --f-display: "Newsreader", "Iowan Old Style", Georgia, serif;
   --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -31,14 +32,14 @@
   :root:not([data-theme="light"]) {
     --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
     --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
-    --g-general: #5a9ded; --g-gp: #2fc48f; --g-spec: #9d87ea; --g-nursing: #f0845a; --g-pharmacy: #e0a72a; --g-lead: #e66d98;
+    --g-general: #5a9ded; --g-gp: #2fc48f; --g-spec: #9d87ea; --g-nursing: #f0845a; --g-pharmacy: #e0a72a; --g-lead: #e66d98; --g-physio: #3bb4bf;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
   --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
-  --g-general: #5a9ded; --g-gp: #2fc48f; --g-spec: #9d87ea; --g-nursing: #f0845a; --g-pharmacy: #e0a72a; --g-lead: #e66d98;
+  --g-general: #5a9ded; --g-gp: #2fc48f; --g-spec: #9d87ea; --g-nursing: #f0845a; --g-pharmacy: #e0a72a; --g-lead: #e66d98; --g-physio: #3bb4bf;
   color-scheme: dark;
 }
 
@@ -117,6 +118,18 @@ section { display: grid; gap: 18px; }
 
 footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; gap: 8px; font-size: 0.86rem; color: var(--ink-2); }
 @media (max-width: 520px) { body { padding-block: 24px 48px; } .page { gap: 36px; } }
+
+/* Corrections and additions panel */
+.contrib { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px 22px; align-items: center; background: var(--surface); border: 1px solid var(--hair); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 22px; }
+.contrib > svg { width: 36px; height: 36px; color: var(--accent); }
+.contrib h2 { font-family: var(--f-display, "Newsreader", Georgia, serif); font-size: 1.3rem; line-height: 1.2; margin: 0 0 4px; letter-spacing: -0.01em; }
+.contrib p { margin: 0; font-size: 0.92rem; color: var(--ink-2); max-width: 64ch; }
+.contrib-actions { display: grid; gap: 8px; }
+.contrib .btn { display: block; text-align: center; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--surface); font-weight: 500; font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+.contrib .btn.ghost { background: transparent; color: var(--accent); }
+.contrib .btn:hover { filter: brightness(1.08); }
+.contrib .all { font-size: 0.82rem; text-align: center; }
+@media (max-width: 760px) { .contrib { grid-template-columns: auto minmax(0, 1fr); } .contrib-actions { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; } .contrib .all { grid-column: 1 / -1; } }
 </style>
 
 <div class="page">
@@ -128,6 +141,19 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   <p class="small"><a href="index.html">DK-AI home</a> · See also: <a href="ai-in-danish-health.html">Networks about AI in Danish Health</a> · <a href="ai-rules.html">Rules and guidance on AI in Denmark</a></p>
 </header>
 
+<aside class="contrib" id="contribute" aria-labelledby="h-contrib">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path d="M9.5 12.5l.4-1.9 4.3-4.3a1 1 0 0 1 1.5 1.5l-4.3 4.3z"/></svg>
+  <div>
+    <h2 id="h-contrib">Corrections and additions</h2>
+    <p>Spotted something wrong, out of date or missing? Every card has a <b>Suggest a correction</b> link that names the entry for you; for anything not yet recorded, suggest an addition. Requests go through GitHub issues: a free GitHub account is needed, and issues are public. Anyone named in the vault can ask for their entry to be removed without giving a reason.</p>
+  </div>
+  <div class="contrib-actions">
+    <a class="btn" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml">Report a correction</a>
+    <a class="btn ghost" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=addition.yml&amp;register=Generative+AI+training+for+clinicians">Suggest an addition</a>
+    <a class="all" href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">See open issues</a>
+  </div>
+</aside>
+
 <section aria-labelledby="h-about">
   <h2 id="h-about" class="eyebrow" style="font-family:var(--f-mono);font-size:0.74rem;font-weight:400;letter-spacing:0.08em">About this register</h2>
   <div class="two">
@@ -137,7 +163,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     </div>
     <div>
       <h3>Where to find the data</h3>
-      <p class="small">The register is part of DK-AI, an open knowledge base on <a href="https://github.com/mortenlindow/dk-ai-okf-vault">GitHub</a>. Each card names its file in the vault's <a href="https://github.com/mortenlindow/dk-ai-okf-vault/tree/main/training">training folder</a>, and the <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/views/genai-training/index.md">register view</a> lists the offerings read but not included. Suggestions: <a href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">open an issue</a>.</p>
+      <p class="small">The register is part of DK-AI, an open knowledge base on <a href="https://github.com/mortenlindow/dk-ai-okf-vault">GitHub</a>. Each card names its file in the vault's <a href="https://github.com/mortenlindow/dk-ai-okf-vault/tree/main/training">training folder</a>, and the <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/views/genai-training/index.md">register view</a> lists the offerings read but not included. How sources are read and recorded across DK-AI is described on the <a href="index.html#method">home page</a>.</p>
     </div>
   </div>
 </section>
@@ -175,13 +201,15 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
 <script>
 (() => {
   const REPO = "https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/";
+  const ISSUE_NEW = "https://github.com/mortenlindow/dk-ai-okf-vault/issues/new?template=correction.yml";
   const GROUP = {
     general:  { label: "Clinicians and staff broadly", c: "--g-general" },
     gp:       { label: "General practice", c: "--g-gp" },
     spec:     { label: "Doctors in specialist training", c: "--g-spec" },
     nursing:  { label: "Nursing education", c: "--g-nursing" },
     pharmacy: { label: "Pharmacy", c: "--g-pharmacy" },
-    lead:     { label: "Leadership and research", c: "--g-lead" }
+    lead:     { label: "Leadership and research", c: "--g-lead" },
+    physio:   { label: "Physiotherapy", c: "--g-physio" }
   };
   const FORMAT = { course: "Course", elearning: "E-learning", webinar: "Webinar & recordings", workshop: "Workshop & theme day", guide: "Guide & slides" };
   const STATUS = { active: "Available", upcoming: "Upcoming", held: "Held", unknown: "Status not recorded" };
@@ -258,6 +286,16 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
       scope: "How generative AI and large language models work, prompting and advanced prompt techniques, problems in use, and teaching examples.",
       facts: [["For", "Doctors in specialist training"], ["Level", "Introductory to intermediate"], ["Where", "In person; slides available online"], ["Access", "Open (slides)"]],
       url: "http://www.fagperson.auh.dk/siteassets/03-job-og-uddannelse/lagelig-videreuddannelse/somatik/arsmode/2024/kunstig-intelligens-i-et-uddannelsesperspektiv/generativ-ai-for-uddannelseslager-arsmode-lvu-auh-okt-2024-oplag-tom-gislev.pdf", path: "training/auh-generativ-ai-for-uddannelseslaeger.md" },
+    { id: "rh-lead", status: "active", date: "2026-07-15", when: "Listing updated 15 Jul 2026; run dates not stated", group: "lead", format: "course", sup: "region", open: false,
+      title: "Ledelse i en AI-drevet tid: nye ledelsesdilemmaer", supplier: "Region Hovedstaden (Ledelse og Organisation)",
+      scope: "Generative AI in a leader's own work and unit: hands-on use on participants' cases, leadership dilemmas, patient safety and ethics, and a roadmap for implementation.",
+      facts: [["For", "Clinical and administrative leaders in Region Hovedstaden"], ["Level", "Introductory"], ["Where", "In person; place not stated"], ["Time", "Two days"], ["Cost", "Not stated for this course"], ["Access", "Registration"]],
+      url: "https://www.regionh.dk/til-fagfolk/uddannelse/karriere-og-kompetenceudvikling/ledelsesudvikling/Sider/Lederens-vaerktoejskurser.aspx", path: "training/region-hovedstaden-ledelse-i-en-ai-drevet-tid.md" },
+    { id: "fysio", status: "upcoming", date: "2026-11-19", when: "19 Nov 2026, 16.00–17.00", group: "physio", format: "webinar", sup: "professional", open: false,
+      title: "Hvad kan du som selvstændig fysioterapeut bruge AI til", supplier: "Danske Fysioterapeuter, with Jordemoderforeningen, Dansk Socialrådgiverforening and Ergoterapeutforeningen",
+      scope: "An introduction to AI and language models for running a practice: planning, meeting preparation, structuring notes, administration, and responsible use.",
+      facts: [["For", "Self-employed physiotherapists who are members"], ["Level", "Introductory"], ["Where", "Live online (Teams); not recorded"], ["Time", "1 hour"], ["Cost", "Free"], ["Access", "Registration; members"]],
+      url: "https://www.fysio.dk/kurser--uddannelse/kursuskalender/webinar--hvad-kan-du-som-selvstandig-fysioterapeut-bruge-ai-til", path: "training/danske-fysioterapeuter-ai-for-selvstaendige.md" },
     { id: "dm", status: "unknown", date: null, when: "Date not stated on the page", group: "general", format: "course", sup: "commercial", open: false,
       title: "ChatGPT som lægens højre hånd", supplier: "Dagens Medicin",
       scope: "Large language models in clinical work: getting started, how far they can be trusted, records, patient information, guidelines and literature, and privacy.",
@@ -349,7 +387,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
         <div class="supplier">${esc(it.supplier)}${it.sup === "commercial" ? '<span class="tag">commercial</span>' : ""}</div>
         <p class="scope">${esc(it.scope)}</p>
         <dl>${dl}</dl>
-        <div class="foot"><a href="${esc(it.url)}" target="_blank" rel="noopener">Source page</a><a class="path" href="${REPO + it.path}" target="_blank" rel="noopener">${esc(it.path)}</a></div>
+        <div class="foot"><a href="${esc(it.url)}" target="_blank" rel="noopener">Source page</a><a href="${ISSUE_NEW}&title=${encodeURIComponent('Correction: ' + it.title)}&entry=${encodeURIComponent(it.path)}" target="_blank" rel="noopener">Suggest a correction</a><a class="path" href="${REPO + it.path}" target="_blank" rel="noopener">${esc(it.path)}</a></div>
       </div>
     </article>`;
   }
