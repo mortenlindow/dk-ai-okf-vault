@@ -3,6 +3,20 @@
 AI activity whose subject is health and care, assembled from every concept tagged `health`.
 A lens, not a home: every concept below lives in its class folder.
 
+## Scope of this register
+
+This register maps **coordinating structures**: the networks, centres, consortia and joint
+initiatives through which AI-in-health activity is convened, governed, funded and connected
+across units and institutions. A body is listed when it brings together people from more
+than one department, institution or sector, under its own name and with a mandate, members
+or governance of its own.
+
+It does not list **individual departments, research groups or single-PI projects**, however
+active they are in AI. Those appear only as the hosts and partners of the coordinating bodies
+(see *Institutional anchors* below), not as entries in their own right. Their research output
+is recorded elsewhere, in their own publication records, and deployed solutions are mapped by
+the Nordic AI Health Map.
+
 Deployed clinical AI solutions are outside this vault's scope — they are mapped by the
 [Nordic AI Health Map](../../references/nordic-ai-health-map.md).
 
