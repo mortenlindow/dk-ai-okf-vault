@@ -74,7 +74,7 @@ in `log.md`.
 
 ## Biweekly update
 
-A scheduled Claude run keeps the vault current every two weeks, following
+A scheduled Claude run keeps the vault current twice a month (the 1st and 15th), following
 `bin/biweekly-update.md`. It works through the open correction and addition issues, the items
 `python3 bin/due.py` lists as due (passed event dates, revision dates, old captures), one
 rotating source cluster, and a few leads, then opens **one pull request** for review. Nothing is

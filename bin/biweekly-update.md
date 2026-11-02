@@ -1,6 +1,6 @@
 # Biweekly update — instructions for the scheduled run
 
-A scheduled Claude run follows this file every two weeks. It keeps the vault current at low cost
+A scheduled Claude run follows this file on the 1st and 15th of each month. It keeps the vault current at low cost
 and **proposes** its changes as one pull request; nothing reaches `main` or the public site until
 the curator merges. `CLAUDE.md` governs everything below — scope, tone, the person policy,
 citation rules, the 15-concept cap and the `log.md` entry shape. Read it first.

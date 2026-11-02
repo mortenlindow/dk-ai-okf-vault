@@ -21,7 +21,8 @@ CONCEPT_DIRS = ["organisations", "initiatives", "bodies", "people", "events", "f
 OLD_AFTER_DAYS = 90   # a capture older than this is re-read
 OLD_CAP = 12          # at most this many old captures per run
 
-# Rotating sweep: one cluster per run, in this order, from the first run on 2026-11-16.
+# Rotating sweep: one cluster per run, in this order. Runs fall on the 1st and 15th of each
+# month, the first on 2026-11-15; each half-month steps to the next cluster.
 CLUSTERS = [
     ("Health networks and national bodies",
      "aisundhed.dk, Danish Life Science Cluster, Digital Sundhed Danmark, KL, Danske Regioner, the regions' AI programmes"),
@@ -40,7 +41,6 @@ CLUSTERS = [
     ("Professional and patient organisations' input",
      "Lægeforeningen, Danske Patienter, DSAM, FYAM, PLO, Dansk Sygeplejeråd and others: positions, consultation responses, proposals"),
 ]
-FIRST_RUN = dt.date(2026, 11, 16)
 
 MONTHS = {m: i for i, m in enumerate(
     ["january", "february", "march", "april", "may", "june", "july", "august",
@@ -102,7 +102,8 @@ for rel, v, d in passed or [("none", "", None)]:
 print(f"\n## 3. Oldest captures (older than {OLD_AFTER_DAYS} days, at most {OLD_CAP})\n")
 for ts, rel in (sorted(old)[:OLD_CAP] or [(None, "none")]):
     print(f"- {rel}" + (f" — captured {ts}" if ts else ""))
-n = max(0, (today - FIRST_RUN).days // 14) % len(CLUSTERS)
+half = (today.year * 12 + today.month - 1) * 2 + (today.day >= 15)
+n = (half - ((2026 * 12 + 10) * 2 + 1)) % len(CLUSTERS)
 name, surfaces = CLUSTERS[n]
 print(f"\n## 4. Sweep cluster for this run ({n + 1} of {len(CLUSTERS)})\n")
 print(f"**{name}** — {surfaces}")
