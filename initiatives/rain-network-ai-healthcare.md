@@ -30,7 +30,7 @@ anchored, one independent.
 | Status | Active |
 | Hosted by | [Syddansk Sundhedsinnovation](/organisations/health/syddansk-sundhedsinnovation.md) |
 | Partners | [CAI-X](/initiatives/cai-x.md); UNIFY – Radiology Research and Innovation Unit, [Odense University Hospital](/organisations/health/ouh.md); Mærsk Mc-Kinney Møller Institute, [University of Southern Denmark](/organisations/academic/sdu.md); Regional IT, [Region Syddanmark](/organisations/health/region-syddanmark.md); [Syddansk Sundhedsinnovation](/organisations/health/syddansk-sundhedsinnovation.md) |
-| Members | about 500 professionals from across Denmark *(as of 2026-10-17)* |
+| Members | about 500 professionals from across Denmark *(as of 2026-11-02)* |
 | Secretariat | Anne Hagelskjær Asmussen, Specialist Consultant and Team Coordinator, User-Centred Innovation |
 | Web | https://syddansksundhedsinnovation.dk |
 

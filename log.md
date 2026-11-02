@@ -23,7 +23,9 @@ pass types and the entry shape.
   the workshop's venue. [Netværk for AI i Sundhed](initiatives/netvaerk-for-ai-i-sundhed.md) —
   368 members; governance wording and the January 2027 event unchanged.
 * **Unchanged**: Digital Sundhed Danmark's page still describes the board as to be appointed
-  in the second half of 2026, with no names; RAIN still states about 500 professionals.
+  in the second half of 2026, with no names; RAIN still states about 500 professionals (its
+  `Members` as-of date moved to 2026-11-02). No member count is published by the Health-AI
+  Network (an open sign-up form), Netværk om AI, CAI-X or RAIT as of 2026-11-02.
 * **Leads not yet written**: two steering committees now meet the Governance Body gate — the
   Health-AI Network's (20+ named) and the AAU centre's (six named, signed rules of procedure).
   Both belong to the next entity pass, which should also read the AAU rules-of-procedure PDF.
