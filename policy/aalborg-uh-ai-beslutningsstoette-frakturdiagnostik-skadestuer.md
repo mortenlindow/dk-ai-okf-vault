@@ -19,6 +19,7 @@ tool in all the region's emergency departments and injury clinics [1].
 | | |
 |---|---|
 | Form | clinical instruction (Instruks - Klinisk) |
+| Domain | clinical |
 | Issued by | Ortopædkirurgi, Aalborg Universitetshospital, [Region Nordjylland](/organisations/health/region-nordjylland.md) |
 | Force | binding clinical instruction |
 | Date | published 10 February 2025; in force since 21 June 2023 per its metadata |

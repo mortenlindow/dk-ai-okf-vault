@@ -18,6 +18,7 @@ nursing and the conditions for its use [1].
 | | |
 |---|---|
 | Form | statement (udtalelse) |
+| Domain | clinical |
 | Issued by | Sygeplejerskers Nordiske etiknetværk; for Denmark, Sygeplejeetisk Råd (Dansk Sygeplejeråd) |
 | Force | recommendation |
 | Date | October 2025 (the PDF); the dsr.dk page dates the councils' meeting to October 2025, the PDF to September 2025 |

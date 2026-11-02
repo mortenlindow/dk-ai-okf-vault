@@ -18,6 +18,7 @@ hospitals and patient records among its examples [1].
 | | |
 |---|---|
 | Form | guidance (vejledning), cross-sector |
+| Domain | clinical |
 | Issued by | Datatilsynet |
 | Force | guidance |
 | Date | October 2023 |

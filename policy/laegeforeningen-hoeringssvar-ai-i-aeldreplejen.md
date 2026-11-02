@@ -18,6 +18,7 @@ use of health data, profiling, and independent professional judgement [1].
 | | |
 |---|---|
 | Form | consultation response with recommendations |
+| Domain | clinical |
 | Issued by | Lægeforeningen (Danish Medical Association) |
 | Force | input — not authoritative (consultation response) |
 | Date | not stated on the page; page modified 9 February 2026 |

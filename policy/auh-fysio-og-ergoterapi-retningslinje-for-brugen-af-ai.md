@@ -17,6 +17,7 @@ therapy: which tools may be used and for what [1].
 | | |
 |---|---|
 | Form | guideline |
+| Domain | clinical |
 | Issued by | Fysio- og Ergoterapi, [Aarhus University Hospital](/organisations/health/auh.md), [Region Midtjylland](/organisations/health/region-midtjylland.md) |
 | Force | binding; management is responsible for compliance |
 | Date | in force from 19 May 2026 |

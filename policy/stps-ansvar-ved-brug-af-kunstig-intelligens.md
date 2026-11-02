@@ -19,6 +19,7 @@ treatment proves to be wrong [1].
 | | |
 |---|---|
 | Form | guidance (web page section) |
+| Domain | clinical |
 | Issued by | Styrelsen for Patientsikkerhed |
 | Force | guidance — restates duties under existing health legislation |
 | Date | not stated on the page (checked 2026-11-02) |

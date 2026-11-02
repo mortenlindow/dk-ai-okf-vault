@@ -18,6 +18,7 @@ confidentiality, and the risk of incorrect output. The health service is not nam
 | | |
 |---|---|
 | Form | guidance (notat), cross-sector |
+| Domain | clinical |
 | Issued by | Digitaliseringsstyrelsen (Agency for Digital Government) |
 | Force | guidance |
 | Date | version 1, January 2024 |

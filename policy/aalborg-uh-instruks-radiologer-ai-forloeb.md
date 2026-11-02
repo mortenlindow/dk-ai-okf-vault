@@ -18,6 +18,7 @@ for divergence between AI and the radiological report [1].
 | | |
 |---|---|
 | Form | instruction |
+| Domain | clinical |
 | Issued by | Billeddiagnostik, Aalborg Universitetshospital, [Region Nordjylland](/organisations/health/region-nordjylland.md) |
 | Force | binding clinical instruction |
 | Date | published 11 September 2024 |

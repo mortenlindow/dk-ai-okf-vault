@@ -347,6 +347,9 @@ this table.
     vendor's terms of use are out. (c) **AI named** as the subject or a distinct section,
     applied to health care or health staff. Cross-sector guidance for all public bodies counts
     when the health service is among its addressees.
+  - **Domain.** Every document carries `| Domain |` — `clinical`, `research` or `education` (or
+    two of them). Rules on AI in research and education are filed the same way and kept apart
+    from clinical rules by this row, in their own view and their own tab on the site page.
   - **One document, one home.** A staff guide already filed in `training/` stays there and is
     listed in the register view by link; it is not filed twice.
   - **Filename `<issuer>-<short-title>`**, as for training: `policy/sundhedsstyrelsen-…md`.
@@ -482,6 +485,7 @@ same disease as type proliferation.
 | `Scope` · `Audience` · `Specialty` | Training and Policy: one-line scope; who it is for, as stated; `general` or the named clinical specialty or profession |
 | `Delivery` · `Time required` | Training only: self-paced online / live online / in person (+ place) / blended / document; the time asked of attendees, as published |
 | `Updated` · `Language` · `Cost` · `Access` | Training: the provider's own date and what it is (*last updated*, *published*, *next runs*); Danish / English; as stated; open / members / registration / staff login. Policy may use `Updated` and `Access` |
+| `Domain` | Policy, rules registers: `clinical`, `research` or `education` — the use of AI the document governs; a document covering two names both (*research and education*) |
 | `Issued by` · `Force` | Policy: the issuing body (linked when it has a file, else plain text); one of *binding*, *guidance*, *recommendation* or *input — not authoritative* (consultation responses, proposals, suggestions), as the document presents itself |
 | `Also known as` · `Web` | aliases, canonical site |
 

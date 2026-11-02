@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Rules on Clinical AI</title>
+<title>Rules on AI in Health</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +41,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body {
   background: var(--bg); color: var(--ink);
   font-family: var(--f-body); font-size: 15.5px; line-height: 1.6;
@@ -68,6 +69,15 @@ section { display: grid; gap: 18px; }
 .two h3 { font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; margin-bottom: 6px; }
 .force-key { display: grid; gap: 4px; margin-top: 10px; }
 .force-key div { display: grid; grid-template-columns: 9.5em 1fr; gap: 10px; font-size: 0.86rem; color: var(--ink-2); }
+
+/* tabs */
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--hair); }
+.tab { font: inherit; font-size: 0.98rem; font-weight: 500; color: var(--ink-2); background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 8px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tab .n { font-family: var(--f-mono); font-size: 0.76rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tabnote { max-width: 72ch; }
+.pending { padding: 28px; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 12px; }
 
 /* controls */
 .controls { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--hair); border-radius: 12px; padding: 16px 18px; }
@@ -125,8 +135,8 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
 
 <header>
   <span class="eyebrow">DK-AI · Rules register · as of 2 November 2026</span>
-  <h1>Rules and guidance on clinical AI in Denmark</h1>
-  <p class="lede">Statute, national guidance, regional guidelines, hospital and department instructions, and the input of professional and patient organisations on how AI may be used in the health service.</p>
+  <h1>Rules and guidance on AI in Danish health</h1>
+  <p class="lede">Statute, national guidance, regional guidelines, hospital and department instructions, and the input of professional and patient organisations on how AI may be used — in clinical work, in research and in education.</p>
   <p class="small">See also: <a href="ai-in-danish-health.html">Networks about AI in Danish Health</a> · <a href="genai-training.html">Generative AI training for clinicians</a></p>
 </header>
 
@@ -135,7 +145,7 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   <div class="two">
     <div>
       <h3>How it was collected</h3>
-      <p class="small">On 2 November 2026 national authorities, about thirty professional and patient organisations, the five regions, and four of the five regions' public instruction databases were searched for documents that name AI and say what health organisations or staff must, should or may do. Institutional input that binds no one — consultation responses, policy proposals — is included and marked as such. Each document was read at its source; where its text sits behind a staff login, only its existence is recorded. Every card distils at most five provisions in the vault's own words — the source document is always the authority.</p>
+      <p class="small">For clinical use: on 2 November 2026 national authorities, about thirty professional and patient organisations, the five regions, and four of the five regions' public instruction databases were searched for documents that name AI and say what health organisations or staff must, should or may do. Institutional input that binds no one — consultation responses, policy proposals — is included and marked as such. Each document was read at its source; where its text sits behind a staff login, only its existence is recorded. Every card distils at most five provisions in the vault's own words — the source document is always the authority.</p>
       <div class="force-key small">
         <div><b>Binding</b><span>a statute, or an instruction or guideline staff must follow</span></div>
         <div><b>Guidance</b><span>guidance from an authority or body, presented as such</span></div>
@@ -153,7 +163,9 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
 
 <section aria-labelledby="h-list">
   <h2 id="h-list">Documents</h2>
-  <div class="controls">
+  <div class="tabs" role="tablist" aria-label="Domain" id="tabs"></div>
+  <p class="small tabnote" id="tabnote"></p>
+  <div class="controls" id="controls">
     <div class="row1">
       <label class="search"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Search titles, issuers, provisions" aria-label="Search the register"></label>
       <label class="sort">Sort <select id="sort" aria-label="Sort order">
@@ -196,12 +208,19 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
     hosp: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/>'
   };
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const state = { q: "", sort: "level", level: new Set(), cat: new Set(), focus: new Set(), region: new Set() };
+  const TABS = {
+    clinical: { label: "Clinical", note: "Rules on AI in patient care and other health-service work. Collected 2 November 2026." },
+    research: { label: "Research", note: "Rules on AI in research at universities, hospitals and regions." },
+    education: { label: "Education", note: "Rules on AI in teaching, exams, theses and the training of health professionals." }
+  };
+  const state = { tab: "clinical", q: "", sort: "level", level: new Set(), cat: new Set(), focus: new Set(), region: new Set() };
+  const inTab = () => items.filter(it => it.domains.includes(state.tab));
 
   function makeChips(id, key, entries, sw) {
     const el = document.getElementById(id);
+    el.innerHTML = "";
     entries.forEach(([val, label]) => {
-      const n = items.filter(it => it[key] === val).length;
+      const n = inTab().filter(it => it[key] === val).length;
       if (!n) return;
       const b = document.createElement("button");
       b.type = "button"; b.className = "chip"; b.dataset.key = key; b.dataset.val = val; b.setAttribute("aria-pressed", "false");
@@ -213,10 +232,30 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
       el.appendChild(b);
     });
   }
-  makeChips("f-level", "level", Object.entries(LEVEL).map(([k, v]) => [k, v.label]), true);
-  makeChips("f-cat", "cat", Object.entries(CAT));
-  makeChips("f-focus", "focus", Object.entries(FOCUS));
-  makeChips("f-region", "region", REGIONS.map(r => [r, r.replace("Region ", "")]));
+  function buildChips() {
+    makeChips("f-level", "level", Object.entries(LEVEL).map(([k, v]) => [k, v.label]), true);
+    makeChips("f-cat", "cat", Object.entries(CAT));
+    makeChips("f-focus", "focus", Object.entries(FOCUS));
+    makeChips("f-region", "region", REGIONS.map(r => [r, r.replace("Region ", "")]));
+    document.querySelectorAll(".fgroup").forEach(g => { g.hidden = !g.querySelector(".chip"); });
+  }
+  const tabsEl = document.getElementById("tabs");
+  Object.entries(TABS).forEach(([k, v]) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "tab"; b.id = "tab-" + k; b.setAttribute("role", "tab");
+    b.innerHTML = esc(v.label) + ` <span class="n">${items.filter(it => it.domains.includes(k)).length}</span>`;
+    b.addEventListener("click", () => setTab(k, true));
+    tabsEl.appendChild(b);
+  });
+  function setTab(k, push) {
+    state.tab = k;
+    tabsEl.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.id === "tab-" + k ? "true" : "false"));
+    document.getElementById("tabnote").textContent = TABS[k].note;
+    ["level", "cat", "focus", "region"].forEach(x => state[x].clear());
+    buildChips();
+    if (push) { try { history.replaceState(null, "", "#" + k); } catch (e) {} }
+    render();
+  }
 
   const LRANK = { national: 0, prof: 1, regions: 2, hosp: 3 };
   const CRANK = { binding: 0, guidance: 1, recommendation: 2, input: 3, stub: 4 };
@@ -258,9 +297,15 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   }
   const grid = document.getElementById("grid"), count = document.getElementById("count");
   function render() {
-    const list = items.filter(matches).sort(sorters[state.sort]);
+    const pool = inTab();
+    document.getElementById("controls").hidden = !pool.length;
+    if (!pool.length) {
+      grid.innerHTML = `<div class="pending">Being collected — the ${esc(TABS[state.tab].label.toLowerCase())} documents are not yet on this page.</div>`;
+      return;
+    }
+    const list = pool.filter(matches).sort(sorters[state.sort]);
     grid.innerHTML = list.length ? list.map(card).join("") : '<div class="empty">No documents match these filters. <button type="button" class="linkbtn" data-reset>Clear filters</button></div>';
-    count.innerHTML = `Showing <b>${list.length}</b> of ${items.length} documents`;
+    count.innerHTML = `Showing <b>${list.length}</b> of ${pool.length} ${esc(TABS[state.tab].label.toLowerCase())} documents`;
     const r = grid.querySelector("[data-reset]"); if (r) r.addEventListener("click", reset);
   }
   function reset() {
@@ -272,6 +317,8 @@ footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; ga
   document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
   document.getElementById("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
   document.getElementById("reset").addEventListener("click", reset);
-  render();
+  const h = (location.hash || "").slice(1);
+  setTab(TABS[h] ? h : "clinical", false);
+  window.addEventListener("hashchange", () => { const k = location.hash.slice(1); if (TABS[k] && k !== state.tab) setTab(k, false); });
 })();
 </script>

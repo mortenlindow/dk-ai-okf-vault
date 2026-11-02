@@ -18,6 +18,7 @@ with patients and relatives, and the duty to document [1].
 | | |
 |---|---|
 | Form | guideline (vejledning) |
+| Domain | clinical |
 | Issued by | Nordsjællands Hospital (approved by its executive board), [Region Hovedstaden](/organisations/health/region-hovedstaden.md) |
 | Force | binding; management ensures staff know it and each employee must follow it |
 | Date | in force from 5 September 2026 |

@@ -18,6 +18,7 @@ and contains no health-specific provision [1].
 | | |
 |---|---|
 | Form | statute |
+| Domain | clinical |
 | Issued by | Folketinget |
 | Force | binding |
 | Date | 14 May 2025; in force 2 August 2025 |

@@ -19,6 +19,7 @@ AI [1].
 | | |
 |---|---|
 | Form | rules of use (web page) |
+| Domain | clinical |
 | Issued by | [CAI-X](/initiatives/cai-x.md), [Odense University Hospital](/organisations/health/ouh.md); SydChat run by Regional IT, [Region Syddanmark](/organisations/health/region-syddanmark.md) |
 | Force | binding as presented |
 | Date | not stated on the page (checked 2026-11-02) |

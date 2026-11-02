@@ -19,6 +19,7 @@ practice, and set out the legal framework [2].
 | | |
 |---|---|
 | Form | position paper with recommendations |
+| Domain | clinical |
 | Issued by | Dansk Selskab for Almen Medicin (DSAM) |
 | Force | recommendation |
 | Date | 1st edition, January 2025 |

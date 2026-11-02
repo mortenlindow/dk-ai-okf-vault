@@ -19,6 +19,7 @@ the region's generative-AI material for staff sits on its intranet [1].
 | | |
 |---|---|
 | Form | guideline (title as named) |
+| Domain | clinical |
 | Issued by | [Region Syddanmark](/organisations/health/region-syddanmark.md) |
 | Force | not read |
 | Date | not visible without login (checked 2026-11-02) |

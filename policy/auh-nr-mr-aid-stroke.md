@@ -17,6 +17,7 @@ scans in stroke: blinded reading, documentation, and the population it applies t
 | | |
 |---|---|
 | Form | instruction |
+| Domain | clinical |
 | Issued by | Røntgen og Skanning, [Aarhus University Hospital](/organisations/health/auh.md), [Region Midtjylland](/organisations/health/region-midtjylland.md) |
 | Force | instruction for a quality project approved at AUH and a second regional hospital (abbreviated *RHG* in the source) |
 | Date | in force from 7 May 2026 |

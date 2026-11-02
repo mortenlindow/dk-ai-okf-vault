@@ -3,6 +3,13 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-11-02 (update — domain for the rules register)
+
+* **Update**: every `Policy` document in the rules register carries a `Domain` row (all 39 are
+  `clinical`), added to the closed vocabulary in `CLAUDE.md` §7, so that rules on AI in research
+  and education can be filed alongside and kept apart; the site page shows the three domains as
+  separate tabs.
+
 ## 2026-11-02 (sweep pass — clinical-AI rules register, hospitals and departments)
 
 * **Research**: Region Nordjylland's PRI, Region Midtjylland's e-Dok, Region Hovedstaden's VIP

@@ -18,6 +18,7 @@ how to read the AI output and how to send images manually [1].
 | | |
 |---|---|
 | Form | clinical instruction (Instruks - Klinisk) |
+| Domain | clinical |
 | Issued by | Billeddiagnostik, Aalborg Universitetshospital, [Region Nordjylland](/organisations/health/region-nordjylland.md) |
 | Force | operational instruction |
 | Date | published 1 October 2026 |

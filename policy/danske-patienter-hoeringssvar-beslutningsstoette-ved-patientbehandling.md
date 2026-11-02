@@ -19,6 +19,7 @@ included. It welcomes the potential and sets out conditions [1].
 | | |
 |---|---|
 | Form | consultation response with recommendations |
+| Domain | clinical |
 | Issued by | Danske Patienter |
 | Force | input — not authoritative (consultation response to Indenrigs- og Sundhedsministeriet) |
 | Date | 14 January 2026 |

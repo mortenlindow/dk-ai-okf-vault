@@ -19,6 +19,7 @@ welfare technologies [2].
 | | |
 |---|---|
 | Form | recommendations (council report) |
+| Domain | clinical |
 | Issued by | Dataetisk Råd (Danish Data Ethics Council), part of Nationalt Center for Etik |
 | Force | recommendation |
 | Date | 18 June 2025 |

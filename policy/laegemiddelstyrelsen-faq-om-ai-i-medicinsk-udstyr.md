@@ -18,6 +18,7 @@ and clinical evidence require, including for self-learning systems [1].
 | | |
 |---|---|
 | Form | guidance (FAQ) |
+| Domain | clinical |
 | Issued by | Lægemiddelstyrelsen (Danish Medicines Agency) |
 | Force | guidance — explains requirements of the EU Medical Device Regulation |
 | Date | 28 April 2021 in the text |

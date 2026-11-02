@@ -18,6 +18,7 @@ responsibility for the patient pathway [1].
 | | |
 |---|---|
 | Form | instruction (Q&A) |
+| Domain | clinical |
 | Issued by | Billeddiagnostik, Aalborg Universitetshospital, [Region Nordjylland](/organisations/health/region-nordjylland.md) |
 | Force | operational instruction |
 | Date | first published 28 August 2024 |

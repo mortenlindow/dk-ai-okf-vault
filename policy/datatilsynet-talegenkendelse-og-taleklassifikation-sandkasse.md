@@ -19,6 +19,7 @@ authorities to use [1].
 | | |
 |---|---|
 | Form | guidance (regulatory-sandbox report) |
+| Domain | clinical |
 | Issued by | Datatilsynet and Digitaliseringsstyrelsen |
 | Force | guidance, written for one project and published for others |
 | Date | October 2025 |

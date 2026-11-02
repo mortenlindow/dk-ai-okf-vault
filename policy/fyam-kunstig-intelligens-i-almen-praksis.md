@@ -17,6 +17,7 @@ out eight positions on the conditions for using AI in general practice [1].
 | | |
 |---|---|
 | Form | position paper (holdningspapir) |
+| Domain | clinical |
 | Issued by | FYAM-udvalget, Dansk Selskab for Almen Medicin |
 | Force | recommendation |
 | Date | June 2024 |

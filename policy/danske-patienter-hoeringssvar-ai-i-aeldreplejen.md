@@ -18,6 +18,7 @@ of health data. It supports the development and sets out conditions [2].
 | | |
 |---|---|
 | Form | consultation response with recommendations |
+| Domain | clinical |
 | Issued by | Danske Patienter |
 | Force | input — not authoritative (consultation response to the legislator) |
 | Date | 19 December 2025 |

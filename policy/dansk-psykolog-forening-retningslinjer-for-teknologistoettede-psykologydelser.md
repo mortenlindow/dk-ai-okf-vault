@@ -18,6 +18,7 @@ chat-based language models [1].
 | | |
 |---|---|
 | Form | guideline (professional standard) |
+| Domain | clinical |
 | Issued by | Nationalt Videnscenter for Psykologi, published by Dansk Psykolog Forening |
 | Force | guidance |
 | Date | published 7 June 2026 |

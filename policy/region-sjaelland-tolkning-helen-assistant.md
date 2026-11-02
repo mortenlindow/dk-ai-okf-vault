@@ -18,6 +18,7 @@ required [1].
 | | |
 |---|---|
 | Form | guideline (vejledning), with a distinct section on the AI interpreter app |
+| Domain | clinical |
 | Issued by | [Region Sjælland](/organisations/health/region-sjaelland.md); the app rules adopted by the steering group of its *AI Tolkeløsning* project, April and June 2026 |
 | Force | employees must know and follow it |
 | Date | version 16, from 20 August 2026 |

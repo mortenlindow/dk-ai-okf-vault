@@ -18,6 +18,7 @@ receipt [1].
 | | |
 |---|---|
 | Form | instruction |
+| Domain | clinical |
 | Issued by | Patologi, [Aarhus University Hospital](/organisations/health/auh.md), [Region Midtjylland](/organisations/health/region-midtjylland.md) |
 | Force | binding; staff confirm receipt |
 | Date | in force from 5 September 2026 |

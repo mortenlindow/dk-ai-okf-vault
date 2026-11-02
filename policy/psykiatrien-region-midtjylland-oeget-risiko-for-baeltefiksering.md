@@ -19,6 +19,7 @@ documentation [1].
 | | |
 |---|---|
 | Form | guideline (fælles specialespecifik retningslinje) |
+| Domain | clinical |
 | Issued by | Psykiatrien, [Region Midtjylland](/organisations/health/region-midtjylland.md) |
 | Force | guidance on the use of the prediction; daily documentation is required |
 | Date | in force from 18 April 2026 |

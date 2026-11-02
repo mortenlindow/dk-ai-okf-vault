@@ -18,6 +18,7 @@ and document the notifications [1].
 | | |
 |---|---|
 | Form | guideline |
+| Domain | clinical |
 | Issued by | Regionshospitalet Horsens, [Region Midtjylland](/organisations/health/region-midtjylland.md) |
 | Force | local guideline; the clinician's judgement prevails |
 | Date | in force from 25 June 2025 |

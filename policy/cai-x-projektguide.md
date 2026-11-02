@@ -18,6 +18,7 @@ what to settle before going live [1].
 | | |
 |---|---|
 | Form | guidance for AI projects |
+| Domain | clinical |
 | Issued by | [CAI-X](/initiatives/cai-x.md) |
 | Force | guidance |
 | Date | not stated on the page (checked 2026-11-02) |

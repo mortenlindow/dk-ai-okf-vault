@@ -18,6 +18,7 @@ Device Regulation [1].
 | | |
 |---|---|
 | Form | guideline with requirements |
+| Domain | clinical |
 | Issued by | [Region Midtjylland](/organisations/health/region-midtjylland.md); approved by its Informationssikkerhedsudvalg, November 2024 |
 | Force | binding — a set of requirements to be complied with |
 | Date | in force from 17 January 2026 |

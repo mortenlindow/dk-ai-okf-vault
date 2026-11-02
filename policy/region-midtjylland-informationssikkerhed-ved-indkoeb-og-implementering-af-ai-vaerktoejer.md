@@ -18,6 +18,7 @@ treatment [1].
 | | |
 |---|---|
 | Form | guideline with procedure |
+| Domain | clinical |
 | Issued by | [Region Midtjylland](/organisations/health/region-midtjylland.md); approved by its Informationssikkerhedsudvalg, November 2024 |
 | Force | binding for staff; department managements are responsible for compliance |
 | Date | in force from 17 January 2026 |

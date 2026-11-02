@@ -20,6 +20,7 @@ page in e-Dok shows *"Dokumentet kan ikke vises, prøv at logge ind"* [2].
 | | |
 |---|---|
 | Form | instruction (regional instruks) |
+| Domain | clinical |
 | Issued by | [Region Midtjylland](/organisations/health/region-midtjylland.md) |
 | Force | not read |
 | Date | not visible without login (checked 2026-11-02) |

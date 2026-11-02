@@ -18,6 +18,7 @@ and processing patient data [1].
 | | |
 |---|---|
 | Form | policy paper with proposals |
+| Domain | clinical |
 | Issued by | Lægeforeningen (Danish Medical Association) |
 | Force | input — not authoritative (policy proposal addressed to regions and authorities) |
 | Date | 2022 (*Digitalisering 2022*) |

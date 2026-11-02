@@ -18,6 +18,7 @@ solutions [1].
 | | |
 |---|---|
 | Form | principles (policy proposal) |
+| Domain | clinical |
 | Issued by | [Danske Regioner](/organisations/public/danske-regioner.md) |
 | Force | input — not authoritative (policy proposal stating the regions' joint intentions) |
 | Date | 2024 (the file name points to 7 June 2024) |

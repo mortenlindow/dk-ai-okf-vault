@@ -65,7 +65,7 @@ RELATIONS = Set.new([
   'Convened by', 'Part of series', 'Venue',
   'Also known as', 'Web', 'Term length', 'Initiatives', 'Phases', 'Level', 'Offered by',
   'Scope', 'Audience', 'Specialty', 'Delivery', 'Time required', 'Updated', 'Language', 'Cost', 'Access',
-  'Issued by', 'Force'
+  'Issued by', 'Force', 'Domain'
 ]).freeze
 
 FOCUS_VIEWS = { 'ucph' => 'views/ucph/index.md', 'health' => 'views/health/index.md' }.freeze

@@ -18,6 +18,7 @@ controller and sets out the legal steps before use [1].
 | | |
 |---|---|
 | Form | guidance |
+| Domain | clinical |
 | Issued by | Praktiserende Lægers Organisation (PLO) |
 | Force | guidance — states requirements that apply to the practice as data controller |
 | Date | not stated on the page |

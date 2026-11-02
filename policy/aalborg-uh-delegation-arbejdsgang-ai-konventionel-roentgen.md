@@ -18,6 +18,7 @@ out-of-hours service when the AI finds no fracture [1].
 | | |
 |---|---|
 | Form | guideline (Retningslinje - Klinisk); delegation of reserved clinical activity |
+| Domain | clinical |
 | Issued by | Billeddiagnostik, Aalborg Universitetshospital; applies also to Ortopædkirurgi and to Regionshospital Nordjylland's diagnostic department, [Region Nordjylland](/organisations/health/region-nordjylland.md) |
 | Force | formal delegation |
 | Date | approved 15 August 2025; delegation form dated 30 August 2024; AI pathway from 2 September 2024 |

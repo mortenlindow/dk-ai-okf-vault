@@ -17,6 +17,7 @@ section in Frederikshavn [1].
 | | |
 |---|---|
 | Form | clinical instruction (Instruks - Klinisk) |
+| Domain | clinical |
 | Issued by | Billeddiagnostisk afsnit Frederikshavn, Regionshospital Nordjylland, [Region Nordjylland](/organisations/health/region-nordjylland.md) |
 | Force | clinical instruction |
 | Date | published 26 February 2026 |

@@ -18,6 +18,7 @@ staff's own responsibility for what they use [1].
 | | |
 |---|---|
 | Form | guideline (rules of use) |
+| Domain | clinical |
 | Issued by | Hospitalsenhed Midt, [Region Midtjylland](/organisations/health/region-midtjylland.md) |
 | Force | binding; each employee is responsible for following it |
 | Date | in force from 4 July 2026 |

@@ -18,6 +18,7 @@ the AI [1].
 | | |
 |---|---|
 | Form | guideline (Retningslinje - Klinisk) |
+| Domain | clinical |
 | Issued by | Billeddiagnostik Hjørring, Regionshospital Nordjylland, [Region Nordjylland](/organisations/health/region-nordjylland.md) |
 | Force | binding local guideline |
 | Date | published 19 December 2025 |

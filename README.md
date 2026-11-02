@@ -52,7 +52,7 @@ that is an HTML fragment, so the sources can also be published as Claude artifac
   register of the `training/` concepts, at
   https://mortenlindow.github.io/dk-ai-okf-vault/genai-training.html. Card thumbnails are
   generated in the page (format icon, audience colour), not taken from suppliers' sites.
-- `site/clinical-ai-rules.html` — **Rules and guidance on clinical AI**, a searchable card register
+- `site/clinical-ai-rules.html` — **Rules and guidance on AI in health**, a searchable card register
   of the `policy/` concepts, at https://mortenlindow.github.io/dk-ai-okf-vault/clinical-ai-rules.html.
   It is **generated**: after changing `policy/`, run `python3 bin/build_rules_page.py`, which reads
   the files and fills `bin/templates/clinical-ai-rules.html`.
