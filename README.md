@@ -48,6 +48,10 @@ that is an HTML fragment, so the sources can also be published as Claude artifac
   file to that URL, so the link stays the same.
 - `site/ai-in-danish-health.html` — **AI in Danish Health**, a visual summary of the health view,
   at https://mortenlindow.github.io/dk-ai-okf-vault/ai-in-danish-health.html.
+- `site/genai-training.html` — **Generative AI training for clinicians**, a searchable card
+  register of the `training/` concepts, at
+  https://mortenlindow.github.io/dk-ai-okf-vault/genai-training.html. Card thumbnails are
+  generated in the page (format icon, audience colour), not taken from suppliers' sites.
 - `site/index.html` — a landing page linking the pages above.
 
 Each page carries its facts inline, so when the vault changes, the page has to be updated to

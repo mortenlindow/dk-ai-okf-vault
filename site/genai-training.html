@@ -1,0 +1,378 @@
+<title>Generative AI Training for Clinicians</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a catalogue — a short note on method and access, then controls (search,
+   filters, sort) above a card grid; one column of prose, cards run the full width. */
+:root {
+  --bg: #f3f5f5;
+  --surface: #fcfcfb;
+  --ink: #10171a;
+  --ink-2: #47525a;
+  --muted: #6f7a80;
+  --hair: #dce1e2;
+  --axis: #bfc7ca;
+  --band: #eef1f1;
+  --accent: #1b5a85;
+  --g-general: #2a78d6;
+  --g-gp: #1baf7a;
+  --g-spec: #7a5fd3;
+  --g-nursing: #eb6834;
+  --g-pharmacy: #c98500;
+  --g-lead: #d6457a;
+  --f-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
+    --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
+    --g-general: #5a9ded; --g-gp: #2fc48f; --g-spec: #9d87ea; --g-nursing: #f0845a; --g-pharmacy: #e0a72a; --g-lead: #e66d98;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
+  --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
+  --g-general: #5a9ded; --g-gp: #2fc48f; --g-spec: #9d87ea; --g-nursing: #f0845a; --g-pharmacy: #e0a72a; --g-lead: #e66d98;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 15.5px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+.page { max-width: 1120px; margin: 0 auto; display: grid; gap: 48px; }
+.page > *, section > * { min-width: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+h1, h2 { font-family: var(--f-display); font-weight: 600; text-wrap: balance; letter-spacing: -0.01em; margin: 0; }
+h1 { font-size: clamp(2.3rem, 6vw, 3.4rem); line-height: 1.04; }
+h2 { font-size: 1.6rem; line-height: 1.15; }
+h3 { margin: 0; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.small { font-size: 0.88rem; color: var(--ink-2); }
+
+header { display: grid; gap: 16px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 64ch; }
+section { display: grid; gap: 18px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px 40px; }
+.two h3 { font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; margin-bottom: 6px; }
+
+/* controls */
+.controls { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--hair); border-radius: 12px; padding: 16px 18px; }
+.row1 { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.search { flex: 1 1 260px; display: flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--hair); border-radius: 8px; padding: 0 10px; }
+.search svg { flex: none; color: var(--muted); }
+.search input { flex: 1; min-width: 0; font: inherit; color: var(--ink); background: transparent; border: 0; padding: 9px 0; outline: none; }
+.sort { display: flex; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--ink-2); }
+.sort select { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--hair); border-radius: 8px; padding: 8px 10px; }
+.fgroup { display: grid; grid-template-columns: 7.5em 1fr; gap: 8px 12px; align-items: start; }
+.fgroup > span { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: inherit; font-size: 0.84rem; color: var(--ink-2); background: var(--bg); border: 1px solid var(--hair); border-radius: 999px; padding: 4px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+.chip:hover { border-color: var(--axis); color: var(--ink); }
+.chip[aria-pressed="true"] { color: var(--ink); border-color: var(--ink-2); background: var(--band); }
+.chip .n { font-family: var(--f-mono); font-size: 0.74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.chip .sw { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.status-line { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--ink-2); padding-top: 4px; border-top: 1px solid var(--hair); }
+.status-line b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.linkbtn { font: inherit; font-size: 0.86rem; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 560px) { .fgroup { grid-template-columns: 1fr; gap: 4px; } .fgroup > span { padding-top: 0; } }
+
+/* cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.thumb { position: relative; aspect-ratio: 16 / 7; color: var(--c); background: color-mix(in srgb, var(--c) 14%, var(--surface)); border-bottom: 1px solid var(--hair); }
+.thumb svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.thumb .fmt { position: absolute; left: 12px; bottom: 10px; font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); background: var(--surface); border-radius: 4px; padding: 1px 6px; }
+.thumb .st { position: absolute; right: 12px; top: 10px; font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.04em; border-radius: 999px; padding: 1px 8px; background: var(--surface); border: 1px solid var(--ink-2); color: var(--ink); }
+.thumb .st.upcoming { border-style: dashed; }
+.thumb .st.held, .thumb .st.unknown { color: var(--ink-2); border-color: var(--axis); }
+.body { padding: 14px 16px 16px; display: grid; gap: 10px; align-content: start; }
+.who { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.who .sw { width: 10px; height: 10px; border-radius: 3px; background: var(--c); flex: none; }
+.card h3 { font-family: var(--f-display); font-size: 1.18rem; font-weight: 600; line-height: 1.22; }
+.supplier { font-size: 0.88rem; color: var(--ink); font-weight: 500; }
+.supplier .tag { font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--axis); border-radius: 999px; padding: 0 6px; margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+.scope { font-size: 0.9rem; color: var(--ink-2); }
+.card dl { display: grid; grid-template-columns: 6.6em 1fr; gap: 3px 12px; margin: 0; font-size: 0.84rem; }
+.card dt { color: var(--muted); }
+.card dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.when { font-weight: 600; color: var(--ink); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; padding-top: 8px; border-top: 1px solid var(--hair); font-size: 0.8rem; }
+.foot .path { font-family: var(--f-mono); color: var(--muted); text-decoration-color: var(--axis); overflow-wrap: anywhere; }
+.foot .path:hover { color: var(--accent); }
+.empty { padding: 32px; text-align: center; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 12px; }
+
+footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; gap: 8px; font-size: 0.86rem; color: var(--ink-2); }
+@media (max-width: 520px) { body { padding-block: 24px 48px; } .page { gap: 36px; } }
+</style>
+
+<div class="page">
+
+<header>
+  <span class="eyebrow">DK-AI · Training register · as of 2 November 2026</span>
+  <h1>Generative AI training for clinicians</h1>
+  <p class="lede">Courses, e-learning, webinars, workshops and guides on generative AI — language models, ChatGPT, Copilot and the like — offered by Danish suppliers to clinicians and other health professionals.</p>
+</header>
+
+<section aria-labelledby="h-about">
+  <h2 id="h-about" class="eyebrow" style="font-family:var(--f-mono);font-size:0.74rem;font-weight:400;letter-spacing:0.08em">About this register</h2>
+  <div class="two">
+    <div>
+      <h3>How it was collected</h3>
+      <p class="small">Each offering was read on a public page or document on 2 November 2026. An offering is included when a Danish supplier — public, non-profit or commercial — aims it at clinicians or health professionals and names generative AI in its stated scope. Material behind a staff login is recorded from its public description. Dates are the supplier's own. The register describes what is offered; it does not rate it.</p>
+    </div>
+    <div>
+      <h3>Where to find the data</h3>
+      <p class="small">The register is part of DK-AI, an open knowledge base on <a href="https://github.com/mortenlindow/dk-ai-okf-vault">GitHub</a>. Each card names its file in the vault's <a href="https://github.com/mortenlindow/dk-ai-okf-vault/tree/main/training">training folder</a>, and the <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/views/genai-training/index.md">register view</a> lists the offerings read but not included. Suggestions: <a href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">open an issue</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-list">
+  <h2 id="h-list">Offerings</h2>
+  <div class="controls">
+    <div class="row1">
+      <label class="search"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Search titles, suppliers, topics" aria-label="Search the register"></label>
+      <label class="sort">Sort <select id="sort" aria-label="Sort order">
+        <option value="relevance">Upcoming first</option>
+        <option value="newest">Newest date</option>
+        <option value="oldest">Oldest date</option>
+        <option value="title">Title A–Z</option>
+        <option value="supplier">Supplier A–Z</option>
+      </select></label>
+    </div>
+    <div class="fgroup"><span>Status</span><div class="chips" id="f-status" role="group" aria-label="Filter by status"></div></div>
+    <div class="fgroup"><span>For</span><div class="chips" id="f-group" role="group" aria-label="Filter by audience"></div></div>
+    <div class="fgroup"><span>Format</span><div class="chips" id="f-format" role="group" aria-label="Filter by format"></div></div>
+    <div class="fgroup"><span>Supplier</span><div class="chips" id="f-sup" role="group" aria-label="Filter by supplier type"></div></div>
+    <div class="fgroup"><span>Access</span><div class="chips" id="f-open" role="group" aria-label="Filter by access"></div></div>
+    <div class="status-line"><span id="count" aria-live="polite"></span><button type="button" class="linkbtn" id="reset">Clear filters</button></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer>
+  <p>Commercial suppliers appear in this register as named suppliers of an offering; the wider DK-AI vault maps public and non-profit bodies. Prices and dates are as published and may have changed — follow the source link before registering.</p>
+  <p class="eyebrow" style="text-transform:none;letter-spacing:0">Source view: views/genai-training/index.md · Each entry: training/&lt;file&gt;.md</p>
+</footer>
+
+</div>
+
+<script>
+(() => {
+  const REPO = "https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/";
+  const GROUP = {
+    general:  { label: "Clinicians and staff broadly", c: "--g-general" },
+    gp:       { label: "General practice", c: "--g-gp" },
+    spec:     { label: "Doctors in specialist training", c: "--g-spec" },
+    nursing:  { label: "Nursing education", c: "--g-nursing" },
+    pharmacy: { label: "Pharmacy", c: "--g-pharmacy" },
+    lead:     { label: "Leadership and research", c: "--g-lead" }
+  };
+  const FORMAT = { course: "Course", elearning: "E-learning", webinar: "Webinar & recordings", workshop: "Workshop & theme day", guide: "Guide & slides" };
+  const STATUS = { active: "Available", upcoming: "Upcoming", held: "Held", unknown: "Status not recorded" };
+  const SUP = { region: "Region or hospital", professional: "Professional body", commercial: "Commercial" };
+
+  const items = [
+    { id: "lg209", status: "upcoming", date: "2026-11-10", when: "10 Nov 2026, 09.00–12.30", group: "gp", format: "course", sup: "professional", open: false,
+      title: "AI i praksis – muligheder og udfordringer", supplier: "Lægedage (PLO and DSAM)",
+      scope: "Introduction to AI including large language models: uses, limits, pitfalls, and ethical, legal and professional considerations, with hands-on clinical examples.",
+      facts: [["For", "General practitioners and practice staff together"], ["Level", "Introductory"], ["Where", "In person, Bella Center, Copenhagen"], ["Time", "3.5 hours"], ["Cost", "DKK 3,700 per day of Lægedage; reduced rates for some groups"], ["Access", "Registration"]],
+      url: "https://laeger.dk/media/gkhlcvyq/laegekatalog-2026_ver05082026.pdf", path: "training/laegedage-ai-i-praksis-muligheder-og-udfordringer.md" },
+    { id: "lg319", status: "upcoming", date: "2026-11-11", when: "11 Nov 2026, 14.00–17.00", group: "gp", format: "workshop", sup: "professional", open: false,
+      title: "Brug af AI til instrukser m.v.", supplier: "Lægedage (PLO and DSAM)",
+      scope: "Using language models in a GP's working day — instructions, phrases, staff teaching, clinical puzzles, certificates — with prompt practice.",
+      facts: [["For", "General practitioners"], ["Level", "Intermediate; a basic understanding of language models is assumed"], ["Where", "In person, Bella Center, Copenhagen"], ["Time", "3 hours"], ["Cost", "DKK 3,700 per day of Lægedage; reduced rates for some groups"], ["Access", "Registration; limited places"]],
+      url: "https://laeger.dk/media/gkhlcvyq/laegekatalog-2026_ver05082026.pdf", path: "training/laegedage-brug-af-ai-til-instrukser.md" },
+    { id: "lg513", status: "upcoming", date: "2026-11-13", when: "13 Nov 2026, 09.00–12.00", group: "gp", format: "course", sup: "professional", open: false,
+      title: "AI begynderkursus – prompt i praksis", supplier: "Lægedage (PLO and DSAM)",
+      scope: "Building a good prompt from scratch and refining it, using everyday practice tasks such as a letter to a patient or a staff instruction.",
+      facts: [["For", "General-practice staff"], ["Level", "Introductory"], ["Where", "In person, Bella Center, Copenhagen"], ["Time", "3 hours"], ["Cost", "DKK 3,700 per day of Lægedage; reduced rates for some groups"], ["Access", "Registration; limited places"]],
+      url: "https://laeger.dk/media/gkhlcvyq/laegekatalog-2026_ver05082026.pdf", path: "training/laegedage-ai-begynderkursus-prompt-i-praksis.md" },
+    { id: "rsd-elearn", status: "active", date: null, when: "Update date not stated", group: "general", format: "elearning", sup: "region", open: false,
+      title: "E-læringskursus i AI-færdigheder", supplier: "Region Syddanmark",
+      scope: "What generative AI is and how to use it safely and responsibly at work, in line with the EU's AI-competence requirements. Required of staff who use generative AI at work.",
+      facts: [["For", "Staff of Region Syddanmark, Odense University Hospital and SDU, clinical staff included"], ["Level", "Introductory"], ["Where", "Self-paced online (Plan2Learn)"], ["Time", "Not stated"], ["Access", "Staff login"]],
+      url: "https://cai-x.dk/kom-i-gang-med-ai/vaerktojer-og-guides/ai-pa-ouh", path: "training/region-syddanmark-e-laering-i-ai-faerdigheder.md" },
+    { id: "rsd-guide", status: "active", date: null, when: "Update date not stated", group: "general", format: "guide", sup: "region", open: false,
+      title: "Guide til brug af generativ AI", supplier: "Region Syddanmark (Regional IT)",
+      scope: "What generative AI is, when and how staff may use it, which services are approved, and how data security and ethics are handled; with a companion page of prompting advice.",
+      facts: [["For", "Staff of Region Syddanmark, Odense University Hospital and SDU, clinical staff included"], ["Where", "Document (intranet)"], ["Access", "Staff login (intranet)"]],
+      url: "https://cai-x.dk/kom-i-gang-med-ai/vaerktojer-og-guides/ai-pa-ouh", path: "training/region-syddanmark-guide-til-brug-af-generativ-ai.md" },
+    { id: "rm", status: "active", date: "2026-08-01", when: "In the catalogue of August 2026", group: "general", format: "elearning", sup: "region", open: false,
+      title: "Bliv klogere på generativ AI", supplier: "Region Midtjylland",
+      scope: "Five-week email course: one short video a week in which colleagues show how they use generative AI, ChatGPT among it, safely in everyday work.",
+      facts: [["For", "Staff and leaders of Region Midtjylland, clinical staff included"], ["Level", "Introductory"], ["Where", "Self-paced online, one email with a video each week"], ["Time", "Five weeks, one video a week"], ["Access", "Registration via Plan2Learn"]],
+      url: "http://www.medarbejder.rm.dk/siteassets/udvikling/udviklingsforlob/katalog_ledelsesudviklingsforlob_aug.2026.pdf", path: "training/region-midtjylland-bliv-klogere-paa-generativ-ai.md" },
+    { id: "rsj-lead", status: "active", date: "2026-03-23", when: "Page updated 23 Mar 2026", group: "lead", format: "webinar", sup: "region", open: false,
+      title: "Ledelse og AI", supplier: "Region Sjælland (Koncern HR, Ledelsesudvikling)",
+      scope: "Recordings, podcast episodes and a webinar series for leaders on strategy, risk and the EU AI Act, implementation, and what generative AI means for working life.",
+      facts: [["For", "Leaders in Region Sjælland, clinical and non-clinical"], ["Where", "Self-paced online (recordings and podcast)"], ["Access", "Staff login for the conference recordings; podcast and webinars as published"]],
+      url: "https://www.regionsjaelland.dk/job-og-uddannelse/min-ansaettelse/ledelsesudvikling/ledelse-og-ai", path: "training/region-sjaelland-ledelse-og-ai.md" },
+    { id: "rsj-res", status: "active", date: "2026-09-30", when: "Page updated 30 Sep 2026", group: "lead", format: "course", sup: "region", open: false,
+      title: "Ansvarlig brug af generativ AI i forskning", supplier: "Region Sjælland (Forskningsbiblioteket)",
+      scope: "Responsible use of generative AI in research. The research library lists the course by title among its courses for staff; details are on Plan2Learn.",
+      facts: [["For", "Staff of Region Sjælland"], ["Access", "Registration via Plan2Learn"]],
+      url: "https://www.regionsjaelland.dk/fagfolk/dokumenter-viden-og-vaerktoejer/region-sjaellands-forskningsbibliotek/om-region-sjaellands-forskningsbibliotek/kurser-og-undervisning", path: "training/region-sjaelland-ansvarlig-brug-af-generativ-ai-i-forskning.md" },
+    { id: "dge", status: "active", date: "2026-06-26", when: "Created 26 Jun 2026", group: "gp", format: "guide", sup: "professional", open: true,
+      title: "AI i almen praksis: Refleksionsark til podcast", supplier: "DGE groups in general practice (via sundhed.dk)",
+      scope: "Two-page discussion sheet for continuing-education groups, to use after a podcast on AI in general practice: speech-to-text, chatbots, patient mail, legal and ethical aspects.",
+      facts: [["For", "General practitioners in DGE groups"], ["Level", "Introductory"], ["Where", "Document, for group discussion"], ["Cost", "Free"], ["Access", "Open"]],
+      url: "https://www.sundhed.dk/content/cms/1/136501_refleksionsark-ai-i-almen-praksis.pdf", path: "training/dge-refleksionsark-ai-i-almen-praksis.md" },
+    { id: "pharmakon", status: "active", date: "2025-03-01", when: "Dated March 2025", group: "pharmacy", format: "guide", sup: "commercial", open: true,
+      title: "Patienten, farmaceuten og AI", supplier: "Pharmakon",
+      scope: "Summary for pharmacy practice of the AI presentations at the 2024 FIP congress, including evidence-based medicine with generative AI, bias, transparency and data security.",
+      facts: [["For", "Pharmacists and pharmacy technicians"], ["Where", "Document"], ["Cost", "Free"], ["Access", "Open"]],
+      url: "https://www.pharmakon.dk/media/2878/patienten-farmaceuten-og-ai.pdf", path: "training/pharmakon-patienten-farmaceuten-og-ai.md" },
+    { id: "rsd-theme", status: "held", date: "2025-12-03", when: "Held 3 Dec 2025 · slides online", group: "general", format: "workshop", sup: "region", open: true,
+      title: "Er generativ AI virkelig løsningen på dit problem?", supplier: "Region Syddanmark with RAIN",
+      scope: "How language models work, hallucination and automation bias, SydChat and its rules, a checklist for when a chatbot fits, and prompting.",
+      facts: [["For", "Clinical specialties, administration, project management, IT and data, and leadership"], ["Level", "Introductory"], ["Where", "In person; slides available online"], ["Access", "Open (slides)"]],
+      url: "https://syddansksundhedsinnovation.dk/nyheder/2025/er-ai-virkelig-losningen-pa-dit-problem-opsamling-fra-netvaerksmode-om-ai-i-sundhed", path: "training/region-syddanmark-er-generativ-ai-virkelig-loesningen.md" },
+    { id: "kaps", status: "held", date: "2025-12-17", when: "Held 17 Dec 2025", group: "gp", format: "webinar", sup: "professional", open: false,
+      title: "AI – For begyndere", supplier: "KAP-S",
+      scope: "Getting started with AI in general practice, from administrative tasks: practice examples, a PLO update, and the legal framework.",
+      facts: [["For", "General practices without prior AI experience, doctors and staff"], ["Level", "Introductory"], ["Where", "Live online"], ["Time", "2 hours"], ["Access", "Registration"]],
+      url: "https://kap-s.dk/kursus/ai-for-begyndere/", path: "training/kap-s-ai-for-begyndere.md" },
+    { id: "fsus", status: "held", date: "2025-10-29", when: "Held 29–30 Oct 2025", group: "nursing", format: "workshop", sup: "professional", open: false,
+      title: "Prompt din praksis", supplier: "FSUS, Fagligt Selskab for Undervisende Sygeplejersker",
+      scope: "How generative AI works and what it does to professional practice; supervision and teaching with generative AI; hands-on trials.",
+      facts: [["For", "Clinical nurse educators and supervisors, and nursing lecturers"], ["Level", "Introductory to intermediate"], ["Where", "In person, Hotel Nyborg Strand"], ["Time", "Two days"], ["Access", "Registration"]],
+      url: "https://dsr.dk/media/33slntiu/program-fsus-konference-efteraar-2025-020925.pdf", path: "training/fsus-prompt-din-praksis.md" },
+    { id: "auh", status: "held", date: "2024-10-25", when: "Slides dated 25 Oct 2024", group: "spec", format: "guide", sup: "region", open: true,
+      title: "Generativ AI for uddannelseslæger", supplier: "Aarhus University Hospital (Lægelig Videreuddannelse)",
+      scope: "How generative AI and large language models work, prompting and advanced prompt techniques, problems in use, and teaching examples.",
+      facts: [["For", "Doctors in specialist training"], ["Level", "Introductory to intermediate"], ["Where", "In person; slides available online"], ["Access", "Open (slides)"]],
+      url: "http://www.fagperson.auh.dk/siteassets/03-job-og-uddannelse/lagelig-videreuddannelse/somatik/arsmode/2024/kunstig-intelligens-i-et-uddannelsesperspektiv/generativ-ai-for-uddannelseslager-arsmode-lvu-auh-okt-2024-oplag-tom-gislev.pdf", path: "training/auh-generativ-ai-for-uddannelseslaeger.md" },
+    { id: "dm", status: "unknown", date: null, when: "Date not stated on the page", group: "general", format: "course", sup: "commercial", open: false,
+      title: "ChatGPT som lægens højre hånd", supplier: "Dagens Medicin",
+      scope: "Large language models in clinical work: getting started, how far they can be trusted, records, patient information, guidelines and literature, and privacy.",
+      facts: [["For", "Health professionals, decision-makers, and innovation, project and IT leaders"], ["Where", "In person; place not stated"], ["Time", "One day"], ["Cost", "DKK 3,000 excl. VAT"], ["Access", "Registration"]],
+      url: "https://www.dagensmedicin.dk/konferencer/chat-gpt/", path: "training/dagens-medicin-chatgpt-som-laegens-hoejre-haand.md" }
+  ];
+
+  /* ---------- thumbnails: a format icon on a seeded pattern, coloured by audience ---------- */
+  const hash = s => { let h = 2166136261; for (const ch of s) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
+  const rng = seed => () => ((seed = Math.imul(seed ^ (seed >>> 15), 2246822507) ^ Math.imul(seed ^ (seed >>> 13), 3266489909)) >>> 0) / 4294967296;
+  function pattern(id) {
+    const r = rng(hash(id)), kind = hash(id) % 3; let s = "";
+    if (kind === 0) {               // dot field
+      const ox = r() * 20, oy = r() * 20;
+      for (let x = 0; x < 340; x += 22) for (let y = 0; y < 150; y += 22) {
+        const rad = 1.2 + 2.6 * Math.max(0, Math.sin((x + ox) / 60 + (y + oy) / 45));
+        s += `<circle cx="${x + ox}" cy="${y + oy}" r="${rad.toFixed(1)}" fill="currentColor" opacity="0.22"/>`;
+      }
+    } else if (kind === 1) {        // concentric arcs from a corner
+      const cx = r() < 0.5 ? 0 : 320, cy = r() < 0.5 ? 0 : 140;
+      for (let k = 1; k < 9; k++) s += `<circle cx="${cx}" cy="${cy}" r="${k * 26}" fill="none" stroke="currentColor" stroke-width="1.4" opacity="${(0.32 - k * 0.025).toFixed(2)}"/>`;
+    } else {                        // soft waves
+      const ph = r() * 6;
+      for (let k = 0; k < 7; k++) {
+        let d = `M0 ${18 + k * 20}`;
+        for (let x = 0; x <= 320; x += 20) d += ` L${x} ${(18 + k * 20 + 7 * Math.sin(x / 38 + ph + k * 0.6)).toFixed(1)}`;
+        s += `<path d="${d}" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.24"/>`;
+      }
+    }
+    return s;
+  }
+  const ICON = {
+    course:   `<rect x="-30" y="-24" width="60" height="38" rx="4"/><path d="M-20 -12h28M-20 -3h40M-20 6h22"/><path d="M-10 14l-8 16M10 14l8 16"/>`,
+    elearning:`<rect x="-30" y="-24" width="60" height="38" rx="4"/><path d="M-38 20h76l-4 6h-68z"/><path d="M-6 -12v14l12-7z" fill="currentColor"/>`,
+    webinar:  `<rect x="-30" y="-24" width="60" height="40" rx="4"/><circle cx="0" cy="-8" r="7"/><path d="M-12 10c3-8 21-8 24 0"/><path d="M36 -20c6 6 6 18 0 24M44 -26c10 10 10 30 0 40"/>`,
+    workshop: `<circle cx="0" cy="-18" r="7"/><circle cx="-24" cy="2" r="7"/><circle cx="24" cy="2" r="7"/><rect x="-16" y="10" width="32" height="14" rx="4"/><path d="M-6 -4l-10 6M6 -4l10 6"/>`,
+    guide:    `<path d="M-22 -28h30l14 14v44h-44z"/><path d="M8 -28v14h14"/><path d="M-14 -6h28M-14 4h28M-14 14h20"/>`
+  };
+  function thumb(it) {
+    return `<svg viewBox="0 0 320 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${pattern(it.id)}` +
+      `<g transform="translate(160 66)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">` +
+      `<circle r="52" fill="var(--surface)" stroke="none" opacity="0.92"/>${ICON[it.format]}</g></svg>`;
+  }
+
+  /* ---------- filters ---------- */
+  const state = { q: "", sort: "relevance", status: new Set(), group: new Set(), format: new Set(), sup: new Set(), open: new Set() };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  function makeChips(el, key, entries, swatch) {
+    entries.forEach(([val, label]) => {
+      const n = items.filter(it => (key === "open" ? (it.open ? "open" : "login") : it[key]) === val).length;
+      if (!n) return;
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.dataset.key = key; b.dataset.val = val; b.setAttribute("aria-pressed", "false");
+      b.innerHTML = (swatch ? `<i class="sw" style="background:var(${GROUP[val].c})"></i>` : "") + esc(label) + ` <span class="n">${n}</span>`;
+      b.addEventListener("click", () => {
+        const set = state[key]; set.has(val) ? set.delete(val) : set.add(val);
+        b.setAttribute("aria-pressed", set.has(val) ? "true" : "false"); render();
+      });
+      el.appendChild(b);
+    });
+  }
+  makeChips(document.getElementById("f-status"), "status", Object.entries(STATUS));
+  makeChips(document.getElementById("f-group"), "group", Object.entries(GROUP).map(([k, v]) => [k, v.label]), true);
+  makeChips(document.getElementById("f-format"), "format", Object.entries(FORMAT));
+  makeChips(document.getElementById("f-sup"), "sup", Object.entries(SUP));
+  makeChips(document.getElementById("f-open"), "open", [["open", "Open to anyone"], ["login", "Registration or staff login"]]);
+
+  const STATUS_RANK = { upcoming: 0, active: 1, held: 2, unknown: 3 };
+  const t = it => it.date ? Date.parse(it.date) : null;
+  const sorters = {
+    relevance: (a, b) => STATUS_RANK[a.status] - STATUS_RANK[b.status] ||
+      (a.status === "upcoming" ? t(a) - t(b) : (t(b) ?? -Infinity) - (t(a) ?? -Infinity)) || a.title.localeCompare(b.title, "da"),
+    newest: (a, b) => (t(b) ?? -Infinity) - (t(a) ?? -Infinity) || a.title.localeCompare(b.title, "da"),
+    oldest: (a, b) => (t(a) ?? Infinity) - (t(b) ?? Infinity) || a.title.localeCompare(b.title, "da"),
+    title: (a, b) => a.title.localeCompare(b.title, "da"),
+    supplier: (a, b) => a.supplier.localeCompare(b.supplier, "da") || a.title.localeCompare(b.title, "da")
+  };
+
+  const grid = document.getElementById("grid"), count = document.getElementById("count");
+  function card(it) {
+    const g = GROUP[it.group];
+    const dl = [["Date", `<span class="when">${esc(it.when)}</span>`], ...it.facts.map(([k, v]) => [k, esc(v)])]
+      .map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+    return `<article class="card" style="--c:var(${g.c})">
+      <div class="thumb">${thumb(it)}<span class="fmt">${esc(FORMAT[it.format])}</span><span class="st ${it.status}">${STATUS[it.status]}</span></div>
+      <div class="body">
+        <div class="who"><i class="sw"></i>${esc(g.label)}</div>
+        <h3>${esc(it.title)}</h3>
+        <div class="supplier">${esc(it.supplier)}${it.sup === "commercial" ? '<span class="tag">commercial</span>' : ""}</div>
+        <p class="scope">${esc(it.scope)}</p>
+        <dl>${dl}</dl>
+        <div class="foot"><a href="${esc(it.url)}" target="_blank" rel="noopener">Source page</a><a class="path" href="${REPO + it.path}" target="_blank" rel="noopener">${esc(it.path)}</a></div>
+      </div>
+    </article>`;
+  }
+  function matches(it) {
+    const q = state.q.trim().toLowerCase();
+    if (q && !(it.title + " " + it.supplier + " " + it.scope + " " + it.facts.map(f => f[1]).join(" ")).toLowerCase().includes(q)) return false;
+    for (const key of ["status", "group", "format", "sup"]) if (state[key].size && !state[key].has(it[key])) return false;
+    if (state.open.size && !state.open.has(it.open ? "open" : "login")) return false;
+    return true;
+  }
+  function render() {
+    const list = items.filter(matches).sort(sorters[state.sort]);
+    grid.innerHTML = list.length ? list.map(card).join("") : '<div class="empty">No offerings match these filters. <button type="button" class="linkbtn" data-reset>Clear filters</button></div>';
+    count.innerHTML = `Showing <b>${list.length}</b> of ${items.length} offerings`;
+    const r = grid.querySelector("[data-reset]"); if (r) r.addEventListener("click", reset);
+  }
+  function reset() {
+    state.q = ""; document.getElementById("q").value = "";
+    ["status", "group", "format", "sup", "open"].forEach(k => state[k].clear());
+    document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", "false"));
+    render();
+  }
+  document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+  document.getElementById("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
+  document.getElementById("reset").addEventListener("click", reset);
+  render();
+})();
+</script>
