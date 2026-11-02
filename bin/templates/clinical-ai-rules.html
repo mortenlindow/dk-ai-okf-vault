@@ -1,0 +1,276 @@
+<title>Rules on Clinical AI</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a register — a short note on method and access, then controls (search, filters,
+   sort) above a card grid. Cards open to show the distilled key provisions. */
+:root {
+  --bg: #f3f5f5;
+  --surface: #fcfcfb;
+  --ink: #10171a;
+  --ink-2: #47525a;
+  --muted: #6f7a80;
+  --hair: #dce1e2;
+  --axis: #bfc7ca;
+  --band: #eef1f1;
+  --accent: #1b5a85;
+  --l-national: #2a78d6;
+  --l-prof: #7a5fd3;
+  --l-regions: #1baf7a;
+  --l-hosp: #eb6834;
+  --f-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
+    --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
+    --l-national: #5a9ded; --l-prof: #9d87ea; --l-regions: #2fc48f; --l-hosp: #f0845a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1214; --surface: #161b1d; --ink: #edf1f2; --ink-2: #b4bec2; --muted: #8a959b;
+  --hair: #283034; --axis: #3b454a; --band: #12171a; --accent: #8ec3ea;
+  --l-national: #5a9ded; --l-prof: #9d87ea; --l-regions: #2fc48f; --l-hosp: #f0845a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 15.5px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+.page { max-width: 1120px; margin: 0 auto; display: grid; gap: 48px; }
+.page > *, section > * { min-width: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+h1, h2 { font-family: var(--f-display); font-weight: 600; text-wrap: balance; letter-spacing: -0.01em; margin: 0; }
+h1 { font-size: clamp(2.3rem, 6vw, 3.4rem); line-height: 1.04; }
+h2 { font-size: 1.6rem; line-height: 1.15; }
+h3 { margin: 0; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.small { font-size: 0.88rem; color: var(--ink-2); }
+
+header { display: grid; gap: 16px; }
+.lede { font-size: 1.12rem; color: var(--ink-2); max-width: 64ch; }
+section { display: grid; gap: 18px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px 40px; }
+.two h3 { font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; margin-bottom: 6px; }
+.force-key { display: grid; gap: 4px; margin-top: 10px; }
+.force-key div { display: grid; grid-template-columns: 9.5em 1fr; gap: 10px; font-size: 0.86rem; color: var(--ink-2); }
+
+/* controls */
+.controls { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--hair); border-radius: 12px; padding: 16px 18px; }
+.row1 { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.search { flex: 1 1 260px; display: flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--hair); border-radius: 8px; padding: 0 10px; }
+.search svg { flex: none; color: var(--muted); }
+.search input { flex: 1; min-width: 0; font: inherit; color: var(--ink); background: transparent; border: 0; padding: 9px 0; outline: none; }
+.sort { display: flex; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--ink-2); }
+.sort select { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--hair); border-radius: 8px; padding: 8px 10px; }
+.fgroup { display: grid; grid-template-columns: 7.5em 1fr; gap: 8px 12px; align-items: start; }
+.fgroup > span { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: inherit; font-size: 0.84rem; color: var(--ink-2); background: var(--bg); border: 1px solid var(--hair); border-radius: 999px; padding: 4px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+.chip:hover { border-color: var(--axis); color: var(--ink); }
+.chip[aria-pressed="true"] { color: var(--ink); border-color: var(--ink-2); background: var(--band); }
+.chip .n { font-family: var(--f-mono); font-size: 0.74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.chip .sw { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.status-line { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--ink-2); padding-top: 4px; border-top: 1px solid var(--hair); }
+.status-line b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.linkbtn { font: inherit; font-size: 0.86rem; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 560px) { .fgroup { grid-template-columns: 1fr; gap: 4px; } .fgroup > span { padding-top: 0; } }
+
+/* cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; align-items: start; }
+.card { background: var(--surface); border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; display: grid; min-width: 0; }
+.band { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; color: var(--c); background: color-mix(in srgb, var(--c) 13%, var(--surface)); border-bottom: 1px solid var(--hair); }
+.band .lv { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
+.band svg { flex: none; color: var(--c); }
+.force { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.04em; border-radius: 999px; padding: 1px 8px; background: var(--surface); border: 1px solid var(--ink-2); color: var(--ink); white-space: nowrap; }
+.force.guidance { border-style: solid; color: var(--ink-2); }
+.force.recommendation { border-style: dashed; color: var(--ink-2); }
+.force.input { border-style: dotted; color: var(--ink-2); }
+.force.stub { border-color: var(--axis); color: var(--muted); }
+.body { padding: 14px 16px 16px; display: grid; gap: 10px; align-content: start; }
+.card h3 { font-family: var(--f-display); font-size: 1.12rem; font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
+.issuer { font-size: 0.88rem; color: var(--ink); font-weight: 500; }
+.desc { font-size: 0.9rem; color: var(--ink-2); }
+.stubnote { font-size: 0.84rem; color: var(--ink-2); border-left: 2px solid var(--axis); padding-left: 10px; }
+.card dl { display: grid; grid-template-columns: 6.4em 1fr; gap: 3px 12px; margin: 0; font-size: 0.84rem; }
+.card dt { color: var(--muted); }
+.card dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+details { border-top: 1px solid var(--hair); padding-top: 8px; }
+summary { cursor: pointer; font-size: 0.86rem; font-weight: 500; color: var(--ink); }
+details ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 6px; font-size: 0.86rem; color: var(--ink-2); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; padding-top: 8px; border-top: 1px solid var(--hair); font-size: 0.8rem; }
+.foot .path { font-family: var(--f-mono); color: var(--muted); text-decoration-color: var(--axis); overflow-wrap: anywhere; }
+.foot .path:hover { color: var(--accent); }
+.empty { padding: 32px; text-align: center; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--axis); border-radius: 12px; }
+
+footer { border-top: 1px solid var(--hair); padding-top: 20px; display: grid; gap: 8px; font-size: 0.86rem; color: var(--ink-2); }
+@media (max-width: 520px) { body { padding-block: 24px 48px; } .page { gap: 36px; } .grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="page">
+
+<header>
+  <span class="eyebrow">DK-AI · Rules register · as of 2 November 2026</span>
+  <h1>Rules and guidance on clinical AI in Denmark</h1>
+  <p class="lede">Statute, national guidance, regional guidelines, hospital and department instructions, and the input of professional and patient organisations on how AI may be used in the health service.</p>
+  <p class="small">See also: <a href="ai-in-danish-health.html">Networks about AI in Danish Health</a> · <a href="genai-training.html">Generative AI training for clinicians</a></p>
+</header>
+
+<section aria-labelledby="h-about">
+  <h2 id="h-about" class="eyebrow" style="font-family:var(--f-mono);font-size:0.74rem;font-weight:400;letter-spacing:0.08em">About this register</h2>
+  <div class="two">
+    <div>
+      <h3>How it was collected</h3>
+      <p class="small">On 2 November 2026 national authorities, about thirty professional and patient organisations, the five regions, and four of the five regions' public instruction databases were searched for documents that name AI and say what health organisations or staff must, should or may do. Institutional input that binds no one — consultation responses, policy proposals — is included and marked as such. Each document was read at its source; where its text sits behind a staff login, only its existence is recorded. Every card distils at most five provisions in the vault's own words — the source document is always the authority.</p>
+      <div class="force-key small">
+        <div><b>Binding</b><span>a statute, or an instruction or guideline staff must follow</span></div>
+        <div><b>Guidance</b><span>guidance from an authority or body, presented as such</span></div>
+        <div><b>Recommendation</b><span>from an advisory body or professional association</span></div>
+        <div><b>Input</b><span>not authoritative: consultation responses, proposals</span></div>
+        <div><b>Login-walled</b><span>existence recorded; text not read</span></div>
+      </div>
+    </div>
+    <div>
+      <h3>Where to find the data</h3>
+      <p class="small">The register is part of DK-AI, an open knowledge base on <a href="https://github.com/mortenlindow/dk-ai-okf-vault">GitHub</a>. Each card names its file in the vault's <a href="https://github.com/mortenlindow/dk-ai-okf-vault/tree/main/policy">policy folder</a>. The <a href="https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/views/clinical-ai-rules/index.md">register view</a> also lists documents where AI is a short passage of a wider instruction, documents read but not included, the searches made, and leads still to follow. Corrections and additions: <a href="https://github.com/mortenlindow/dk-ai-okf-vault/issues">open an issue</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-list">
+  <h2 id="h-list">Documents</h2>
+  <div class="controls">
+    <div class="row1">
+      <label class="search"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Search titles, issuers, provisions" aria-label="Search the register"></label>
+      <label class="sort">Sort <select id="sort" aria-label="Sort order">
+        <option value="level">By level</option>
+        <option value="newest">Newest date</option>
+        <option value="oldest">Oldest date</option>
+        <option value="title">Title A–Z</option>
+        <option value="issuer">Issuer A–Z</option>
+      </select></label>
+    </div>
+    <div class="fgroup"><span>Level</span><div class="chips" id="f-level" role="group" aria-label="Filter by level"></div></div>
+    <div class="fgroup"><span>Force</span><div class="chips" id="f-cat" role="group" aria-label="Filter by force"></div></div>
+    <div class="fgroup"><span>About</span><div class="chips" id="f-focus" role="group" aria-label="Filter by AI focus"></div></div>
+    <div class="fgroup"><span>Region</span><div class="chips" id="f-region" role="group" aria-label="Filter by region"></div></div>
+    <div class="status-line"><span id="count" aria-live="polite"></span><button type="button" class="linkbtn" id="reset">Clear filters</button></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer>
+  <p>The register describes what each document says and how it presents itself; it does not assess the documents. Rules change — follow the source link for the current text before relying on it.</p>
+  <p class="eyebrow" style="text-transform:none;letter-spacing:0">Source view: views/clinical-ai-rules/index.md · Each entry: policy/&lt;file&gt;.md</p>
+</footer>
+
+</div>
+
+<script>
+(() => {
+  const REPO = "https://github.com/mortenlindow/dk-ai-okf-vault/blob/main/";
+  const items = __DATA__;
+  const LEVEL = { national: { label: "National", c: "--l-national" }, prof: { label: "Professional & patient bodies", c: "--l-prof" },
+                  regions: { label: "Regions", c: "--l-regions" }, hosp: { label: "Hospitals & departments", c: "--l-hosp" } };
+  const CAT = { binding: "Binding", guidance: "Guidance", recommendation: "Recommendation", input: "Input", stub: "Login-walled" };
+  const FOCUS = { "generative-ai": "Generative AI", imaging: "Imaging AI", clinical: "Clinical use", governance: "Governance & data" };
+  const REGIONS = ["Region Hovedstaden", "Region Sjælland", "Region Syddanmark", "Region Midtjylland", "Region Nordjylland"];
+  const ICON = {
+    national: '<path d="M3 9l9-5 9 5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/>',
+    prof: '<circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M2.5 19c.8-3.6 3-5.5 5.5-5.5s4.7 1.9 5.5 5.5M13 15.3c1-.9 2.2-1.3 3.5-1.3 2.2 0 4 1.6 4.8 5"/>',
+    regions: '<path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0113 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
+    hosp: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/>'
+  };
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const state = { q: "", sort: "level", level: new Set(), cat: new Set(), focus: new Set(), region: new Set() };
+
+  function makeChips(id, key, entries, sw) {
+    const el = document.getElementById(id);
+    entries.forEach(([val, label]) => {
+      const n = items.filter(it => it[key] === val).length;
+      if (!n) return;
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.dataset.key = key; b.dataset.val = val; b.setAttribute("aria-pressed", "false");
+      b.innerHTML = (sw ? `<i class="sw" style="background:var(${LEVEL[val].c})"></i>` : "") + esc(label) + ` <span class="n">${n}</span>`;
+      b.addEventListener("click", () => {
+        const set = state[key]; set.has(val) ? set.delete(val) : set.add(val);
+        b.setAttribute("aria-pressed", set.has(val) ? "true" : "false"); render();
+      });
+      el.appendChild(b);
+    });
+  }
+  makeChips("f-level", "level", Object.entries(LEVEL).map(([k, v]) => [k, v.label]), true);
+  makeChips("f-cat", "cat", Object.entries(CAT));
+  makeChips("f-focus", "focus", Object.entries(FOCUS));
+  makeChips("f-region", "region", REGIONS.map(r => [r, r.replace("Region ", "")]));
+
+  const LRANK = { national: 0, prof: 1, regions: 2, hosp: 3 };
+  const CRANK = { binding: 0, guidance: 1, recommendation: 2, input: 3, stub: 4 };
+  const t = it => it.sort ? Date.parse(it.sort) : null;
+  const byTitle = (a, b) => a.title.localeCompare(b.title, "da");
+  const sorters = {
+    level: (a, b) => LRANK[a.level] - LRANK[b.level] || CRANK[a.cat] - CRANK[b.cat] || (t(b) ?? -Infinity) - (t(a) ?? -Infinity) || byTitle(a, b),
+    newest: (a, b) => (t(b) ?? -Infinity) - (t(a) ?? -Infinity) || byTitle(a, b),
+    oldest: (a, b) => (t(a) ?? Infinity) - (t(b) ?? Infinity) || byTitle(a, b),
+    title: byTitle,
+    issuer: (a, b) => a.issuer.localeCompare(b.issuer, "da") || byTitle(a, b)
+  };
+
+  function card(it) {
+    const L = LEVEL[it.level];
+    const rows = [["Form", it.form], ["Date", it.date], ["Updated", it.updated], ["For", it.audience], ["Specialty", it.specialty], ["Force", it.force], ["Access", it.access]]
+      .filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
+    const prov = it.provisions.length
+      ? `<details><summary>Key provisions (${it.provisions.length})</summary><ul>${it.provisions.map(p => `<li>${esc(p)}</li>`).join("")}</ul></details>` : "";
+    const stub = it.cat === "stub" ? `<p class="stubnote">The document is listed publicly, but its text sits behind a staff login and was not read.</p>` : "";
+    return `<article class="card" style="--c:var(${L.c})">
+      <div class="band"><span class="lv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[it.level]}</svg>${esc(L.label)}${it.region ? " · " + esc(it.region.replace("Region ", "")) : ""}</span><span class="force ${it.cat}">${CAT[it.cat]}</span></div>
+      <div class="body">
+        <h3>${esc(it.title)}</h3>
+        <div class="issuer">${esc(it.issuer)}</div>
+        <p class="desc">${esc(it.desc)}</p>
+        ${stub}
+        <dl>${rows}</dl>
+        ${prov}
+        <div class="foot"><a href="${esc(it.url)}" target="_blank" rel="noopener">Source document</a><a class="path" href="${REPO + it.path}" target="_blank" rel="noopener">${esc(it.path)}</a></div>
+      </div>
+    </article>`;
+  }
+  function matches(it) {
+    const q = state.q.trim().toLowerCase();
+    if (q && ![it.title, it.issuer, it.desc, it.audience, it.specialty, ...it.provisions].join(" ").toLowerCase().includes(q)) return false;
+    for (const k of ["level", "cat", "focus", "region"]) if (state[k].size && !state[k].has(it[k])) return false;
+    return true;
+  }
+  const grid = document.getElementById("grid"), count = document.getElementById("count");
+  function render() {
+    const list = items.filter(matches).sort(sorters[state.sort]);
+    grid.innerHTML = list.length ? list.map(card).join("") : '<div class="empty">No documents match these filters. <button type="button" class="linkbtn" data-reset>Clear filters</button></div>';
+    count.innerHTML = `Showing <b>${list.length}</b> of ${items.length} documents`;
+    const r = grid.querySelector("[data-reset]"); if (r) r.addEventListener("click", reset);
+  }
+  function reset() {
+    state.q = ""; document.getElementById("q").value = "";
+    ["level", "cat", "focus", "region"].forEach(k => state[k].clear());
+    document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", "false"));
+    render();
+  }
+  document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+  document.getElementById("sort").addEventListener("change", e => { state.sort = e.target.value; render(); });
+  document.getElementById("reset").addEventListener("click", reset);
+  render();
+})();
+</script>
