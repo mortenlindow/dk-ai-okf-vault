@@ -3,6 +3,52 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-11-02 (new class — the generative-AI training register, first sweep)
+
+* **Decision**: at the curator's request, a register of **generative-AI training and awareness
+  material for clinicians** from Danish suppliers, public or for-profit. Recorded in `CLAUDE.md`
+  as the *training-register carve-out* (§1), with a new type `Training` (§3, folder `training/`),
+  a filename and template rule (§4), a time convention for course runs and update dates (§5),
+  nine Training-only fact labels (§7), and tags `training`, `course`, `e-learning`, `webinar`,
+  `workshop`, `guide` and `commercial` (§8). The linter knows the type, tags and labels. It is a
+  catalogue on purpose: no Danish registry covers these offerings. For-profit suppliers are named
+  in prose and never given files; Training files do not carry the `health` focus tag, since every
+  entry is health by admission.
+* **Research**: five parallel sweeps — regions and hospitals; professional associations, unions
+  and specialty societies; universities and professionshøjskoler; commercial suppliers; and a
+  specialty-by-specialty search — followed by two gap-filling passes on direct fetches and the
+  built-in browser. Course catalogues and programmes were read as PDFs with `pdftotext -layout`
+  (Lægedage 2025 and 2026, PLO Efteruddannelse 2026, KAP-S, FSUS, Region Midtjylland's
+  leadership catalogue, AUH slides, Pharmakon). Regional records were spot-checked against their
+  pages before writing.
+* **Creation**: 15 `Training` concepts — three Lægedage 2026 courses (general practice), KAP-S's
+  webinar and a DGE discussion sheet (general practice), three Region Syddanmark items, two Region
+  Sjælland items, one Region Midtjylland course, AUH slides for doctors in specialist training,
+  an FSUS conference for clinical nurse educators, a Pharmakon evidence summary (pharmacy) and a
+  Dagens Medicin course (commercial). Views: [the register](views/genai-training/index.md) and the
+  [training index](training/index.md); the health view links the register.
+* **Judgement — audience.** Material a regional employer offers to all its staff, or to its
+  leaders, is admitted, with the audience recorded as stated: clinicians are among those it is for.
+  Material for educators and students on health programmes (UCL Videnportal Sund, GKI-PROF) is
+  listed as *read, not filed*.
+* **Judgement — generative AI named.** PLO Efteruddannelse's three 2026 AI courses for general
+  practice give titles and dates alone, and People's Clinic's guides describe AI note-taking
+  without naming language models; both are *read, not filed* until a page names generative AI.
+* **Not yet recorded**: Region Hovedstaden's pages (bot check, not passed); University of
+  Copenhagen continuing education (unreachable in this pass); a VIA course for nurses and
+  therapists and a Danske Fysioterapeuter webinar (known from search snippets alone); the
+  date of the Dagens Medicin course; the podcast the DGE sheet accompanies; the specialty
+  societies beyond general practice, and the associations for midwives, bioanalysts,
+  radiographers and pharmacy technicians, whose listings did not render.
+* **Leads not yet written**: **TRAIN — TværRegionalt AI-Netværk**, a cross-regional AI network
+  run from Region Midtjylland with dated meetings and a language-model subgroup
+  (`rm.dk/kontakt/digitalisering-og-it/train/`). It is a candidate `Initiative` for the main map,
+  distinct from TRAIN Europe (see [coverage](views/coverage/index.md)).
+* **Open points**: the web-search budget was exhausted by every sweep, so this is a first
+  sweep, not a mapped focus.
+* **Coverage**: 15 offerings admitted and 10 read and not filed, from seven sweeps; the number of
+  pages read was not tallied, so no ratio is claimed.
+
 ## 2026-11-02 (verification pass — the AI-in-health page)
 
 * **Research**: re-read the sources behind every time-sensitive item on the *AI in Danish

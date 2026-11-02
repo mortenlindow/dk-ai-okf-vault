@@ -305,7 +305,7 @@ this table.
   title: <title as the supplier writes it>
   description: <one line: what it is and who it is for — no dates, no prices>
   resource: https://<the offering's own page>
-  tags: [training, health, e-learning, regional]
+  tags: [training, e-learning, regional]
   timestamp: 2026-11-02T00:00:00Z
   ---
 
@@ -460,7 +460,7 @@ kebab, lowercase, no `#`.
 | Slot | Values |
 |---|---|
 | class | `organisation` `initiative` `body` `person` `event` `funding` `policy` `infrastructure` `programme` `training` `reference` `snapshot` |
-| **focus** | `ucph` · `health` — **load-bearing; these drive the two views.** Both may apply; neither is required |
+| **focus** | `ucph` · `health` — **load-bearing; these drive the two views.** Both may apply; neither is required. `Training` files carry neither: every entry is health by admission, so the tag would be noise, and the register has its own view |
 | form/kind | `centre` `network` `consortium` `strategic-initiative` `working-group` `cluster` `steering-committee` `series` `university` `faculty` `department` `hospital` `region` `municipality` `state-agency` `ministry` `foundation` `association` · training: `course` `e-learning` `webinar` `workshop` `guide` |
 | geo/sector | `national` `regional` `municipal` `nordic` `eu` · `au` `aau` `dtu` `itu` `sdu` `ruc` `cbs` · `commercial` (training only: a for-profit supplier) |
 | subject | `governance` `education` `data-infrastructure` `clinical` `nlp` `imaging` `succession` `funding` |

@@ -82,6 +82,10 @@ earliest-dated bodies are hospital-anchored; the university networks are the mos
 * [Martin Bøgsted](../../people/martin-boegsted.md) - head, Centre for AI in Health.
 * [Lasse Riis Østergaard](../../people/lasse-riis-oestergaard.md) - deputy head, Centre for AI in Health.
 
+## Training
+
+* [Generative-AI training for clinicians](../genai-training/index.md) - the register of generative-AI training and awareness material for clinicians, from Danish suppliers of every kind.
+
 ## Possible further evolution
 
 Patterns in the landscape suggest directions it could take:
