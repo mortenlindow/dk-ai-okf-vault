@@ -72,6 +72,14 @@ correction* link that opens the correction form with the entry's title and vault
 A correction is applied like any other change: read the cited source, edit the file, and log it
 in `log.md`.
 
+## Biweekly update
+
+A scheduled Claude run keeps the vault current every two weeks, following
+`bin/biweekly-update.md`. It works through the open correction and addition issues, the items
+`python3 bin/due.py` lists as due (passed event dates, revision dates, old captures), one
+rotating source cluster, and a few leads, then opens **one pull request** for review. Nothing is
+published until the PR is merged; merging closes the issues it resolves.
+
 ## Checking it
 
 ```
