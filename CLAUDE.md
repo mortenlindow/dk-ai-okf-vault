@@ -55,6 +55,34 @@ around a thing, and point at the registry of the things themselves.* Solutions p
 Nordic AI Health Map; network members point at the network's own list; programmes point at
 UddannelsesGuiden.
 
+**The training-register carve-out.** Added 2026-11-02 at the curator's request: a register of
+**generative-AI training and awareness material for clinicians**, held as `Training` concepts
+in `training/` and listed in `/views/genai-training/index.md`. Unlike the education carve-out,
+this one *is* a catalogue, and deliberately so. The reasoning is the same rule run the other
+way: *point at the registry of the things where one exists; build one where none does.* No
+Danish registry covers short courses, e-learning, webinars and guidance on generative AI for
+health professionals, and UddannelsesGuiden does not list them.
+
+It is bounded so it cannot leak into the rest of the vault:
+
+1. **Admission — all three.** (a) A **Danish supplier** — public, non-profit **or
+   for-profit**: this register is the one place the Public/Non-profit Test is relaxed.
+   (b) Aimed at **clinicians or health professionals**, generally or for a named specialty.
+   (c) **Generative AI within the offering's stated scope** — the page names generative AI,
+   language models, ChatGPT, Copilot or the like. An "AI in health" course whose page does not
+   is *adjacent*, listed in the view's coverage notes, and not filed.
+2. **One file per offering, never per supplier.** Supplying training does not earn a supplier
+   a concept. A for-profit supplier is named in the `Offered by` row **as plain text** — the
+   company containment rule still holds. A public or non-profit supplier is linked when it
+   already has a file in this vault; otherwise it is plain text too. No speculative
+   `Organisation` stubs.
+3. **Record the offering, not its content.** Scope in one or two distilled sentences,
+   audience, specialty, level, delivery, time required, the provider's own update date,
+   language, cost, access and status. No syllabi, learning objectives, slide content, trainer
+   names (§6), or quality judgements (Tone).
+4. **Public pages alone.** Material behind a staff login is recorded from its public
+   description, with `Access` set to *staff login*. Nothing is signed into or registered for.
+
 ### Test 2 — the Public/Non-profit Test
 
 **If its purpose is to sell, it is out. If its purpose is to convene, fund, govern,
@@ -203,6 +231,7 @@ to it, or when it holds a fact we need. It stays a small, near-closed set (~40 f
 | `Policy` | `policy/` | A normative instrument: national strategy, statute, rules of procedure. |
 | `Infrastructure` | `infrastructure/` | Shared public/non-profit infrastructure that initiatives organise around. An **anchor, never a product**. |
 | `Programme` | `programmes/` | A named, publicly offered course of study whose subject is AI or its direct application **and which connects two or more concepts** — jointly offered, or run by a mapped initiative. **The one exception to the Structure Test**, and rare by design; see §1. |
+| `Training` | `training/` | A publicly offered piece of **generative-AI training or awareness material for clinicians** from a Danish supplier: a course, e-learning module, webinar, workshop, guide or recorded series. **The training-register carve-out**; see §1. One file per offering. |
 | `Reference` | `references/` | An external dataset or map DK-AI points at rather than replicates. |
 | `Log` | `snapshots/` | A dated snapshot of state with **no single durable subject**. Kept near-empty. |
 

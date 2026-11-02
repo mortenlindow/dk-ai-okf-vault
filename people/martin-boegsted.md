@@ -2,7 +2,7 @@
 type: Person
 title: Martin Bøgsted
 description: Professor at Aalborg University's Department of Clinical Medicine; head of the Centre for AI in Health.
-resource: https://www.klinisk.aau.dk/forskning/forskningscentre-pa-klinisk-institut/centre-for-ai-in-health
+resource: https://www.medicine.aau.dk/research/centre-for-ai-in-health
 tags: [person, health, aau, governance]
 timestamp: 2026-09-21T00:00:00Z
 ---
@@ -24,5 +24,5 @@ timestamp: 2026-09-21T00:00:00Z
 
 # Citations
 
-[1] [Centre for AI in Health — Klinisk Institut, Aalborg Universitet](https://www.klinisk.aau.dk/forskning/forskningscentre-pa-klinisk-institut/centre-for-ai-in-health)
+[1] [Centre for AI in Health — Aalborg University](https://www.medicine.aau.dk/research/centre-for-ai-in-health)
 [2] [AI and Health Data Science — AAU SUND](https://www.sundhedsvidenskab.aau.dk/forskning/forskningsstyrker/ai-and-health-data-science)

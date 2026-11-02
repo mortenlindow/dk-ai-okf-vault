@@ -3,6 +3,34 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-11-02 (verification pass — the AI-in-health page)
+
+* **Research**: re-read the sources behind every time-sensitive item on the *AI in Danish
+  Health* page: `aisundhed.dk` (front page, *Om os*); the Health-AI Network's announcement,
+  standing page, *About*, *Steering committee* and *Past events* pages (`health.au.dk`); the
+  AAU Centre for AI in Health page, now at `medicine.aau.dk` (*Organisation* tab opened);
+  Sundhedsdatastyrelsen's Digital Sundhed Danmark page; RAIN's page. Scoped to the health page:
+  the vault-wide sweep of oldest timestamps is still due.
+* **Creation**: none (verification pass).
+* **Update**: [Health-AI Network inaugural meeting](events/2026-10-27-health-ai-network-inaugural-meeting.md)
+  — `Announced` → `Held`, with an `# Outcome` from the network's *Past events* page.
+  [Health-AI Network](initiatives/health-ai-network-au.md) — `resource:` moved to its new standing
+  page; goal, partners and stated activities added; a steering committee of two chairs, 18
+  members, a faculty representative and a coordinator recorded by count.
+  [Centre for AI in Health](initiatives/centre-for-ai-in-health-aau.md) — `resource:` moved to the
+  new address (also on the two person files); steering committee of six named members; a
+  first portfolio of three signature projects and four capabilities as a `# Structure` table;
+  the workshop's venue. [Netværk for AI i Sundhed](initiatives/netvaerk-for-ai-i-sundhed.md) —
+  368 members; governance wording and the January 2027 event unchanged.
+* **Unchanged**: Digital Sundhed Danmark's page still describes the board as to be appointed
+  in the second half of 2026, with no names; RAIN still states about 500 professionals.
+* **Leads not yet written**: two steering committees now meet the Governance Body gate — the
+  Health-AI Network's (20+ named) and the AAU centre's (six named, signed rules of procedure).
+  Both belong to the next entity pass, which should also read the AAU rules-of-procedure PDF.
+  The Health-AI Network names the Danish Data Science Academy among its national partners;
+  not yet read.
+* **Coverage**: 0 new concepts by design; 5 concepts and 2 person files refreshed.
+
 ## 2026-10-20 (publication — GitHub Pages and the AI-in-health page)
 
 * **Update**: the repository was made public and `site/` is published on GitHub Pages by a

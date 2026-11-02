@@ -4,15 +4,10 @@ title: Health-AI Network — inaugural meeting
 description: Launch meeting of Aarhus University's Health-AI Network at the Aarhus Institute of Advanced Studies.
 resource: https://health.au.dk/en/display/artikel/join-the-inaugural-meeting-of-the-health-ai-network
 tags: [event, health, au]
-timestamp: 2026-09-28T00:00:00Z
+timestamp: 2026-11-02T00:00:00Z
 ---
 
 # Summary
-
-> **Forward-looking — announced, not yet held.** Captured 2026-09-21 from the published
-> programme; date re-confirmed 2026-09-28. After the date: flip `Status` to `Held`, delete this blockquote, add
-> `# Outcome`, bump `timestamp`, and log an `**Update**`. **Do not rename or move this
-> file** — the path is the identity.
 
 The inaugural meeting of the [Health-AI Network](/initiatives/health-ai-network-au.md),
 convening Aarhus University researchers, Aarhus University Hospital and partner
@@ -24,7 +19,7 @@ organisations.
 |---|---|
 | Form | instance |
 | Date | 2026-10-27 |
-| Status | Announced |
+| Status | Held |
 | Venue | AIAS Auditorium (1632-201), Høegh-Guldbergs Gade 6B, 8000 Aarhus C |
 | Convened by | [Health-AI Network (Aarhus University)](/initiatives/health-ai-network-au.md) |
 | Part of series | — first instance; a series concept is created only when a second is confirmed |
@@ -45,6 +40,12 @@ Registration and abstract-submission deadline: 2026-10-13.
 Speakers appear as plain text unless they hold a named role in a mapped body, per the
 Person Test in `CLAUDE.md`.
 
+# Outcome
+
+The network's standing page lists the meeting under *Past events* (*"Tuesday 27 October
+2026, at 15:00"*, 15:00–18:00) and shows no upcoming events, as of 2026-11-02 [3]. A report
+of the meeting is not yet recorded in this vault.
+
 # Notes
 
 **Postponed.** The faculty first announced the launch event for **8 September 2026**
@@ -61,3 +62,4 @@ the network's first year.
 
 [1] [Join the inaugural meeting of the Health-AI Network](https://health.au.dk/en/display/artikel/join-the-inaugural-meeting-of-the-health-ai-network)
 [2] [New network brings together researchers on AI in health](https://health.au.dk/en/display/artikel/new-network-brings-together-researchers-on-ai-in-health)
+[3] [Past events — Health-AI Network](https://health.au.dk/en/research/research-networks/health-ai-network/past-events)

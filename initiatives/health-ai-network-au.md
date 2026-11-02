@@ -2,9 +2,9 @@
 type: Initiative
 title: Health-AI Network (Aarhus University)
 description: Faculty research network bringing together Aarhus University researchers working with AI in health.
-resource: https://health.au.dk/en/display/artikel/new-network-brings-together-researchers-on-ai-in-health
+resource: https://health.au.dk/en/research/research-networks/health-ai-network
 tags: [initiative, health, network, au]
-timestamp: 2026-09-21T00:00:00Z
+timestamp: 2026-11-02T00:00:00Z
 ---
 
 # Summary
@@ -22,6 +22,14 @@ responsibility to carefully test whether and how these technologies can make a m
 difference in healthcare."* Stine Korreman argues the term itself misleads: *"In reality,
 it is advanced statistics powered by computing and data."*
 
+Its standing page states the goal *"to advance rigorous and responsible use of artificial
+intelligence (AI) in the health sciences – and improve health outcomes for patients and
+populations"*, and describes a network of clinical, technical and social-science researchers
+connecting the Faculty of Health Sciences, Aarhus University, Aarhus University Hospital,
+Central Denmark Region and external partners [4][5]. It names the Danish Data Science Academy
+and the [Pioneer Centre for AI](/initiatives/pioneer-centre-for-ai.md) among the national
+initiatives it works with [5].
+
 It is one of **three** interdisciplinary research networks the faculty established in the
 same round, alongside a HealthTech Network and a Women's Health Network.
 
@@ -35,7 +43,7 @@ same round, alongside a HealthTech Network and a Women's Health Network.
 | Hosted by | [Faculty of Health, Aarhus University](/organisations/academic/health-au.md) |
 | Partners | [Aarhus University Hospital](/organisations/health/auh.md) |
 | Also known as | HealthAI Network |
-| Web | https://health.au.dk |
+| Web | https://health.au.dk/en/research/research-networks/health-ai-network |
 
 # Governance
 
@@ -46,9 +54,11 @@ same round, alongside a HealthTech Network and a Women's Health Network.
 
 The two chairs are described throughout as **co-chairs**, with no seniority between them.
 
-A **steering group** stands behind the network, as the faculty's announcement describes;
-its membership is not yet recorded in this vault. Faculty-level sponsorship sits with
-Vice-Dean Lise Wogensen Bach, who opens the inaugural meeting.
+A **steering committee** is published on the network's own page [6]: the two chairs, 18
+members from departments across the faculty, a faculty representative (Vice-Dean Lise
+Wogensen Bach) and a network coordinator *(as of 2026-11-02)*. With more than five named
+members it meets the Governance Body gate in `CLAUDE.md` §4; the roster is not copied here,
+and the committee is a candidate for its own concept in the next entity pass.
 
 # Membership
 
@@ -56,17 +66,18 @@ Open to *"everyone, including researchers and healthcare professionals across Aa
 University and Aarhus University Hospital, as well as representatives from industry."*
 
 Industry participation does not affect scope: the network is a faculty body, and its
-commercial participants are not given concepts. *No member count is published.*
+commercial participants are not given concepts. Members may form focus and interest groups around themes [5]. *A member count is not yet
+recorded in this vault.*
 
 # Activities
 
-- [Inaugural meeting, 27 October 2026](/events/2026-10-27-health-ai-network-inaugural-meeting.md)
+- [Inaugural meeting, 27 October 2026](/events/2026-10-27-health-ai-network-inaugural-meeting.md) — held.
+- Stated activity forms: symposia, workshops, PhD courses and seminars [5].
 
 # Notes
 
-`resource:` points at the faculty's announcement of the network, which describes it in full.
-The faculty's article links to a registration page for the network. Possible further
-evolution: a standing network page, which would become this entry's resource.
+`resource:` moved on 2026-11-02 from the faculty's announcement to the network's standing
+page, which the announcement now links to.
 
 # Links
 
@@ -77,3 +88,6 @@ evolution: a standing network page, which would become this entry's resource.
 [1] [New network brings together researchers on AI in health — Health, Aarhus University](https://health.au.dk/en/display/artikel/new-network-brings-together-researchers-on-ai-in-health)
 [2] [Join the inaugural meeting of the Health-AI Network](https://health.au.dk/en/display/artikel/join-the-inaugural-meeting-of-the-health-ai-network)
 [3] [Health establishes three new interdisciplinary research networks](https://health.au.dk/en/display/artikel/health-establishes-three-new-interdisciplinary-research-networks)
+[4] [Health-AI Network — Faculty of Health Sciences, Aarhus University](https://health.au.dk/en/research/research-networks/health-ai-network)
+[5] [About the Health-AI Network](https://health.au.dk/en/research/research-networks/health-ai-network/about-the-network)
+[6] [Steering committee for the Health-AI Network](https://health.au.dk/en/research/research-networks/health-ai-network/steering-group-for-health-ai-network)

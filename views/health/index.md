@@ -16,15 +16,15 @@ Danish public AI-in-health activity is organised at three levels, each with its 
   hospitals, universities, companies and authorities. Its five working groups span needs
   assessment, cross-disciplinary learning, a think tank, implementation and the network's
   own operations. Membership grew from 173 to 270 in the week of its first general
-  assembly in September 2026, and stood at 335 on 20 October. [RAIN](../../initiatives/rain-network-ai-healthcare.md), an
+  assembly in September 2026, and stood at 368 on 2 November. [RAIN](../../initiatives/rain-network-ai-healthcare.md), an
   open network of about 500 professionals anchored in the Region of Southern Denmark, also
   draws members from across the country.
 - **University faculties.** The
   [Centre for AI in Health](../../initiatives/centre-for-ai-in-health-aau.md) at Aalborg has a
   head, a deputy, a steering committee and rules of procedure, with Region Nordjylland as
   partner. The [Health-AI Network](../../initiatives/health-ai-network-au.md) at Aarhus is a
-  co-chaired faculty network with open membership, holding its inaugural meeting in October
-  2026. At UCPH, [CORS²](../../initiatives/cors.md) brings AI into drug-safety research.
+  co-chaired faculty network with open membership and a named steering committee; it held its
+  inaugural meeting on 27 October 2026. At UCPH, [CORS²](../../initiatives/cors.md) brings AI into drug-safety research.
 - **Hospitals.** [CAI-X](../../initiatives/cai-x.md) joins Odense University Hospital with
   two SDU faculties. In the Capital Region, the
   [AI-Innovationsnetværket](../../initiatives/ai-innovationsnetvaerket-region-hovedstaden.md)
@@ -73,7 +73,7 @@ earliest-dated bodies are hospital-anchored; the university networks are the mos
 ## Events
 
 * [2026-09-23 — Generalforsamling og netværksmøde for AI i Sundhed](../../events/2026-09-23-generalforsamling-og-netvaerksmoede.md) - held.
-* [2026-10-27 — Health-AI Network inaugural meeting](../../events/2026-10-27-health-ai-network-inaugural-meeting.md) - announced.
+* [2026-10-27 — Health-AI Network inaugural meeting](../../events/2026-10-27-health-ai-network-inaugural-meeting.md) - held.
 
 ## People
 

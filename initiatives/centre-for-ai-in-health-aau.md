@@ -2,9 +2,9 @@
 type: Initiative
 title: Centre for AI in Health (Aalborg University)
 description: Interdisciplinary research centre at AAU SUND applying AI in healthcare, from research to clinical practice.
-resource: https://www.klinisk.aau.dk/forskning/forskningscentre-pa-klinisk-institut/centre-for-ai-in-health
+resource: https://www.medicine.aau.dk/research/centre-for-ai-in-health
 tags: [initiative, health, centre, aau]
-timestamp: 2026-10-20T00:00:00Z
+timestamp: 2026-11-02T00:00:00Z
 ---
 
 # Summary
@@ -19,7 +19,10 @@ and transparency.
 
 Aalborg University announced the centre as new on 25 September 2026, describing it as
 gathering competences across the Faculty of Medicine (AAU SUND) so that AI creates concrete
-value in the health service [3].
+value in the health service [3]. Its page, re-read on 2026-11-02 at a new address, describes
+it as bringing together researchers, clinicians and healthcare stakeholders from Aalborg
+University and Aalborg University Hospital, and names *"the healthcare sector of the North
+Denmark Region"* and AAU SUND as its collaborators [1].
 
 It has a named head, a deputy, an administrator, a steering committee and published rules
 of procedure. The AI-in-health bodies in this vault take a range of organisational forms,
@@ -35,29 +38,51 @@ nationally.
 | Hosted by | [Department of Clinical Medicine, Aalborg University](/organisations/academic/klinisk-aau.md) |
 | Part of | [Faculty of Medicine, Aalborg University (AAU SUND)](/organisations/academic/sund-aau.md) |
 | Partners | [Region Nordjylland](/organisations/health/region-nordjylland.md) — the North Denmark Region healthcare sector |
-| Web | https://www.klinisk.aau.dk |
+| Web | https://www.medicine.aau.dk/research/centre-for-ai-in-health |
 
 # Governance
 
 | | |
 |---|---|
-| Head | [Martin Bøgsted](/people/martin-boegsted.md), Professor |
-| Deputy head | [Lasse Riis Oestergaard](/people/lasse-riis-oestergaard.md), Professor, Institut for Medicin og Sundhedsteknologi [3] |
+| Head | [Martin Bøgsted](/people/martin-boegsted.md), Professor, Department of Clinical Medicine, Aalborg University and Aalborg University Hospital |
+| Deputy head | [Lasse Riis Oestergaard](/people/lasse-riis-oestergaard.md), Professor, Department of Health Science and Technology, Aalborg University |
 | Secretariat | Camilla Høyer, Centre Administrator |
 
 A **Steering Committee** governs the centre, guided by published **Rules of Procedure**:
 *"The Rules of Procedure outline the key principles that guide the work of the Steering
 Committee."*
 
-*The committee's membership and the text of its Rules of Procedure are not yet recorded in
-this vault.* With published rules of procedure, the committee meets the Governance Body gate
-in `CLAUDE.md` §4, so it is a natural candidate for its own concept in a later pass.
+The page names the committee: the head, the deputy head and four members from the
+Department of Health Science and Technology and the Department of Clinical Medicine — six in
+all *(as of 2026-11-02)* [1]. The signed Rules of Procedure are published as a PDF [4]; their
+text is not yet recorded in this vault. With named members and rules of procedure, the
+committee meets the Governance Body gate in `CLAUDE.md` §4 and is a candidate for its own
+concept in the next entity pass, where the roster will be recorded.
+
+# Structure — first portfolio
+
+The centre has defined a first portfolio of **three signature projects**, described as its
+first clinical demonstration areas, supported by **four cross-cutting capabilities** [1].
+Held as a table under the sub-unit rule in `CLAUDE.md` §4: none has a published lead yet.
+
+| Signature project | Cross-cutting capability |
+|---|---|
+| AI for Cardiovascular and Stroke Care | Data and Infrastructure |
+| AI for Precision Cancer Care | Patient and Citizen Involvement |
+| AI for Chronic Disease and Cross-Sector Care | Implementation and Evaluation |
+| | Governance, Research Support and Collaboration |
+
+The portfolio builds on use cases contributed across the faculty and developed through the
+centre's workshop activities; the page describes the three projects as *"starting points
+rather than the limits"* of its activities.
 
 # Activities
 
 Interdisciplinary workshops, co-creation of research projects, hackathons and
-knowledge-sharing activities. A two-day strategic workshop was held on 29–30 September to
-align participants on shared priorities and research directions.
+knowledge-sharing activities. A two-day workshop was held on 29–30 September at Comwell
+Rebild Bakker, bringing together participants from research, clinical practice and
+administration; the page reports that the Steering Group is taking forward the priorities
+identified there [1].
 
 AAU's launch news of 25 September 2026 describes an upcoming workshop at which researchers
 and clinicians will discuss the centre's build-up, activities and long-term development [3].
@@ -83,6 +108,7 @@ than given a concept of its own.
 
 # Citations
 
-[1] [Centre for AI in Health — Klinisk Institut, Aalborg Universitet](https://www.klinisk.aau.dk/forskning/forskningscentre-pa-klinisk-institut/centre-for-ai-in-health)
+[1] [Centre for AI in Health — Aalborg University](https://www.medicine.aau.dk/research/centre-for-ai-in-health)
 [2] [AI and Health Data Science — AAU SUND](https://www.sundhedsvidenskab.aau.dk/forskning/forskningsstyrker/ai-and-health-data-science)
 [3] [Nyt AI-center skal hjælpe patienter og sundhedsprofessionelle — AAU news, 25 September 2026](https://www.aau.dk/nyt-ai-center-skal-hjaelpe-patienter-og-sundhedsprofessionelle-n177709)
+[4] [Rules of Procedure for the Steering Committee of the Centre for AI in Health (signed, PDF)](https://www.aaudxp-cms.aau.dk/media/z1els3wq/rules-of-procedure-for-the-steering-committee-of-the-centre-for-ai-in-health-signed.pdf)
