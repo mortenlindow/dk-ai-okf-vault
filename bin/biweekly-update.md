@@ -7,7 +7,7 @@ citation rules, the 15-concept cap and the `log.md` entry shape. Read it first.
 
 ## 0. Set up
 
-- Work on a new branch `update/<YYYY-MM-DD>` from `main`. Never push to `main`.
+- Work on a new branch `claude/update-<YYYY-MM-DD>` from `main` (cloud runs may only push `claude/` branches). Never push to `main`.
 - Run `python3 bin/due.py` and keep its output: it is this run's work list.
 - Fetch the open issues:
   `curl -s "https://api.github.com/repos/mortenlindow/dk-ai-okf-vault/issues?state=open&per_page=50"`
