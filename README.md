@@ -46,7 +46,7 @@ that is an HTML fragment, so the sources can also be published as Claude artifac
   https://mortenlindow.github.io/dk-ai-okf-vault/ai-at-ucph.html and as a private artifact at
   https://claude.ai/artifact/1DDCVrmJZ72ZoNYaMJdUG5. To update the artifact, republish this
   file to that URL, so the link stays the same.
-- `site/ai-in-danish-health.html` — **AI in Danish Health**, a visual summary of the health view,
+- `site/ai-in-danish-health.html` — **Networks about AI in Danish Health**, a visual summary of the health view,
   at https://mortenlindow.github.io/dk-ai-okf-vault/ai-in-danish-health.html.
 - `site/genai-training.html` — **Generative AI training for clinicians**, a searchable card
   register of the `training/` concepts, at
