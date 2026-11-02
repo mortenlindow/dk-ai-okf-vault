@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build site/clinical-ai-rules.html from the policy/ concepts of the clinical-AI rules register.
+"""Build site/ai-rules.html from the policy/ concepts of the rules register.
 
 Usage: python3 bin/build_rules_page.py   (run from the repo root after changing policy/)
 Levels come from the section headings of policy/index.md; everything else from each file.
@@ -63,7 +63,7 @@ for slug, lvl in LEVEL.items():
         audience=plain(facts.get("Audience","")), specialty=plain(facts.get("Specialty","")), access=plain(facts.get("Access","")),
         status=facts.get("Status",""), region=region, edu=edu_levels(facts), eduText=plain(facts.get("Level","")) if "education" in facts.get("Domain","") else "", domains=[d.strip() for d in re.split(r",| and ", plain(facts.get("Domain","clinical"))) if d.strip()], focus=focus, provisions=[plain(p) for p in prov]))
 data = json.dumps(out, ensure_ascii=False).replace("</", "<\\/")
-tpl = open(f"{root}/bin/templates/clinical-ai-rules.html").read()
+tpl = open(f"{root}/bin/templates/ai-rules.html").read()
 assert tpl.count("__DATA__") == 1
-open(f"{root}/site/clinical-ai-rules.html", "w").write(tpl.replace("__DATA__", data))
-print(f"site/clinical-ai-rules.html: {len(out)} documents")
+open(f"{root}/site/ai-rules.html", "w").write(tpl.replace("__DATA__", data))
+print(f"site/ai-rules.html: {len(out)} documents")
