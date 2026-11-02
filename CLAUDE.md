@@ -228,7 +228,7 @@ to it, or when it holds a fact we need. It stays a small, near-closed set (~40 f
 | `Person` | `people/` | A natural person in a named, publicly published role in an in-scope body. |
 | `Event` | `events/` | A dated convening, or a recurring series of them (`\| Form \| series` vs `instance`). |
 | `Funding Programme` | `funding/` | A named pot of money with rules, a call, or an allocation decision. |
-| `Policy` | `policy/` | A normative instrument: national strategy, statute, rules of procedure. |
+| `Policy` | `policy/` | A normative instrument: national strategy, statute, executive order, guidance, local clinical instruction, rules of procedure. Holds **the clinical-AI rules register**; see §4. One file per document. |
 | `Infrastructure` | `infrastructure/` | Shared public/non-profit infrastructure that initiatives organise around. An **anchor, never a product**. |
 | `Programme` | `programmes/` | A named, publicly offered course of study whose subject is AI or its direct application **and which connects two or more concepts** — jointly offered, or run by a mapped initiative. **An exception to the Structure Test**, alongside `Training`, and rare by design; see §1. |
 | `Training` | `training/` | A publicly offered piece of **generative-AI training or awareness material for clinicians** from a Danish supplier: a course, e-learning module, webinar, workshop, guide or recorded series. **The training-register carve-out**; see §1. One file per offering. |
@@ -331,6 +331,39 @@ this table.
 
   # Citations
   ```
+- **The clinical-AI rules register is `Policy`, one file per document.** Added 2026-11-02 at the
+  curator's request: rules and guidance on the **clinical use of AI** in Denmark, from central
+  authorities down to single hospital departments, listed in `/views/clinical-ai-rules/index.md`.
+  It needs no carve-out: a normative instrument from an in-scope body is already `Policy`.
+  - **Admission — all three.** (a) **Normative**: it tells health organisations or staff what
+    they must, should or may do, or sets an approval procedure — statute, executive order,
+    guidance, guideline, local instruction, rules of use, ethical rules, or a statement *with*
+    recommendations. **Institutional input counts too** (curator's decision, 2026-11-02): a
+    consultation response, policy proposal, position paper or suggestion from an in-scope body,
+    even when it binds no one — recorded as what it is in `Force`. A news item, an individual's
+    opinion piece, or a strategy that proposes nothing about AI use is not admitted.
+    (b) **Issued by a Danish public or non-profit body**: an authority, region, hospital,
+    department, professional association, scientific society or patient organisation. A
+    vendor's terms of use are out. (c) **AI named** as the subject or a distinct section,
+    applied to health care or health staff. Cross-sector guidance for all public bodies counts
+    when the health service is among its addressees.
+  - **One document, one home.** A staff guide already filed in `training/` stays there and is
+    listed in the register view by link; it is not filed twice.
+  - **Filename `<issuer>-<short-title>`**, as for training: `policy/sundhedsstyrelsen-…md`.
+  - **Record the instrument, distil the rules.** `# Facts`, then up to five `# Key provisions`
+    bullets in the vault's own words, and no more. Never copy the document; quotes stay short.
+    Issuing units, never individual authors (§6).
+  - **The issuer** is linked in `Issued by` when it already has a file; otherwise plain text.
+    No speculative `Organisation` stubs.
+  - **Behind a login, still recorded — as a stub.** When a document's existence is public (a
+    title in a database listing, a link or reference on a public page) but the document sits
+    behind a staff or members' login, it gets a `Policy` file anyway: title as shown, issuer,
+    the public page where it is listed (as `resource:`), any date or description visible
+    without logging in, `| Access | staff login |` or `members only`, and a
+    `> **Login-walled stub.**` note saying the text was not read. No `# Key provisions`. Never
+    sign in, register or bypass a wall to read it.
+  - **EU law** (the AI Act, the MDR) gets a thin `Policy` file with a `> **Foreign-instrument
+    stub.**` note only when a Danish instrument in the register applies or explains it.
 - **Companies are never concepts** — including as suppliers in the training register.
 - **A re-classification is never a reason to move a file.** Path is identity.
 
@@ -360,6 +393,7 @@ is also permanent identity.
 | **Term-limited appointment** | 3-col `\| Seat \| Holder \| Term \|` table on the **appointing body only**. Where terms exist but dates are not published: `2-year term, start not published` — **never guess**. On turnover the outgoing holder moves to `# Notes`, never deleted: the roster is the historical record. |
 | **Dissolution + succession** | Predecessor: `\| Status \| Dissolving 2026-12-31 \|` + `\| Succeeded by \| [link] \|`. Successor: `\| Succeeds \| [links] \|`. The **succession narrative has exactly one home — the successor's `# Succession` section**; three predecessors × one story would be three drifting copies. If the successor's name is not yet published, use a descriptive slug and say so; the eventual rename is a genuine identity change, logged as `**Rename**` with the old path kept in `\| Also known as \|`. |
 | **Training offering** | `Updated` is the **provider's** date, quoted with what it is (*last updated 2026-05-12*, *published 2025-09*, *next runs 2026-11-20 and 2027-02-05*) — never inferred; where none is shown, *not stated on the page (checked <date>)*. `Status`: `Active` (available now), `Announced` (future runs alone), `Held` (past runs alone, kept as the record), `Unknown`. A new run of a known course updates the same file. |
+| **Policy document** | `Date` is the issue or adoption date **as the document states it**; `Updated` carries a version or revision date (*version 2, 2026-03-01*; *next revision 2027-06*). `Status`: `Active` (in force or current), `Planned` (draft or out for consultation), `Announced` (adopted, not yet in force), `Superseded <date>` (with `Succeeded by`), `Unknown`. A revised version updates the same file; a document re-issued under a new title is a new file with `Succeeds`. |
 | **Volatile counts** | `\| Members \| 173 *(as of 2026-09-21)* \|`. **Never in `description:`** — descriptions get cached into `index.md` entries and go stale invisibly. Whole-concept volatility gets a `> **Dated snapshot — volatile.**` blockquote. |
 
 `type: Log` is reserved for genuinely **subjectless** landscape snapshots. Entities are
@@ -445,9 +479,10 @@ same disease as type proliferation.
 | `Succeeds` · `Succeeded by` | organisational succession |
 | `Convened by` · `Part of series` · `Venue` | Event |
 | `Level` · `Offered by` | Programme: bachelor / master / continuing education, and the body that runs it. Training: introductory / intermediate / advanced, and the supplier (plain text for a company) |
-| `Scope` · `Audience` · `Specialty` | Training only: one-line scope; who it is for, as stated; `general` or the named clinical specialty or profession |
+| `Scope` · `Audience` · `Specialty` | Training and Policy: one-line scope; who it is for, as stated; `general` or the named clinical specialty or profession |
 | `Delivery` · `Time required` | Training only: self-paced online / live online / in person (+ place) / blended / document; the time asked of attendees, as published |
-| `Updated` · `Language` · `Cost` · `Access` | Training only: the provider's own date and what it is (*last updated*, *published*, *next runs*); Danish / English; as stated; open / members / registration / staff login |
+| `Updated` · `Language` · `Cost` · `Access` | Training: the provider's own date and what it is (*last updated*, *published*, *next runs*); Danish / English; as stated; open / members / registration / staff login. Policy may use `Updated` and `Access` |
+| `Issued by` · `Force` | Policy: the issuing body (linked when it has a file, else plain text); one of *binding*, *guidance*, *recommendation* or *input — not authoritative* (consultation responses, proposals, suggestions), as the document presents itself |
 | `Also known as` · `Web` | aliases, canonical site |
 
 ---
@@ -461,9 +496,9 @@ kebab, lowercase, no `#`.
 |---|---|
 | class | `organisation` `initiative` `body` `person` `event` `funding` `policy` `infrastructure` `programme` `training` `reference` `snapshot` |
 | **focus** | `ucph` · `health` — **load-bearing; these drive the two views.** Both may apply; neither is required. `Training` files carry neither: every entry is health by admission, so the tag would be noise, and the register has its own view |
-| form/kind | `centre` `network` `consortium` `strategic-initiative` `working-group` `cluster` `steering-committee` `series` `university` `faculty` `department` `hospital` `region` `municipality` `state-agency` `ministry` `foundation` `association` · training: `course` `e-learning` `webinar` `workshop` `guide` |
+| form/kind | `centre` `network` `consortium` `strategic-initiative` `working-group` `cluster` `steering-committee` `series` `university` `faculty` `department` `hospital` `region` `municipality` `state-agency` `ministry` `foundation` `association` · training: `course` `e-learning` `webinar` `workshop` `guide` · policy: `statute` `guidance` `guideline` `instruction` `statement` |
 | geo/sector | `national` `regional` `municipal` `nordic` `eu` · `au` `aau` `dtu` `itu` `sdu` `ruc` `cbs` · `commercial` (training only: a for-profit supplier) |
-| subject | `governance` `education` `data-infrastructure` `clinical` `nlp` `imaging` `succession` `funding` |
+| subject | `governance` `education` `data-infrastructure` `clinical` `nlp` `imaging` `succession` `funding` `generative-ai` |
 
 - **No status tags** (`active`, `dissolved`). A tag cannot carry an as-of date, so a
   stale status tag is a lie. Status is a `# Facts` row.

@@ -18,6 +18,9 @@ One register sits alongside the map: **generative-AI training and awareness mate
 clinicians**, from Danish suppliers of every kind, including companies. It is a deliberate,
 bounded catalogue — see the training-register carve-out in `CLAUDE.md` §1.
 
+A second register holds **rules, guidance and institutional input on the clinical use of AI**,
+from statute down to single hospital departments — filed as `Policy`, see `CLAUDE.md` §4.
+
 ## Classes
 
 * [Organisations](organisations/index.md) - host bodies: universities, hospitals, regions, authorities, funders.
@@ -26,7 +29,7 @@ bounded catalogue — see the training-register carve-out in `CLAUDE.md` §1.
 * [People](people/index.md) - named role-holders only.
 * [Events](events/index.md) - convenings and series.
 * [Funding](funding/index.md) - funding programmes and their awards.
-* [Policy](policy/index.md) - strategies, agreements, rules of procedure.
+* [Policy](policy/index.md) - statutes, guidance, local instructions and institutional input; the clinical-AI rules register.
 * [Infrastructure](infrastructure/index.md) - shared public infrastructure initiatives organise around.
 * [Programmes](programmes/index.md) - AI degrees and continuing education that connect two or more concepts; an exception to the Structure Test.
 * [Training](training/index.md) - generative-AI training and awareness material for clinicians; the training register.
@@ -40,6 +43,7 @@ bounded catalogue — see the training-register carve-out in `CLAUDE.md` §1.
 * [National map](views/national-map/index.md) - by sector and by funder.
 * [Coverage](views/coverage/index.md) - how far the map reaches, and how each part was read.
 * [Generative-AI training for clinicians](views/genai-training/index.md) - the training register: general and by specialty, with delivery, time required and update date.
+* [Rules and guidance on clinical AI](views/clinical-ai-rules/index.md) - the rules register: national, professional, regional, and hospital and department level.
 
 ## Working here
 

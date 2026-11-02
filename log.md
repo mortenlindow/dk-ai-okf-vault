@@ -3,6 +3,57 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-11-02 (sweep pass — clinical-AI rules register, hospitals and departments)
+
+* **Research**: Region Nordjylland's PRI, Region Midtjylland's e-Dok, Region Hovedstaden's VIP
+  and Region Sjælland's document system, searched through their public interfaces for AI terms
+  and product names; read by a research agent, the HE Midt guideline re-checked in the browser.
+* **Creation**: 14 `Policy` — seven radiology AI instructions at Aalborg University Hospital and
+  Regionshospital Nordjylland; generative-AI rules at Hospitalsenhed Midt, AUH Patologi and AUH
+  Fysio- og Ergoterapi; AI in clinical decision support at Regionshospitalet Horsens and in
+  regional adult psychiatry; an imaging-AI quality project at AUH; an AI interpreter-app
+  guideline at Nordsjællands Hospital.
+* **Judgement — passages listed, not filed.** Ten documents where AI is a short passage of a
+  wider instruction are listed in the register view rather than given files.
+* **Not yet recorded**: Region Syddanmark's local instructions (its database did not respond).
+* **Coverage**: four of five regional databases searched; 14 filed, 10 listed.
+
+## 2026-11-02 (sweep pass — clinical-AI rules register, regions)
+
+* **Research**: the five regions and Danske Regioner — e-Dok, PRI, VIP, committee papers, CAI-X's
+  pages for Odense University Hospital, Danske Regioner's 2024 proposal.
+* **Creation**: 9 `Policy` — three Region Midtjylland guidelines in force and its RMchat instruction
+  (login-walled stub); CAI-X's *AI på OUH* rules and project guide; Region Syddanmark's named
+  guidelines on generative AI (login-walled stub); Danske Regioner's 2024 principles; Region
+  Sjælland's interpreter-app section.
+* **Not yet recorded**: a region-wide public guideline in Region Hovedstaden or Region Sjælland on
+  generative AI; Region Østdanmark has not yet published one.
+* **Coverage**: 7 bodies, 9 filed.
+
+## 2026-11-02 (sweep pass — clinical-AI rules register, national and professional)
+
+* **Research**: national authorities and advisory bodies (Styrelsen for Patientsikkerhed,
+  Lægemiddelstyrelsen, Datatilsynet, Digitaliseringsstyrelsen, Dataetisk Råd, Retsinformation),
+  and some 30 professional associations, scientific societies and patient organisations, by
+  research agents; Sundhedsstyrelsen, Dataetisk Råd, Danske Patienter and Danske Fysioterapeuter
+  re-tried in the browser after refusing automated reading; the STPS section re-checked.
+* **Creation**: 16 `Policy` — 7 national (statute, guidance, a sandbox report, recommendations), 9
+  from professional and patient bodies (position papers, guidance, a professional standard, a
+  Nordic statement, four consultation responses and a policy paper).
+* **Decision — the register.** `Policy` holds the clinical-AI rules register, one file per document
+  (`CLAUDE.md` §4); new relation labels `Issued by` and `Force`; new tags `statute`, `guidance`,
+  `guideline`, `instruction`, `statement` and the subject tag `generative-ai`.
+* **Decision — login walls.** A document whose existence is public but whose text is behind a
+  login gets a stub, marked as such (curator's instruction).
+* **Decision — institutional input.** Consultation responses, policy proposals and suggestions are
+  admitted even when they bind no one, with `Force` recording them as *input — not
+  authoritative* (curator's instruction).
+* **Not yet recorded**: Sundhedsstyrelsen guidance on AI (none found by its own search); Det Etiske
+  Råd (site refused automated reading).
+* **Leads not yet written**: the draft executive order on decision support in patient treatment
+  (consultation December 2025, not yet issued); see the register view for the rest.
+* **Coverage**: about 46 bodies checked, 16 filed.
+
 ## 2026-11-02 (training register — browser follow-up)
 
 * **Research**: the pages earlier sweeps could not open, read in the built-in browser: Region

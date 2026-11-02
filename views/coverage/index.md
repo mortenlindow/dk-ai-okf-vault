@@ -114,6 +114,9 @@ and [RAIT](../../initiatives/rait.md). **Leads** to follow: CSTAR at Rigshospita
 (Technical University Hospital of Greater Copenhagen); Steno Diabetes Center Copenhagen;
 Hvidovre, Amager, Nordsjælland and Bornholm hospitals.
 
+For the rules register's own searches, leads and documents read but not filed, see
+[Rules and guidance on clinical AI](../clinical-ai-rules/index.md).
+
 # Notes on sources
 
 Practical observations from reading the landscape, for the next pass:
@@ -184,3 +187,7 @@ A focus counts as **mapped** when a sweep yields fewer than 1 new entity per 10 
 | State, municipal, regional, cluster, hospital | 2026-09-21 | ~12 | 6 | still growing |
 | UCPH research centres | 2026-09-22 | 125 | 7 | **mapped** |
 | UCPH education | 2026-09-26 | 7 | 1 programme, 3 rows | mapped under the programme rule |
+| Rules register — national authorities and advisory bodies | 2026-11-02 | ~16 bodies | 7 | still growing; Sundhedsstyrelsen searched, Det Etiske Råd not yet read |
+| Rules register — professional and patient bodies | 2026-11-02 | ~30 bodies | 9 | still growing |
+| Rules register — regions and Danske Regioner | 2026-11-02 | 7 | 9 (2 login-walled stubs) | still growing |
+| Rules register — hospital and department instruction databases | 2026-11-02 | 4 of 5 regional databases | 14 filed, 10 listed as passages | Region Syddanmark's database not reachable |

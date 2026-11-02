@@ -96,6 +96,10 @@ earliest-dated bodies are hospital-anchored; the university networks are the mos
 * [Martin Bøgsted](../../people/martin-boegsted.md) - head, Centre for AI in Health.
 * [Lasse Riis Østergaard](../../people/lasse-riis-oestergaard.md) - deputy head, Centre for AI in Health.
 
+## Rules and guidance
+
+* [Rules and guidance on clinical AI](../clinical-ai-rules/index.md) - the register of rules, guidance and institutional input on the clinical use of AI, from statute to single hospital departments.
+
 ## Training
 
 * [Generative-AI training for clinicians](../genai-training/index.md) - the register of generative-AI training and awareness material for clinicians, from Danish suppliers of every kind.

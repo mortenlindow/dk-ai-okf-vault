@@ -9,3 +9,5 @@ concept has exactly one home in its class folder and appears in as many views as
 * [AI in health](health/index.md) - everything health.
 * [National map](national-map/index.md) - by sector and by funder.
 * [Coverage](coverage/index.md) - how far the map reaches, and how each part was read.
+* [Generative-AI training for clinicians](genai-training/index.md) - the training register.
+* [Rules and guidance on clinical AI](clinical-ai-rules/index.md) - the rules register.

@@ -50,8 +50,9 @@ TAGS = Set.new(%w[
   centre network consortium strategic-initiative working-group cluster steering-committee
   series university faculty department hospital region municipality state-agency ministry
   foundation association course e-learning webinar workshop guide
+  statute guidance guideline instruction statement
   national regional municipal nordic eu au aau dtu itu sdu ruc cbs commercial
-  governance education data-infrastructure clinical nlp imaging succession
+  governance education data-infrastructure clinical nlp imaging succession generative-ai
 ]).freeze
 
 RELATIONS = Set.new([
@@ -63,7 +64,8 @@ RELATIONS = Set.new([
   'Succeeds', 'Succeeded by',
   'Convened by', 'Part of series', 'Venue',
   'Also known as', 'Web', 'Term length', 'Initiatives', 'Phases', 'Level', 'Offered by',
-  'Scope', 'Audience', 'Specialty', 'Delivery', 'Time required', 'Updated', 'Language', 'Cost', 'Access'
+  'Scope', 'Audience', 'Specialty', 'Delivery', 'Time required', 'Updated', 'Language', 'Cost', 'Access',
+  'Issued by', 'Force'
 ]).freeze
 
 FOCUS_VIEWS = { 'ucph' => 'views/ucph/index.md', 'health' => 'views/health/index.md' }.freeze
