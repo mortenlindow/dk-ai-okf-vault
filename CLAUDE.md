@@ -634,7 +634,8 @@ the whole answer to that focus. Nothing else would catch it: the concept still l
 class folder and is still listed there.
 
 `CLAUDE.md` and `README.md` are repo prose, not bundle concepts, and are excluded: their
-fenced examples contain illustrative links that must not be resolved.
+fenced examples contain illustrative links that must not be resolved. So is
+`CLAUDE.local.md`, a curator's local, uncommitted session file.
 
 ## 11. Divergences from cpdse-okf-vault
 
