@@ -26,7 +26,7 @@ ALLOWED_KEYS   = %w[type title description resource tags timestamp].freeze
 RESERVED       = %w[index.md log.md].freeze
 # Repo-level prose, not part of the bundle graph. Their fenced examples contain
 # illustrative links that must not be resolved.
-DOC_FILES      = %w[CLAUDE.md README.md].freeze
+DOC_FILES      = %w[CLAUDE.md CLAUDE.local.md README.md].freeze
 SKIP_DIRS      = %w[_okf bin .git].freeze
 
 FOLDER_TYPES = {
