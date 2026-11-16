@@ -99,6 +99,7 @@ They are listed here rather than given files (read 2026-11-02):
 * **Dansk Sygeplejeråd, *Teknologi – en del af fremtidens sygepleje*** — technology in general, with AI as an example; ***Teknologi og sygepleje*** in its members' knowledge bank is members-only and not titled as AI.
 * Regional strategies, action plans and committee briefings that describe AI work without proposing rules or input on its use (Region Syddanmark, Region Midtjylland, Region Nordjylland, Region Hovedstaden, Region Sjælland).
 * Articles in professional magazines (*Fysioterapeuten*, *Ergoterapeuten*), opinion pieces and newsletters.
+* **FUTURE-AI: international consensus guideline for trustworthy and deployable artificial intelligence in healthcare** (FUTURE-AI Consortium, *BMJ* 2025;388:e081554, [doi:10.1136/bmj-2024-081554](https://doi.org/10.1136/bmj-2024-081554); [future-ai.eu](https://future-ai.eu/)) — an international consensus guideline from 117 experts in 50 countries, funded under EU Horizon 2020 and built on six principles: fairness, universality, traceability, usability, robustness and explainability. Its issuer is not a Danish body, so it is not filed under the current admission rule; it would get a thin foreign-instrument stub once a Danish document in this register refers to it. No such reference is yet recorded in this vault (public pages searched 2026-11-13).
 
 ## Searched — not yet recorded
 

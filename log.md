@@ -3,6 +3,21 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-11-13 (scope check — FUTURE-AI, read, not filed)
+
+* **Research**: the FUTURE-AI guideline (Lekadir et al., *BMJ* 2025;388:e081554), read in full on
+  PubMed Central (PMC11795397); bmj.com and future-ai.eu refused automated reading. Public `.dk`
+  pages searched for references to it.
+* **Update**: [Rules and guidance on clinical AI](/views/clinical-ai-rules/index.md) lists it under
+  *Read, not filed*.
+* **Judgement — international guideline, not filed.** Its issuer is an international consortium,
+  so it does not meet admission criterion (b) of the clinical-AI register (`CLAUDE.md` §4). By
+  analogy with the foreign-instrument rule for EU law, a thin stub would follow once a Danish
+  document in the register refers to it; the curator chose the *read, not filed* line over a rule
+  change.
+* **Not yet recorded**: a Danish public document referring to FUTURE-AI (searched 2026-11-13).
+* **Coverage**: 1 read, 0 filed.
+
 ## 2026-11-02 (sweep pass — research and education register, hospitals and regions)
 
 * **Research**: the public instruction databases of Region Hovedstaden, Region Midtjylland, Region
