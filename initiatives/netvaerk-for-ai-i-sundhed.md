@@ -4,7 +4,7 @@ title: Netværk for AI i Sundhed (Network for AI in Health)
 description: Politically independent Danish cross-disciplinary network working for AI in healthcare driven by clinical need rather than technological possibility.
 resource: https://aisundhed.dk/
 tags: [initiative, health, network, national]
-timestamp: 2026-11-02T00:00:00Z
+timestamp: 2026-11-25T00:00:00Z
 ---
 
 # Summary
@@ -35,7 +35,7 @@ developers alike.
 | Form | voluntary network, politically independent |
 | Status | Active |
 | Founded | 2025 |
-| Members | 368 *(as of 2026-11-02; 335 on 2026-10-20; 270 on 2026-09-28; 173 on 2026-09-21)* |
+| Members | 410 *(as of 2026-11-25; 368 on 2026-11-02; 335 on 2026-10-20; 270 on 2026-09-28; 173 on 2026-09-21)* |
 | Governed by | coordination group, in the network's start-up phase — see Notes |
 | Web | https://aisundhed.dk |
 
@@ -58,7 +58,7 @@ perspectives to public debate. It is also *"investigating the possibility of a m
 programme in health aimed at data scientists."*
 
 - [Generalforsamling and network meeting, 23 September 2026](/events/2026-09-23-generalforsamling-og-netvaerksmoede.md) — held.
-- Next event: January 2027, exact date not yet announced *(as of 2026-11-02)*. Recorded as a row
+- Next event: 15 January 2027, location to be announced *(as of 2026-11-25)*. Recorded as a row
   under the Event gate in `CLAUDE.md` §4 until a date and programme are published.
 
 # Notes

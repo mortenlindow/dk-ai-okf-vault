@@ -27,9 +27,9 @@ delivery · time required · date.
 
 ### General practice
 
-* [AI i praksis – muligheder og udfordringer](../../training/laegedage-ai-i-praksis-muligheder-og-udfordringer.md) - Lægedage (PLO and DSAM) · course for GPs and staff · in person, Copenhagen · 3.5 hours · 10 November 2026.
-* [Brug af AI til instrukser m.v.](../../training/laegedage-brug-af-ai-til-instrukser.md) - Lægedage (PLO and DSAM) · workshop for GPs · in person, Copenhagen · 3 hours · 11 November 2026.
-* [AI begynderkursus – prompt i praksis](../../training/laegedage-ai-begynderkursus-prompt-i-praksis.md) - Lægedage (PLO and DSAM) · beginners' course for practice staff · in person, Copenhagen · 3 hours · 13 November 2026.
+* [AI i praksis – muligheder og udfordringer](../../training/laegedage-ai-i-praksis-muligheder-og-udfordringer.md) - Lægedage (PLO and DSAM) · course for GPs and staff · in person, Copenhagen · 3.5 hours · 10 November 2026 (past run).
+* [Brug af AI til instrukser m.v.](../../training/laegedage-brug-af-ai-til-instrukser.md) - Lægedage (PLO and DSAM) · workshop for GPs · in person, Copenhagen · 3 hours · 11 November 2026 (past run).
+* [AI begynderkursus – prompt i praksis](../../training/laegedage-ai-begynderkursus-prompt-i-praksis.md) - Lægedage (PLO and DSAM) · beginners' course for practice staff · in person, Copenhagen · 3 hours · 13 November 2026 (past run).
 * [AI – For begyndere](../../training/kap-s-ai-for-begyndere.md) - KAP-S · webinar · live online · 2 hours · held 17 December 2025.
 * [AI i almen praksis: Refleksionsark til podcast](../../training/dge-refleksionsark-ai-i-almen-praksis.md) - DGE groups · discussion guide · document · created June 2026.
 
@@ -43,7 +43,7 @@ delivery · time required · date.
 
 ### Physiotherapy
 
-* [Hvad kan du som selvstændig fysioterapeut bruge AI til](../../training/danske-fysioterapeuter-ai-for-selvstaendige.md) - Danske Fysioterapeuter · webinar for members in private practice · live online · 1 hour · 19 November 2026 · free.
+* [Hvad kan du som selvstændig fysioterapeut bruge AI til](../../training/danske-fysioterapeuter-ai-for-selvstaendige.md) - Danske Fysioterapeuter · webinar for members in private practice · live online · 1 hour · 19 November 2026 (past run) · free.
 
 ### Pharmacy
 

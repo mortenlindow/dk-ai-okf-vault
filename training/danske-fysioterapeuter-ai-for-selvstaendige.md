@@ -19,15 +19,19 @@ timestamp: 2026-11-02T00:00:00Z
 | Level | introductory |
 | Delivery | live online (Teams); not recorded |
 | Time required | 1 hour (16.00–17.00) |
-| Updated | runs 19 November 2026; registration closes 17 November 2026 |
+| Updated | scheduled for 19 November 2026; the page was no longer online when checked 2026-11-25 |
 | Language | Danish |
 | Cost | free |
 | Access | registration required; members |
-| Status | Announced |
+| Status | Held |
 
 # Scope
 
 A down-to-earth *"introduktion til AI og sprogmodeller"* for self-employed physiotherapists: what the tools can do now and where they are heading, with examples from planning, meeting preparation, structuring one's own notes, idea development and sparring, agentic AI, and AI for bookkeeping and administration. It closes on responsible use — hallucinations, confidential data and keeping control [1]. The webinar is held on Teams, has room for 100 participants, and is not recorded [1].
+
+# Notes
+
+The run date has passed. When checked on 2026-11-25 the offering's page returned *page not found*, and no recording or later run was found on fysio.dk; the details above are from the capture of 2026-11-02.
 
 # Links
 

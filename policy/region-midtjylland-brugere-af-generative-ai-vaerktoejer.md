@@ -4,7 +4,7 @@ title: "Brugere af generative AI-værktøjer, regional retningslinje (Region Mid
 description: "Region Midtjylland's binding guideline for staff who use publicly available generative-AI tools."
 resource: https://e-dok.rm.dk/app/documents/X4C851FEF3BE5115FC1258B79002A7FD2?db=RM
 tags: [policy, guideline, regional, generative-ai]
-timestamp: 2026-11-02T00:00:00Z
+timestamp: 2026-11-25T00:00:00Z
 ---
 
 # Summary
@@ -22,7 +22,7 @@ responsibility as employer, and critical use of output [1].
 | Issued by | [Region Midtjylland](/organisations/health/region-midtjylland.md); approved by its Informationssikkerhedsudvalg, November 2024 |
 | Force | binding for staff; department managements are responsible for compliance |
 | Date | in force from 17 January 2026 |
-| Updated | version 3; next revision 14 November 2026 |
+| Updated | version 3; next revision 14 November 2026 — unchanged on e-Dok when checked 2026-11-25 |
 | Audience | employees of Region Midtjylland who use publicly available generative-AI tools |
 | Scope | Data that must not be entered, employer responsibility, and critical use of generative-AI output |
 | Access | open |
