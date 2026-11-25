@@ -11,6 +11,7 @@ here and cite the text. Promote the text to a [policy](../policy/index.md) conce
 when two or more concepts need it for its content rather than its money.
 
 * [Aftale om tre storskalaprojekter med kunstig intelligens i den offentlige sektor](offentlig-ai-aftale-2026.md) - DKK 266.7m tripartite agreement from 2026; one of its three projects lands in clinical practice.
+* [Forskning i kunstig intelligens på kræftområdet (DFF, 2026)](dff-forskning-i-kunstig-intelligens-paa-kraeftomraadet.md) - Danmarks Frie Forskningsfond's DKK 40m theme on AI in cancer research; seven projects awarded in October 2026.
 
 *Expected to grow to include the Novo Nordisk Foundation's AI programmes, Innovationsfonden,
 and Nordic and EU instruments.*

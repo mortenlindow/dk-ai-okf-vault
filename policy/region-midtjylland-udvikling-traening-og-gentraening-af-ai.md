@@ -4,7 +4,7 @@ title: "Udvikling, træning og gentræning af AI, regional retningslinje (Region
 description: "Region Midtjylland's guideline setting requirements for developing, training and retraining AI in-house."
 resource: https://e-dok.rm.dk/app/documents/X42CDF3E95BD43792C1258B7900417FE0?db=RM
 tags: [policy, guideline, regional, governance]
-timestamp: 2026-11-02T00:00:00Z
+timestamp: 2026-11-25T00:00:00Z
 ---
 
 # Summary
@@ -22,7 +22,7 @@ Device Regulation [1].
 | Issued by | [Region Midtjylland](/organisations/health/region-midtjylland.md); approved by its Informationssikkerhedsudvalg, November 2024 |
 | Force | binding — a set of requirements to be complied with |
 | Date | in force from 17 January 2026 |
-| Updated | version 2; next revision 14 November 2026 |
+| Updated | version 2; next revision 14 November 2026 — unchanged on e-Dok when checked 2026-11-25 |
 | Audience | employees who develop, train or run AI tools |
 | Scope | Legal basis for patient data, IT security and MDR quality assurance for in-house AI |
 | Access | open |

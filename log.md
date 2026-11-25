@@ -3,6 +3,38 @@
 Newest first. One heading per research pass. See §9 of [CLAUDE.md](CLAUDE.md) for the
 pass types and the entry shape.
 
+## 2026-11-25 — Biweekly update
+
+* **Research**: `bin/due.py` work list (5 status-flip candidates, 3 passed revision dates, no
+  captures older than 90 days); open GitHub issues (none). Region Midtjylland's three AI guidelines
+  on e-Dok; the Lægedage 2026 catalogue and the PLO-Efteruddannelse 2027 catalogue; the Danske
+  Fysioterapeuter webinar page; the hf/SSO agreement and its draft bill on Høringsportalen; the
+  draft AI-hjemmelslov, its consultation note and Retsinformation (decision-support order lead).
+  Sweep of the *Health networks and national bodies* cluster by a research agent, its claims
+  re-read on aisundhed.dk and dff.dk.
+* **Creation**: 2 `Policy` — the draft bill adding an oral exam to the hf major written
+  assignment; the cross-sector draft AI-hjemmelslov, whose remarks address clinical decision
+  support. 1 `Funding Programme` — DFF's 2026 theme *Forskning i kunstig intelligens på
+  kræftområdet*.
+* **Update**: four training offerings `Announced → Held` (three Lægedage 2026 courses; the Danske
+  Fysioterapeuter webinar, whose page no longer loads). Region Midtjylland's three guidelines:
+  revision date passed, version unchanged on e-Dok (checked). The hf/SSO agreement links its draft
+  bill. Netværk for AI i Sundhed: 410 members and next event 15 January 2027 *(as of 2026-11-25)*.
+  Rules page rebuilt (91 documents); training and health site pages updated.
+* **Not yet recorded**: whether the hf bill and the AI-hjemmelslov have been introduced in the
+  Folketing (ft.dk behind a bot check); Digital Sundhed Danmark's board and any AI function (new
+  site due 1 December 2026); an issued executive order on personal data for decision support in
+  patient treatment (none on Retsinformation, 2026-11-25).
+* **Leads not yet written**: Syddansk Sundhedsinnovation's *Partnership on Artificial Intelligence
+  in Healthcare* — its partners largely coincide with RAIN's, so it may belong on RAIN's file rather
+  than in one of its own (§4); the regulatory sandbox for AI run by Digitaliseringsstyrelsen and
+  Datatilsynet (cross-sector; one 2026 project with Region Hovedstaden); CLIC-BAIT (Region
+  Østdanmark, news only); PLO-Efteruddannelse 2027 AI courses (*Kunstig intelligens i praksis*, for
+  doctors and for practice staff; *Intelligent klinikdrift med AI*) — course pages not yet read for
+  the generative-AI test; the Digital Taskforce's large-scale projects as rows on the 2026 agreement.
+* **Open points**: the DLSC AI network's page gives its latest meeting date as 30 March 2023 (checked 2026-11-25); a verification pass may re-read it.
+* **Coverage**: health networks and national bodies — ~26 bodies read, 1 new: **mapped**.
+
 ## 2026-11-13 (scope check — FUTURE-AI, read, not filed)
 
 * **Research**: the FUTURE-AI guideline (Lekadir et al., *BMJ* 2025;388:e081554), read in full on

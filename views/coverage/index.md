@@ -167,6 +167,8 @@ when a source appears:
 * **CAISA** - launch date on its own pages. **Pioneer Centre** - current funding total.
 * **AI-Innovationsnetværket** - activity after November 2020.
 * **Sundhedsstyrelsen**, **Dataetisk Råd** - not yet read; both rate-limited automated reading on 2026-09-21.
+* **Digital Sundhed Danmark** - board, chair and director; any AI function. The successor's site was due 1 December 2026 (searched 2026-11-25).
+* **Region Syddanmark's and Aarhus University Hospital's AI competence units**, **Region Hovedstaden's AI and data domain** - known from committee papers and job advertisements, no own page found (searched 2026-11-25).
 
 # Where this map is expected to grow
 
@@ -196,3 +198,4 @@ A focus counts as **mapped** when a sweep yields fewer than 1 new entity per 10 
 | Research and education register — universities | 2026-11-02 | 8 universities | 18 | University of Copenhagen not reachable |
 | Research and education register — school levels | 2026-11-02 | ~15 bodies | 15 | still growing |
 | Research and education register — hospitals and regions | 2026-11-02 | 4 regional databases + sites | 4 filed, 4 listed | Region Hovedstaden's sites and Region Syddanmark's database not reachable |
+| Health networks and national bodies (biweekly update) | 2026-11-25 | ~26 bodies | 1 funding programme | **mapped** (1 per 26) |

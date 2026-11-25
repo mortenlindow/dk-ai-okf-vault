@@ -24,6 +24,7 @@ provisions in the vault's own words; the documents themselves are linked.
 * [Offentlige myndigheders brug af kunstig intelligens – Inden I går i gang (Datatilsynet)](../../policy/datatilsynet-offentlige-myndigheders-brug-af-kunstig-intelligens.md) - *guidance*. Datatilsynet's data-protection guidance for public authorities starting AI projects, with examples from hospitals and patient records.
 * [Talegenkendelse og taleklassifikation som støtteværktøj for personale inden for sundheds- og omsorgsområdet (slutrapport, sandkasseforløb)](../../policy/datatilsynet-talegenkendelse-og-taleklassifikation-sandkasse.md) - *guidance*. Final report of Datatilsynet's and Digitaliseringsstyrelsen's regulatory sandbox on generative-AI speech recognition for health and care records.
 * [Guide til offentlige myndigheder om brug af (generativ) kunstig intelligens (Digitaliseringsstyrelsen)](../../policy/digitaliseringsstyrelsen-guide-om-brug-af-generativ-kunstig-intelligens.md) - *guidance*. Digitaliseringsstyrelsen's guide for leaders of public authorities on choosing an approach to generative-AI tools and writing internal rules.
+* [Forslag til lov om offentlige myndigheders og organers udvikling og anvendelse af AI-systemer ved behandling af personoplysninger (AI-hjemmelsloven) — høringsudkast](../../policy/udkast-ai-hjemmelsloven-offentlige-myndigheder.md) - *binding once enacted (draft)*. Draft cross-sector act giving public authorities, the health service among them, a general legal basis to develop and use AI on personal data.
 * [AI i sundheds- og velfærdsteknologier — fire anbefalinger (Dataetisk Råd)](../../policy/dataetisk-raad-ai-i-sundheds-og-velfaerdsteknologier.md) - *recommendation*. Dataetisk Råd's four recommendations for responsible, data-ethical use of AI in the health and welfare sector.
 
 ## Professional associations, patient organisations and their input
@@ -112,7 +113,7 @@ They are listed here rather than given files (read 2026-11-02):
 
 ## Leads not yet written
 
-* **Draft executive order on personal data for decision support in patient treatment** (Indenrigs- og Sundhedsministeriet) — out for consultation from December 2025; no issued order found on Retsinformation on 2026-11-02.
+* **Draft executive order on personal data for decision support in patient treatment** (Indenrigs- og Sundhedsministeriet) — out for consultation from December 2025; no issued order found on Retsinformation on 2026-11-02 or 2026-11-25.
 * **Danske Patienter's AI position page** — its address returns *no access* as of 2026-11-02.
 * **Dataetisk Råd, *Genovervej bred hjemmel til offentlig AI*** (12 October 2026) and **Danske Regioner's consultation responses on the AI Act legislation** — institutional input, not yet read.
 * **Region Hovedstaden** — a regional guideline on the AI interpreter app, which Herlev and Gentofte's guideline says will replace the hospitals' own; a regional frame for AI under its digital steering group.

@@ -4,7 +4,7 @@ title: "Informationssikkerhed ved indkøb og implementering af AI-værktøjer, r
 description: "Region Midtjylland's guideline and procedure for buying and implementing AI tools, including tools used in patient treatment."
 resource: https://e-dok.rm.dk/app/documents/X1C1C8A844EC1072CC1258B79003F3B6B?db=RM
 tags: [policy, guideline, regional, governance]
-timestamp: 2026-11-02T00:00:00Z
+timestamp: 2026-11-25T00:00:00Z
 ---
 
 # Summary
@@ -22,7 +22,7 @@ treatment [1].
 | Issued by | [Region Midtjylland](/organisations/health/region-midtjylland.md); approved by its Informationssikkerhedsudvalg, November 2024 |
 | Force | binding for staff; department managements are responsible for compliance |
 | Date | in force from 17 January 2026 |
-| Updated | version 2; next revision 14 November 2026 |
+| Updated | version 2; next revision 14 November 2026 — unchanged on e-Dok when checked 2026-11-25 |
 | Audience | employees who procure or implement AI tools |
 | Scope | Procurement and implementation of AI tools: security, CE marking, static models, cloud and data handling |
 | Access | open |

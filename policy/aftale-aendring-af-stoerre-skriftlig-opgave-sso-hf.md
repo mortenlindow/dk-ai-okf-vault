@@ -4,7 +4,7 @@ title: "Aftale om ændring af eksamen i Større skriftlig opgave (SSO) — polit
 description: "Political agreement adding an oral exam to the hf major written assignment because of AI, with a bill to follow."
 resource: https://uvm.dk/media/gp3mmc53/politisk-aftale-om-aendring-af-stoerre-skriftlig-opgave-sso.pdf
 tags: [policy, statement, national, education]
-timestamp: 2026-11-02T00:00:00Z
+timestamp: 2026-11-25T00:00:00Z
 ---
 
 # Summary
@@ -26,7 +26,7 @@ to follow [1].
 | Audience | Folketinget and schools offering hf |
 | Scope | An oral exam added to the hf major written assignment in light of AI |
 | Access | open |
-| Status | Planned |
+| Status | Planned — the bill was out for consultation 9 October – 6 November 2026 (checked 2026-11-25) |
 
 # Key provisions
 
@@ -41,11 +41,17 @@ defence of home-written papers, exam monitoring tools, more written work at scho
 ministry's news items and not filed. The agreement and the package both refer to a coming national AI
 strategy for the school and education sector.
 
+The ministry published a [draft bill](/policy/udkast-lovforslag-mundtlig-eksamination-sso-hf.md)
+for consultation on 9 October 2026, with a proposed entry into force of 1 January 2027 [3]. The
+agreement itself speaks of the current school year, 2026/27 [1].
+
 # Links
 
+- Given effect by: [the draft bill](/policy/udkast-lovforslag-mundtlig-eksamination-sso-hf.md).
 - Register: [Rules and guidance on clinical AI](/views/clinical-ai-rules/index.md).
 
 # Citations
 
 [1] [Politisk aftale om ændring af SSO (PDF)](https://uvm.dk/media/gp3mmc53/politisk-aftale-om-aendring-af-stoerre-skriftlig-opgave-sso.pdf)
 [2] [Ny eksamensform på hf skal modvirke snyd med AI — uvm.dk, 24 September 2026](https://uvm.dk/aktuelt/nyheder/2026/september/260924-ny-eksamensform-paa-hf-skal-modvirke-snyd-med-ai/)
+[3] [Høring: Forslag til lov om ændring af lov om de gymnasiale uddannelser (SSO på hf) — Høringsportalen](https://hoeringsportalen.dk/Hearing/Details/71621)

@@ -4,7 +4,7 @@ title: "Brug af AI til instrukser m.v. (Lægedage 2026, course 319T)"
 description: "Hands-on Lægedage workshop for general practitioners on using language models for instructions, phrases, staff teaching and certificates."
 resource: https://laeger.dk/media/gkhlcvyq/laegekatalog-2026_ver05082026.pdf
 tags: [training, workshop, national]
-timestamp: 2026-11-02T00:00:00Z
+timestamp: 2026-11-25T00:00:00Z
 ---
 
 # Facts
@@ -19,11 +19,11 @@ timestamp: 2026-11-02T00:00:00Z
 | Level | intermediate — a basic understanding of language models is assumed |
 | Delivery | in person, Bella Center, Copenhagen |
 | Time required | 3 hours (14.00–17.00) |
-| Updated | catalogue version 05.08.2026; runs 11 November 2026 |
+| Updated | catalogue version 05.08.2026; scheduled for 11 November 2026; no later run listed (checked 2026-11-25) |
 | Language | Danish |
 | Cost | DKK 3,700 per day of Lægedage, with reduced rates for some groups |
 | Access | registration required; limited places |
-| Status | Announced |
+| Status | Held |
 
 # Scope
 
@@ -32,6 +32,8 @@ How AI can help a general practitioner with instructions, phrases, staff teachin
 # Notes
 
 Lægedage 2026 runs 9–13 November 2026 at Bella Center, Copenhagen, with 139 courses over five days. The catalogue gives one price per day of attendance, DKK 3,700, with reduced rates for some groups, and lists each course by day, time, audience and course leader. Course leaders and teachers are named in the catalogue and are not recorded here (`CLAUDE.md` §6).
+
+The run date has passed. The 2026 catalogue is unchanged, and the PLO-Efteruddannelse 2027 catalogue (version 4, 14.08.2026) lists other AI courses but not this one; the Lægedage 2027 programme is not yet recorded in this vault (checked 2026-11-25). No outcome or evaluation is recorded in this vault.
 
 # Links
 

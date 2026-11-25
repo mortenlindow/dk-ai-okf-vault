@@ -30,7 +30,7 @@ Danish public AI-in-health activity is organised at three levels, each with its 
   hospitals, universities, companies and authorities. Its five working groups span needs
   assessment, cross-disciplinary learning, a think tank, implementation and the network's
   own operations. Membership grew from 173 to 270 in the week of its first general
-  assembly in September 2026, and stood at 368 on 2 November. [RAIN](../../initiatives/rain-network-ai-healthcare.md), an
+  assembly in September 2026, stood at 368 on 2 November, and at 410 on 25 November. [RAIN](../../initiatives/rain-network-ai-healthcare.md), an
   open network of about 500 professionals anchored in the Region of Southern Denmark, also
   draws members from across the country.
 - **University faculties.** The
@@ -83,6 +83,7 @@ earliest-dated bodies are hospital-anchored; the university networks are the mos
 ## Funding
 
 * [Aftale om tre storskalaprojekter](../../funding/offentlig-ai-aftale-2026.md) - DKK 266.7m tripartite agreement; its automated-documentation project extends into clinical practice in the regions.
+* [Forskning i kunstig intelligens på kræftområdet (DFF, 2026)](../../funding/dff-forskning-i-kunstig-intelligens-paa-kraeftomraadet.md) - DKK 40m politically set DFF theme on AI in cancer; seven projects awarded in October 2026, four of them hosted by regions.
 
 ## Events
 
