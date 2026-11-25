@@ -62,6 +62,7 @@ earliest-dated bodies are hospital-anchored; the university networks are the mos
 
 ### Regional
 
+* [Partnership on Artificial Intelligence in Healthcare (Syddansk Sundhedsinnovation)](../../initiatives/partnership-on-ai-in-healthcare-syddansk-sundhedsinnovation.md) - Syddansk Sundhedsinnovation's AI partnership for the region's hospitals; coordinates RAIN with Regional IT, SDU's Mærsk Mc-Kinney Møller Institute and CAI-X.
 * [RAIN – Network for AI in Healthcare](../../initiatives/rain-network-ai-healthcare.md) - open network of about 500 professionals, run by a Southern Denmark partnership that includes CAI-X.
 
 ### University-anchored

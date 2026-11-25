@@ -42,6 +42,7 @@ Flat by design: any sub-foldering would use a contested axis (by form) or an uns
 
 ### Regional
 
+* [Partnership on Artificial Intelligence in Healthcare (Syddansk Sundhedsinnovation)](partnership-on-ai-in-healthcare-syddansk-sundhedsinnovation.md) - Syddansk Sundhedsinnovation's AI partnership for the region's hospitals; coordinates RAIN with Regional IT, SDU's Mærsk Mc-Kinney Møller Institute and CAI-X.
 * [RAIN – Network for AI in Healthcare](rain-network-ai-healthcare.md) - open network of about 500 professionals, anchored in the Region of Southern Denmark.
 
 ### Hospital-anchored

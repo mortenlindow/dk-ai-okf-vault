@@ -15,7 +15,8 @@ pass types and the entry shape.
 * **Creation**: 2 `Policy` — the draft bill adding an oral exam to the hf major written
   assignment; the cross-sector draft AI-hjemmelslov, whose remarks address clinical decision
   support. 1 `Funding Programme` — DFF's 2026 theme *Forskning i kunstig intelligens på
-  kræftområdet*.
+  kræftområdet*. 1 `Initiative` — Syddansk Sundhedsinnovation's *Partnership on Artificial
+  Intelligence in Healthcare*, kept apart from RAIN at the curator's decision.
 * **Update**: four training offerings `Announced → Held` (three Lægedage 2026 courses; the Danske
   Fysioterapeuter webinar, whose page no longer loads). Region Midtjylland's three guidelines:
   revision date passed, version unchanged on e-Dok (checked). The hf/SSO agreement links its draft
@@ -25,15 +26,15 @@ pass types and the entry shape.
   Folketing (ft.dk behind a bot check); Digital Sundhed Danmark's board and any AI function (new
   site due 1 December 2026); an issued executive order on personal data for decision support in
   patient treatment (none on Retsinformation, 2026-11-25).
-* **Leads not yet written**: Syddansk Sundhedsinnovation's *Partnership on Artificial Intelligence
-  in Healthcare* — its partners largely coincide with RAIN's, so it may belong on RAIN's file rather
-  than in one of its own (§4); the regulatory sandbox for AI run by Digitaliseringsstyrelsen and
+* **Decision — the partnership and RAIN are two files** (curator, 2026-11-25): the partnership is
+  the host's AI service and coordinating role, RAIN the open network it coordinates.
+* **Leads not yet written**: the regulatory sandbox for AI run by Digitaliseringsstyrelsen and
   Datatilsynet (cross-sector; one 2026 project with Region Hovedstaden); CLIC-BAIT (Region
   Østdanmark, news only); PLO-Efteruddannelse 2027 AI courses (*Kunstig intelligens i praksis*, for
   doctors and for practice staff; *Intelligent klinikdrift med AI*) — course pages not yet read for
   the generative-AI test; the Digital Taskforce's large-scale projects as rows on the 2026 agreement.
 * **Open points**: the DLSC AI network's page gives its latest meeting date as 30 March 2023 (checked 2026-11-25); a verification pass may re-read it.
-* **Coverage**: health networks and national bodies — ~26 bodies read, 1 new: **mapped**.
+* **Coverage**: health networks and national bodies — ~26 bodies read, 2 new: **mapped**.
 
 ## 2026-11-13 (scope check — FUTURE-AI, read, not filed)
 

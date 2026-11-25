@@ -54,6 +54,7 @@ Europe was read.
 
 # Links
 
+- Coordinated through Syddansk Sundhedsinnovation's [Partnership on Artificial Intelligence in Healthcare](/initiatives/partnership-on-ai-in-healthcare-syddansk-sundhedsinnovation.md).
 - Partner [CAI-X](/initiatives/cai-x.md) is also anchored at Odense University Hospital and SDU.
 - Focus view: [AI in health](/views/health/index.md).
 

@@ -29,7 +29,7 @@ present scope rules — a statement about the rules, not about the body).
 * [Region Midtjylland](../../organisations/health/region-midtjylland.md) - not yet read.
 * [Region Nordjylland](../../organisations/health/region-nordjylland.md) - **recorded** as partner of the [Centre for AI in Health](../../initiatives/centre-for-ai-in-health-aau.md). Not yet read: region-level AI programmes.
 * [Region Sjælland](../../organisations/health/region-sjaelland.md) - merges into Region Østdanmark on 2027-01-01. Not yet read for AI programmes.
-* [Region Syddanmark](../../organisations/health/region-syddanmark.md) - **recorded** through [CAI-X](../../initiatives/cai-x.md) and [RAIN](../../initiatives/rain-network-ai-healthcare.md), hosted by [Syddansk Sundhedsinnovation](../../organisations/health/syddansk-sundhedsinnovation.md) (read 2026-10-17). Not yet read: the host's *Partnership on Artificial Intelligence in Healthcare*.
+* [Region Syddanmark](../../organisations/health/region-syddanmark.md) - **recorded** through [CAI-X](../../initiatives/cai-x.md) and [RAIN](../../initiatives/rain-network-ai-healthcare.md), hosted by [Syddansk Sundhedsinnovation](../../organisations/health/syddansk-sundhedsinnovation.md) (read 2026-10-17). The host's [Partnership on Artificial Intelligence in Healthcare](../../initiatives/partnership-on-ai-in-healthcare-syddansk-sundhedsinnovation.md) recorded 2026-11-25.
 
 # State, municipal and interest bodies
 
@@ -198,4 +198,4 @@ A focus counts as **mapped** when a sweep yields fewer than 1 new entity per 10 
 | Research and education register — universities | 2026-11-02 | 8 universities | 18 | University of Copenhagen not reachable |
 | Research and education register — school levels | 2026-11-02 | ~15 bodies | 15 | still growing |
 | Research and education register — hospitals and regions | 2026-11-02 | 4 regional databases + sites | 4 filed, 4 listed | Region Hovedstaden's sites and Region Syddanmark's database not reachable |
-| Health networks and national bodies (biweekly update) | 2026-11-25 | ~26 bodies | 1 funding programme | **mapped** (1 per 26) |
+| Health networks and national bodies (biweekly update) | 2026-11-25 | ~26 bodies | 1 funding programme, 1 initiative | **mapped** (2 per 26) |
